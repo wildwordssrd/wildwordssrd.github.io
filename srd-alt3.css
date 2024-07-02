@@ -75,7 +75,7 @@ body{
   font-size: 26px;
   flex-grow: 1; 
   }
-.banner{background-image:url('graphics/Mythworks Banner Alt2.svg');height:5.3em;flex-grow:0;flex-basis:5.3em;background-repeat:no-repeat;}
+.banner{background-image:url('graphics/Mythworks Banner Alt3.svg');height:5.3em;flex-grow:0;flex-basis:5.3em;background-repeat:no-repeat;}
 iframe{
   overflow:hidden;
   border: none;
