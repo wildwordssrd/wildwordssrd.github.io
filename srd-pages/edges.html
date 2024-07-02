@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edges</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButtonSel" onclick="">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">EDGES&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Edges are areas of general competency that relate to how a character tackles obstacles or approaches situations.</li>
+              <li>Mechanically, an edge adds 1d6 to an action roll if a character is acting in a way that matches it. Only one edge can apply to any one roll.</li>
+              <li>Edge names are, ideally, themed after the setting they're used for, in order to reinforce elements of the world as they're used.</li>
+              <li>Edges are broad by design and flexible to a fault, and players are assumed to almost always have access to an edge to give them their first d6 of a roll</li>
+            </ul>
+            <h4 class="ph4">Edges Define An Approach</h4>
+            <p class="pp">The first true mechanical choice for a character, the edges a character gains should match how the player wants to tackle problems in a game. Taking an edge named 'Stealth' would be great for an assassin- or thief-type character, probably useful for a ranger or detective, and rubbish for a barbarian. In this way, edges define the approach a character usually takes. It doesn't mean they always have to hew to their edges, just that they get an extra d6 on action rolls when they do</p>
+            <span class="example"><b>The Wildsea</b> has seven edges; Grace, Iron, Sharps, Instinct, Teeth, Veils, and Tides. Kicking open a door might be done savagely with the Teeth edge, with great force using the Iron edge, or by applying smart pressure at the right location with Sharps. Using Veils to kick in a door, an edge of stealth and secrecy, might be a tough sell.</span>
+            <h4 class="ph4">How Many Edges</h4>
+            <p class="pp">There's no perfect number for how many edges should exist, or how many a character should have, but 7 edges in total (with each character having access to 3 of them) has worked well so far.</p>
+            <p class="pp">The more edges a game has, the narrower they will likely become. Too many edges and they might as well be skills. Too few edges and they might as well not exist.</p>
+            <span class="exactly">Rise, a game of nation-states, has six edges - War, Commerce, Culture, Plenty, Faith, and Progress. Each of these edges describes elements a nation might hold dear, and each player chooses two of these to represent their nation's broad characteristics.</span>
+            <h4 class="ph4">Naming Edges</h4>
+            <p class="pp">Edge names are important, but that doesn't mean they have to be dry. When naming an edge, try to balance...</p>
+            <ul class="pul">
+              <li>A feeling that it belongs to the world or setting</li>
+              <li>A clarity of meaning</li>
+              <li>A distinctiveness from other edges</li>
+              <li>A sense of brevity</li>
+            </ul>
+            <p class="pp">The ideal edge feels right for the world, is easy enough to understand, feels unique, and is probably a single word.</p>
+            <p class="pp">No pressure, then.</p>
+            <span class="example">One of <b>Drift's</b> edges, Smoke, is a good example of this. It's an edge of dirtiness and stealth, of crawling through gutters and keeping things hidden, of obscuring your movements and intentions. It could have been called 'Stealth', but the city can be a grimy, dirty place at times, so Smoke draws allusions both to hidden things and the feeling of the wider setting it's designed to fit. There are other edges in Drift that might be useful for stealthy actions and lying, but none of them are dedicated to it like Smoke is.</span>
+            <span class="example">The edges of <b>Rise</b> are named more simply than most, as the setting of the game isn't as important as the individual cultures and developments of the nation states involved in it. They're informative, but purposefully trade flavour for absolute clarity.</span>
+            <span class="example"><b>PICO</b> doesn't have edges - it wants players to roll fewer dice and the characters to be very specialized, so it has an expanded skills system instead.</span>
+            <h4 class="ph4">Edges as Stats</h4>
+            <p class="pp">Edges are close to what some TRPGs would call stats, very broad areas that a character excels in. In fact, you can treat edges as more traditional stats if you want to by having them describe the strengths of a character's own body and mind.</p>
+            <span class="example"><b>The Mountain Road</b>, a game of medieval travel, uses edges like basic stats. Characters might choose Strength, Reflexes, Guts, or Wisdom.</span>
+            <h4 style="color: #D25A31;">Chop & Change - Edges</h4>
+            <p class="pp">When adding edges to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Add a special rule to each of them, so that using each edge works slightly differently</li>
+              <li>Have characters take all the edges, but assign them different sized dice (if you're using variable dice sizes)</li>
+              <li>Limit the number of edges a character takes to one, if you want to encourage hyper-specialization</li>
+              <li>Tie the use of certain skills to the use of particular edges (though this will vastly decrease flexibility)</li>
+              <li>Allow multiple edges to contribute to an action roll</li>
+              <li>Make edges into a one box track, that are marked when used and can't be used again until unmarked.</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

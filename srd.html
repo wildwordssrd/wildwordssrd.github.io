@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wild Words SRD</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="/srd-alt2.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="/srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;padding-top:1em;" class="navBar">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location ='../index'">What's Here</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Wild Words</span>
+              <span class="content navSection">
+                <span class="navButton" onclick="window.location ='../srd'">Attribution</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/core-concepts'">Core Concepts</span>
+                <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+                  <span class="content navSection">
+                    <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+                  </span>
+                <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+                  <span class="content navSection">
+                    <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                    <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+                  </span>
+                <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+                  <span class="content navSection">
+                    <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+                  </span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ By Firefly's Light</span>
+              <span class="content navSection">
+                <span class="navButton" onclick="window.location ='../firefly/legal'">Legal</span>
+                <span class="collapsible navButton" onclick="collapse(this);">▾ Resources</span>
+                    <span class="content navSection">
+                        <span class="navButton" onclick="window.location ='../firefly/b-o-p'">Bloodlines, Origins, Posts</span>
+                        <span class="navButton" onclick="window.location ='../firefly/hazards'">Hazards</span>
+                        <span class="navButton" onclick="window.location ='../firefly/reaches'">Reaches</span>
+                        <span class="navButton" onclick="window.location ='../firefly/incursions'">Incursions</span>
+                    </span>
+              </span>
+            <span class="navButton" onclick="collapse(this);">Buy The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span class="accent1">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h2 style="margin-bottom: -5;">PART ONE</h2> 
+            <h1 class="ph1" style="">LEGAL INFORMATION</h1><br>
+            <p class="pp">The Wild Words Engine is a System Reference Document for the system used to create Felix Isaac’s The Wildsea. With this website, you are free to create your own Told by Wild Words games. All that we ask for is you credit us using the Attribution Text below.</p>
+            <h3 class="ph3">ATTRIBUTION</h3>
+            <p class="pp">Wherever you put your copyright notice, add the following text:</p>
+            <span class="example">This work is Told by Wild Worlds (found at url), a product of Felix Isaacs, Quillhound Studios, and Mythworks, and licensed for use under the Creative Commons Attribution 3.0 unported license (http:// creativecommons.org/licenses/by/3.0/).</span>
+            <p class="pp">You are free to make use of the Told by Wild Words logos in your games and promotional materials.</p>
+            <span class="horiz-table" style="flex-wrap: wrap;">
+                <div><img src="/graphics/wildwords_01.png" alt="Told by Wild Words" style="width:150px;height:auto;"></div>
+                <div><img src="/graphics/wildwords-02.png" alt="Told by Wild Words" style="width:150px;height:auto;"></div>
+                <div><img src="/graphics/wildwords-03.png" alt="Told by Wild Words" style="width:150px;height:auto;"></div>
+                <div><img src="/graphics/wildwords-04.png" alt="Told by Wild Words" style="width:150px;height:auto;"></div>
+                <div><img src="/graphics/wildwords-05.png" alt="Told by Wild Words" style="width:150px;height:auto;"></div>
+                <div><img src="/graphics/wildwords-06.png" alt="Told by Wild Words" style="width:150px;height:auto;"></div>
+                <div><img src="/graphics/wildwords-07.png" alt="Told by Wild Words" style="width:150px;height:auto;"></div>
+                <div><img src="/graphics/wildwords-07.png" alt="Told by Wild Words" style="width:150px;height:auto;"></div>
+            </span>
+            <p class="pp">If you use any of the Told by Wild Words logos, please also add the following text:</p>
+            <span class="example">The Told by Wild Words Logo is © Mythopoeia, Inc, and Quillhound Studios, and is used with permission.</span>
+            <h3 class="ph3">COPYING</h3>
+            <p class="pp">As part of this license, you may copy the text of this SRD. If you do this, please remember to include the original copyright notice found above, and don’t add any kind of copy protection.</p>
+            <h3 class="ph3">NEW WORKS</h3>
+            <p class="pp">You have the right to create new works derived from this SRD.</p>
+            <h3 class="ph3">LIMITATIONS</h3>
+            <p class="pp">You cannot imply that Felix Isaacs, Quillhound Studios, or Mythworks is endorsing or sponsoring you unless special arrangements have been made. Don’t use the Wildsea, Quillhound Studios, and Mythworks logo without obtaining permission. You may use the Told by Wild Words logo so long as you follow the terms set above.</p>
+            <p class="pp">You may not use any material from The Wildsea that is not included in this SRD, including but not limited to specific prompts and artwork. You must create you own material using the Told by Wild Words Engine as a base.</p>
+            <p class="pp">Though not required, we ask that you notify us if you plan to use Told by Wild Words as a basis for your game. We’d love to hear from you and maybe check out what you’ve created (contact us)!</p>
+          </div>
+          <div class="page">
+            <h2 style="margin-bottom: -5;">PART TWO</h2> 
+            <h1 class="ph1" style="">INITIAL CHOICES AND SYSTEM</h1><br>
+            <h3 class="ph3">General Overview</h3>
+            <p class="pp">This website details the choices you should make before beginning to develop a Wild Words game. These core systems are essential to understand - even if you don't end up using them, multiple smaller elements of the game refer to or rely on these in order to function. And we'll say it here, but you'll find reminders dotted through the text as well: this is a rough guide, not a full instruction manual. Whatever you choose, even if you hew as closely to an existing game (like The Wildsea) as possible, you'll have some choices to make and some things you'll want to change.</p>
+            <h3 class="ph3">A Few Words on Setting Creation</h3>
+            <p class="pp">You can use whatever setting, style, or genre you like for the Wild Words Engine, but I've found that setting creation works best when you have Pillars, Details, and Not Much In Between.</p>
+            <h4 class="ph4">Pillars</h4>
+            <p class="pp">These are the big ideas that are easy to grasp, and that hold the rest of the setting and the basics of the narrative up. Players should be able to latch onto and use them to understand the basics of a weird or unusual world very quickly. Three is probably a good minimum, seven or so a good maximum (especially if some of the pillars stand close to each other in terms of theme), and ideally they should be laid out as close to the start of a book as you can get them to act as a good foundation for later details.</p>
+            <p class="pp">Remember, there's no inherent depth to pillars. They might imply depth, but that comes later. They're big, bold, and even if they're kind of weird they should be easy enough to grasp.</p>
+            <p class="pp">Example: <b>The Wildsea</b> has seven pillars, ranging from 'the sea is made of trees' and 'plants grow fast and rampant' to 'open flames are forbidden' and 'the world is extremely weird, but not traditionally magical'.</p>
+            <h4 class="ph4">Details</h4>
+            <p class="pp">These are the tiny but intriguing bits that make up the rest of the setting, and should ideally be scattered throughout the book. They come in a hundred forms (well, not quite a hundred) - fictive inserts, setting-based writing, character building options, creatures, resource names... the list goes on. If it's specific but optional, it's a detail.</p> 
+            <p class="pp">Why? Because no single player ever really needs to know more than the details that apply to their own character. If every player knows their own details due to character creation and having the character sheet in front of them, the action and story naturally rises out of a combination of those same details (plus the details of the other player characters and the specific details that the GM gives when crafting or guiding elements of the story).</p>
+            <h4 class="ph4">Not Much In Between</h4>
+            <p class="pp">Wild Words settings ideally have very little in the 'medium' range of ideas that's essential to play. In the case of <b>The Wildsea</b>, play might take place in a Reach - a more detailed and in-depth area of the sea complete with NPCs, places, and specific factions. But every reach is optional - if the players or GM don't want the Foxloft or the Kremich Surge in their world, those places simpy aren't there.</p>
+            <p class="pp">Why? Because these are the bits that are hard to remember, and that have to be checked in the book by newer players or GMs. For some styles of play they can be really useful, but (in general, for narrative-led experiences) the medium-sized stuff that sits in between pillar and detail is created by the GM and players working together, through the conversation and narrative.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

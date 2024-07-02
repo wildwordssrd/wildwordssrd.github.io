@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Assets</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButtonSel" onclick="">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">SHARED ASSETS&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Most Wild Words games will likely have a character for each player, with information recorded on some kind of character sheet. A shared asset is something that all players have equal stake in, often represented on a separate sheet that's shared by everyone at the table.</li>
+              <li>Shared assets are the best way to represent something like a home base or vehicle that exists for all character</li>
+              <li>Shared assets might be available at all times, or restricted to certain scenes. The frequency of use and complexity of these assets will likely have a large impact on speed of play, especially if they're represented by a single sheet.</li>
+            </ul>
+            <h4 class="ph4">What is a Shared Asset?</h4>
+            <p class="pp">Anything that multiple characters own and interact with might be a shared asset, but we recommend only giving such things a sheet of their own if they can be altered or improved during play. A shared asset works particularly well for representing...</p>
+            <ul class="pul">
+              <li><b>A Vehicle</b>: Something that moves all players from place to place in the world, especially if there are rooms or fittings on that vehicle that they can interact with during a game.</li>
+              <li><b>A Base</b>: Such as a building or underground hideout that the characters retire to in between certain scenes.</li>
+              <li><b>A Faction</b>: Not all shared assets have to be physical - if all characters belong to a single group or faction, a sheet for this shared asset might record the opinions of NPCs or how the faction's connections or training benefits characters.</li>
+            </ul>
+            <span class="example">
+              In <b>Iron on Stone</b>, all players share a hangar bay that their mechs return to after a mission. The hangar bay is where characters can unsuit and mingle, having roleplay-first interactions, but also where mechs are repaired and upgraded.
+            </span>
+            <span class="example">
+              In <b>Rise</b>, the shared asset is the world that the nation-states share. The sheet for this shared asset tracks thing like changes in era, barbarian activity, and the changing types of resources available to be claimed. Though the asset is shared it's not always a place for cooperation, and players might have their nation states claim certain elements of the shared asset for themselves from time to time.
+            </span>
+            <h4 class="ph4">Equal Opportunities</h4>
+            <p class="pp">The most important element of a shared asset is that it can be used by everyone at the table in some form. Certain character choices or narrative roles might allow it to be used in different ways, but its called a shared asset for a reason.</p>
+            <p class="pp">Ratings (page XX) are extremely useful when it comes to shared assets. They ensure that what an asset can do is at the same power level or usefulness for everyone, no matter which character or player is interacting with it. This isn't necessary - you might prefer certain characters have an easier or more rewarding time interacting with a shared asset - but it does help with table balance.</p>
+            <span class="example">In <b>The Wildsea</b>, all characters can make a ratings roll using the ratings on their ship sheet. The edges and skills of the character rolling have no effect, as it's the capabilities of the vessel they're determining with their roll, but some particularly sea-focused characters might have their aspects come into play during these rolls.</span>
+            <h4 class="ph4">Developing a Shared Asset</h4>
+            <p class="pp">This might be done through the application of resources, the spending of metacurrency, or merely tied to in-game narrative or the duration of play. But developing a shared asset helps make it more unique, and increases the feeling of group ownership at the table.</p>
+            <span class="example">In <b>The Sword Spiral</b>, the asset that everyone shares is a legend that tells of their heroic triumphs and grisly failures. This legend is updated at the end of every session, and narrative elements that have been added to the legend can be called upon for mechanical boosts in subsequent sessions.</span>
+            <h4 style="color: #D25A31;">Chop & Change - Shared Assets</h4>
+            <p class="pp">When adding a shared asset to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have it used as a storage space for certain types of resources that aren't owned by an individual character (The Wildsea does this with Cargo)</li>
+              <li>Have it out of reach for the majority of a game, accessible only in a limited way for powerful bonuses</li>
+              <li>Use the shared asset as a reward or goal that can only be accessed after a smaller story or arc is completed</li>
+              <li>Treat the shared asset as an NPC that characters must manage their relationship with</li>
+              <li>Have several shared assets that are under the control
+                of pairs of characters, unique from each other</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

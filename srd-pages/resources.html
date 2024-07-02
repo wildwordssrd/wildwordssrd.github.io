@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButtonSel" onclick="">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">RESOURCES&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Resources are simple and temporary, elements of the world that a character can pick up and keep to use later.</li>
+              <li>Resources are usually split into several categories depending on what they are, or how they're used by the rules. Not all categories have to work in the same way, but keeping them similar helps to keep the rules-burden low.</li>
+              <li>A resource can have one or more tags, words attached to it that describe a quality it has.</li>
+              <li>Resources might be arranged in lists or tables in a book, but they should always be simple enough to make in the moment for a GM. Resources are a great reward for small successes during play, so shouldn't require checking a book repeatedly.</li>
+              <li>Resources likely give a 1d6 advantage to an action roll when used, but might be consumed in the process.</li>
+            </ul>
+            <h4 class="ph4">What is a Resource?</h4>
+            <p class="pp">In most Wild Words games, a resource is anything a character picks up during a game to keep, but that isn't vitally important. They're intended to be found, lost, bought, sold - resources are fluid, by their very nature</p>
+            <h4 class="ph4">Mini-Aspects</h4>
+            <p class="pp">In fact, resources are a lit like tiny, temporary, uncomplicated aspects. Their names are important for working out what you might do with them, they give 1d6 advantages on action rolls when used, and they might allow a character to do something they wouldn't normally be able to.</p>
+            <span class="example">Klyka picks up a jagged saw as a resource. He wouldn't normally be able to cut through a rope with ease with just his bare hands, but using the saw as part of an action makes that far more possible.</span>
+            <p class="pp">But, very much unlike aspects...</p>
+            <h4 class="ph4">Resources are Fleeting</h4>
+            <p class="pp">No character or rule should ever rely on a single particular resource to work without a really good reason, because resources are entirely temporary by their nature. A category of resources might be required for something, or a resource with the right kind of type or tag, but avoid hyper-specificity when writing resource-related rules.</p>
+            <span class="example">In <b>The Wildsea</b>, healing usually consumes a resource - a specimen, to be precise. What type of specimen? One that's useful to the roll - that's all the guidance that's given, the rest is left up to the narrative and the interpretation of players.</span>
+            <h4 class="ph4">Resource, Tag, and Category Examples</h4>
+            <p class="pp">This is a lot of words to throw at you at once, but the Wild Words resource system is pretty simple (honest). First you choose a few categories of resource that relate to your setting, then think of a few resources as examples for each type, then how these reosurces might be modified thanks to the condition they're in. Here are a few examples, based around particular themes...</p>
+            <p class="pp"><b>A World of Investigation and Gumshoe Hijinks</b></p>
+            <ul class="pul">
+              <li>Possible Categories: Clues, Contacts</li>
+              <li>Resource Examples: Footprint on the Stairs, Discarded Cigarette, Marley from the Broadmix Club</li>
+              <li>Tag Examples: Spoiled, Dirty, Angry</li>
+            </ul>
+            <p class="pp"><b>A World of Swords and Sorcery</b></p>
+            <ul class="pul">
+              <li>Possible Categories: Loot, Spells</li>
+              <li>Resource Examples: Treasure Chest, Silver Goblet, An Orc's Tooth, Bounty Contract, Grand Levitate, Prestidigitation, Flaming Wheel</li>
+              <li>Tag Examples: Tarnished, Gleaming, Empowered, Unstable, Mind-Born</li>
+            </ul>
+            <p class="pp"><b>A World of Treetop Seas</b></p>
+            <ul class="pul">
+              <li>Possible Categories: Salvage, Charts</li>
+              <li>Resource Examples: Cryptolithic Amber, Broken Sidearm, Chips of Old-World Stone, A Map of the Wavetops, A Many-Folded Chart</li>
+              <li>Tag Examples: Rusting, Pre-Verdant, Faded</li>
+            </ul>
+            <h4 class="ph4">But What Do Resources DO?</h4>
+            <p class="pp">Now this is a tough one, because the answer is 'whatever you want or need them to'. But it's a bit more in-depth than that.</p>
+            <p class="pp">All resources should be able to give a 1d6 advantage when used as part of an action. They should also allow some actions to be taken that wouldn't usually be possible (for example, you might be able to hunker down and hide in plain sight under an Invisible Cloak resource).</p>
+            <p class="pp">But each category you create can also have special rules attached. Perhaps mystical Bounty Contracts turn directly into currency when their mark is brought down. Eggs might hatch when you've carried them around for long enough. Whispers can change the world in small ways, giving narrative agency to a player that's usually reserved for the GM. Resources can do... Pretty much anything.</p>
+            <p class="pp">But there should be some limits.</p>
+            <h4 class="ph4">Using Resources</h4>
+            <p class="pp">Resources come and go, and one of the ways that Wild Words enforces that is by making them limited use. Sometimes it's one-use, sometimes several. Depends on the resource. As a good guideline, resources might be...</p>
+            <ul class="pul">
+              <li><b>Used/Utilized</b>: The resource remains after use.</li>
+              <li><b>Risked</b>: The resource remains after use, but only if things go well.</li>
+              <li><b>Tarnished</b>: The resource gains a negative tag after use. If it already has one, the resource is consumed.</li>
+              <li><b>Consumed</b>: The resource is destroyed or otherwise
+                removed after being used.</li>
+            </ul>
+            <p class="pp">As for which categories of resources follow which rules, or what kind of actions trigger what kind of outcome from the table above... That one's entirely your choice!</p>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

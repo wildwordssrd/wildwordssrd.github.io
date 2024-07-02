@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenes</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButtonSel" onclick="">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">SCENES&nbsp;</h1><h2 class="ph2">CORE SYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Scenes divide play into recognisable chunks, like the scenes of a movie, play, or an episode of a TV show.</li>
+              <li>A game can have different types of scenes, which might encompass different periods of time, require different kinds of actions or decisions from players/GM, or run on different rules and mechanics.</li>
+              <li>Scenes can help to establish a loop of activities for a game, or merely serve as breaks between bits of action or story.</li>
+            </ul>
+            <h4 class="ph4">Do I Need Different Types of Scene?</h4>
+            <p class="pp">When creating a Wild Words game, one of the first things you need to consider is what kind of activities the game focuses on. The more important an activity is, the more likely it will have unique mechanics that govern it. The more unique mechanics that apply, the more likely it is that players will find the action and rules easier to follow if those rules are limited to a particular type of scene.</p>
+            <span class="example">Using Wild Words to create <b>Streets By Moonlight</b>, a game of cthulhuesque cult investigation and growing madness, will likely focus on those elements of play above all others. It has a specific type of scene dedicated to gathering and processing clues, another to represent a raid or the exploration of a significant location, and another for dealing with the growing challenges to the sanity and stability of the characters in the wake of their experiences.</span>
+            <span class="example"><b>The Wildsea</b> is a game of exploration and survival on an endless treetop sea. As well as general scenes that handle most of play, the game defines two additional types of scene; Montages, that handle larger complex actions and periods of downtime with a single roll or stated intention, and Journeys, which focus more on the ship that the characters share, using it to travel the rustling waves in a far more structured way than a normal scene would allow.</span>
+            <p class="pp">You might have a particular scene and set of rules, conventions or unique mechanics to govern...</p>
+            <ul class="pul">
+              <li>Combat and times of high tension</li>
+              <li>Periods of downtime, study, or exploration</li>
+              <li>Sections of in-character worldbuilding</li>
+              <li>Time spent travelling from place to place</li>
+              <li>Moments of relaxation and healing</li>
+              <li>Time spent building up a base, hide-out, or home</li>
+            </ul>
+            <h4 class="ph4">Establishing a Loop</h4>
+            <p class="pp">When using different types of scene, you may want to aim to create a loop - a set structure that the game follows, something to mold the story and action of play around. You might choose...</p>
+            <h4 class="ph4">A Core Loop</h4>
+            <p class="pp">This sets scenes as happening in a specific order, so players always know what's coming next. Core loops hold structure first and narrative second - the story is still important, but it will follow a particular set of repeating beats.</p>
+            <span class="example"><b>Streets By Moonlight</b> follows a core loop - characters have time to prepare and investigate, then to confront whatever they've discovered, then to recover from the confrontation's aftermath. Once sufficiently recovered (or perhaps before), a new investigation begins.</span>
+            <h4 class="ph4">A Fluid Loop</h4>
+            <p class="pp">With this method specific types of scene will reoccur,
+              but in an order that is dictated by the narrative. This puts the story and the decisions of the players and GM at the forefront of an experience, but might be more difficult to balance mechanically (as certain characters may be better suited to a particular type of scene, but the story could lead play away from those scenes occuring often).</p>
+            <span class="example"><b>The WIldsea</b> follows a fluid loop - basic scenes, montages, and journeys happen whenever they feel most appropriate, allowing variable length and frequency of different modes of play. A session may be a series of linked basic scenes, with no special mechanics, or it might be a single long journey, or anything in between.</span>
+            <h4 class="ph4">Why Use Scenes?</h4>
+            <p class="pp">Humans tend to split things into digestible chunks by nature, especially narrative. Shows have episodes and switch focus from one group of characters to another, books have chapters and differing viewpoints. Scenes in Wild Words simply codify the way a lot of people already play, allowing for groups of complementary mechanics and easy key phrase uage.</p>
+            <h4 class="ph4">Complementary Mechanics</h4>
+            <p class="pp">One of the easiest ways to define a scene is by restricting or delineating the kinds of mechanics used within it. This allows you to use mechanics to change the flow of a game and the focus of a table.</p>
+            <span class="example">A montage in <b>The Wildsea</b> is a particular type of scene that runs very differently from usual play. Instead of taking actions in any order, as the narrative dictates, each character has the opportunity to undertake a single Task - a larger, more complex action that's boiled down to a single description or dice roll. Once every character has taken a task, the montage ends and the next scene begins (usually based in some way on what was accomplished during the montage).</span>
+            <p class="pp">If you do use scene-specific mechanics, we recommend keeping them in the same ballpark as the rest of the game in terms of how they work. If every other roll in the game treats high results as better, for example, don't have high results mean something bad in one particular type of scene.</p>
+            <h4 class="ph4">Key Phrases</h4>
+            <p class="pp">When thinking of abilities and rules, the various types of scene in your game can act as keywords for easier understanding and for setting durations. An ability might say, for example...</p>
+            <ul class="pul">
+              <li>... Until end of scene.</li>
+              <li>For the duration of a scene...</li>
+              <li>During a ____ scene, you can...</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

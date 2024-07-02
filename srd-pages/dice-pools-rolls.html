@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice, Pools, & Rolls</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButtonSel" onclick="">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">DICE, POOLS, & ROLLS&nbsp;</h1><h2 class="ph2">CORE SYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Wild Words runs on a dice pool system, where multiple elements controbite dice to a pool, which is then rolled for a set of results. The highest result (usually) is the final outcome of a roll, though other results may also play a part</li>
+              <li>Core Wild Words assumes a dice pool of d6s, with a maximum number of six dice (thus ensuring that doubles are never a complete certainty).</li>
+              <li>Dice only come into the game as a response to uncertainty or drama - there's a rule of three Ds that you might find it useful to stick to in the text below</li>
+            </ul>
+            <h4 class="ph4">What Are Dice For?</h4>
+            <p class="pp"><b>Bringing an element of randomness to proceedings.</b></p>
+            <p class="pp">When the outcome of an action or event is uncertain, it's time to roll some dice. There are other situations you might choose as a designer for dice to come into play, of course, but this is the easiest guideline.</p>
+            <p class="pp">This can be clarified further with a reference to the three Ds, three situations in which players will likely want to be rolling dice.</p>
+            <ul class="pul">
+                <li>When a situation is Dangerous, so they can partake in the thrill of uncertainty.<li>
+                <li>When a situation is Difficult, so they can show off how they've made their character to tackle such difficulties.</li>
+                <li>And when a situation is Dramatic, so there's an element of added tension.</li>
+            </ul>
+            <span class="example">The Wildsea calls out these three Ds directly in the text within the book as a good guidelines for GMs as to when they should be asking for rolls.</span>
+            <span class="example">Laura thinks that her character, Hayk, has had quite enough of the mystic that's trying to oversell them on his services. She tells the group that Hayk strides forward, grabs the mystic by the collar of his shirt, and demands a fair price. This action depends on how intimidating Hayk can be, and the Mystic's resistance to being strong-armed, so the GM calls for a roll.</span>
+            <p class="pp">There's a fourth situation where dice can be particularly useful as well, though - when a character's edges, skills, and aspects have absolutely nothing to do with the result of an action or situation. This is when Fortune dice come into play, rolls based on pure luck.</p>
+            <h4 class="ph4">Who Rolls?</h4>
+            <p class="pp">Core Wilds Words assumes that players will be rolling more often than the GM, but this doesn't have to be the case. Asymmetric play benefits a game in play by keeping speed higher (usually by treating hazards and the environment differently to characters in terms of agency and roll frequency), but it isn't the only way.</p>
+            <h4 class="ph4">Other Rolls</h4>
+            <p class="pp">There are many other situations where dice might be rolled. There's no way we could list them all here, but as a taste you might want to involve dice...</p>
+            <ul class="pul">
+                <li>In damage-based rolls, for when you want unexpected amounts of damage to be dealt.</li>
+                <li>In rolls for the potential harm or reward of a situation, such as when determining how much treasure lies within a chest or how many poison darts are shot from a wall.</li>
+                <li>In situations where players or GM can use a random table to determine what happens, from a pre-made list of some kind.</li>
+            </ul>
+            <span class="example">In <b>The Wildsea: Tooth & Nail</b>, the kind of weather a settlement experiences can be decided narratively by the GM and players or with a roll on the Weather table, a d66 table where two dice are rolled and the results are read as a number between 11 and 66 (corresponding to an entry on the table).</span>
+            <span class="example">In Rise, GMs roll for the danger and effectiveness of roving barbarians if one of the nation-states at the table moves into new territory. Outside of that situation, GMs rarely roll dice, but may affec tthe dice pools of players at the table.</span>
+            <h4 class="ph4">Choosing Your Dice</h4>
+            <p class="pp">When designing the mechanical side of your game, dice are usually an important component. You might want to go diceless, which Wild Words can definitelysupport, but without direct experience of it myself I wouldn't be able to give much advice on how to do it effectively.</p>
+            <p class="pp">So assuming that you're using dice, you're going to need to decide on the size of them. D6s are a classic for a reason - easy to find and easy to understand - but they're not your only option.</p>
+            <p class="pp">When choosing dice, consider whether results, doubles, and an odd/even split are going to be important. There's a lot you can do with dice, so instead of telling you exactly what you should do, I'll show you a few things I've done myself...</p>
+            <h4 style="color: #4A6B6A;">Core D6</h4>
+            <p class="pp">The 'Wild Words standard' that powers <b>The Wildsea</b>, dice pools are made of between 1 and 6 D6s. The highest result of a roll is most important, as are doubles. Odd/even results don't matter, and triples give no benefit over doubles. Results are split into three distinct bands - 6s give a triumph, 5s and 4s give a conflict, and 3s, 2s, and 1s give a disaster.</p>
+            <h4 style="color: #4A6B6A;">Quarter Eights</h4>
+            <p class="pp">Made for <b>Streets By Moonlight</b>, dice pools are made of between 1 and 4 D8s. The highest result of a roll is most important, and the lowest sometimes comes into play too. Doubles and triples add a level of safety that would otherwise be absent for actions. Results are split into three distinct bands, with 7-8 as a triumph, 3-6 as a conflict, and 1-2 as a disaster</p>
+            <h4 style="color: #4A6B6A;">Clash</h4>
+            <p class="pp">Made for <b>Iron on Stone</b>, dice pools are made of any number of d6s. Highest and lowest results don't matter, but evens and odds do (with evens representing a mech's output and odds a pilot's acuity). The number of evens and odds that can be contributed changes the actions that can be taken. Results are split into two bands - anything above a 3 is a useful result, anything a 2 or below is useless.</p>
+            <h4 class="ph4">Words Before Rolls</h4>
+            <p class="pp">Wild Words is designed for fiction-first gaming, and one of the core tenets of this is that the story (and player agency in that story) is paramount. Most dice mechanics assume that a player decides on what they're going to do, and then the dice come into play to tell them how it goes (or an element of the world does something, and the GM or players uses dice to determine the ultimate effect of it)</p>
+            <p class="pp">You can turn this on its head if you do it carefully, as in the Iron on Stone example in the previous column, but I can't fully recommend it.</p>
+            <span class="example">For <b>Iron on Stone</b>, non-combat scenes are fiction-first but combat is far more mechanical, with a turn order deciding who acts in what sequence, and the result of rolls offering a suite of potential actions to mech pilots.</span>
+            <h4 class="ph4">Pool Sizes & Dice Draws</h4>
+            <p class="pp">Once you've decided on the size of your dice, you need to set an upper limit on the pools that players (and maybe the GM) will be rolling. Remember, any pool larger than the highest die outcome will necessarily result in doubles. And if doubles are important, the smaller the pool (and the larger the dice), the less likely they are.</p>
+            <p class="pp">You also need to work out where dice are being drawn from in different situations. If the dice are rolled by a player they're probably coming from their character elements, most likely edges, skills, aspects, and resources (pages xx to xx). If the diece are being rolled by the GM, or by a player in a way that's unconnected to their character, you as a designer need to work out how everyone at the table can put together a dice pool quickly and without breaking the flow of play.</p>
+            <span class="example">Oracle only allows players to roll two dice at a time, but their size can vary depending on the type of action they're taking information drawn from the character sheet. Doubles in Oracle are bad, and high results are good - the larger the dice players roll, the more likely they are to get a high number and the less likely they are to roll doubles. Difficulty in Oracle comes from the GM adding dice to player rolls to break that cap of two, increasing the chance of duplicate results, but there are limited situations in which the GM can pull this off to keep play speed high.</span>
+            <div class="horiz-table">
+              <span style="padding-right:20px;width:40%">
+                <h4 class="ph4">Results Bands</h4>
+                <p class="pp">The outcome of a dice roll is usually determined by the results band it falls into. Here's an example of a results table that shows off various bands (for ease of reference, this table is drawn from The Wildsea, which uses the Core D6 presentation on the left.)</p>
+                <p class="pp">The results bands above are weighted toward bad
+                outcomes (with everything from a 1 to a 5 representing
+                some sort of penalty), with only 6 being a perfect result,
+                but wildsea players tend to be rolling at least 3 or 4 dice
+                as standard. There's also an extra band given for doubles,
+                which the Wildsea uses to bring in <a href="srd-pages/twists.html">narrative-focused
+                twist rules</a>.</p>
+                <p class="pp">This brings up the most important point where results bands are concerned - players will likely be rolling mutliple dice. Even if it looks harsh on paper, it might well be forgiving at the table. Playtest your dice systems!</p>
+              </span>
+              <span style="width:70%">
+                <div style="background-color:#175D7E;color:white;"><h4 style="margin:none;padding:20px 10px 0px 10px;line-height:20px">&nbsp;Action Roll Results</h3></div>
+                <div class="horiz-table-always">
+                  <span style="background-color:#175D7E;color:white;padding:20px 10px 20px 10px;margin-bottom:-4px;flex-grow:0;"><h3 style="display:block;margin:auto;font-size:30px;width:30px;text-align:center;">6</h3></span>
+                  <span style="border:solid #175D7E 4px;padding:8px 15px 8px 15px;margin-bottom:-4px;"><h4 class="ph4">Triumph</h4><br>A complete success with no drawbacks. If you’re affecting a track, this lets you mark or clear a box.</span>
+                </div>
+                <div class="horiz-table-always">
+                  <span style="background-color:#175D7E;color:white;padding:20px 10px 20px 10px;margin-bottom:-4px;flex-grow:0;"><h3 style="display:block;margin:auto;font-size:25px;line-height:15px;width:30px;text-align:center;">5&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;4</h3></span>
+                  <span style="border:solid #175D7E 4px;padding:8px 15px 8px 15px;margin-bottom:-4px;"><h4 class="ph4">Conflict</h4><br>Still a success, but with a drawback of some kind (such as taking damage or losing a resource). If you’re affecting a track, this usually still lets you mark or clear a box.</span>
+                </div>
+                <div class="horiz-table-always">
+                  <span style="background-color:#175D7E;color:white;padding:20px 10px 20px 10px;margin-bottom:-4px;flex-grow:0;"><h3 style="display:block;margin:auto;width:30px;font-size:20px;line-height:10px;text-align:center;">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</h3></span>
+                  <span style="border:solid #175D7E 4px;padding:8px 15px 8px 15px;margin-bottom:-4px;"><h4 class="ph4">Disaster</h4><br>A failure that also introduces a narrative complication or drawback of some kind. If you’re affecting a track, this usually doesn’t let you mark or clear at all.</span>
+                </div>
+                <div class="horiz-table-always">
+                  <span style="background-color:#175D7E;color:white;padding:20px 10px 20px 10px;flex-grow:0;"><h3 style="display:block;margin:auto;width:15px;line-height:10px;writing-mode: vertical-lr;text-align:center;rotate:180deg;padding-right:15px;font-size:20px;">Doubles</h3></span>
+                  <span style="border:solid #175D7E 4px;padding:8px 15px 8px 15px;border-radius:0px 0px 30px 0px;"><h4 class="ph4">Twist</h4><br>An unexpected outcome in addition to the usual result, often something small but potentially useful. This twist can be suggested by any player at the table, but the Firefly has the final say.</span>
+                </div>
+              </span>
+            </div>
+            <span class="emphasis">
+                <h3 class="ph3">PENALTY Vs CUT</h3>
+                <p class="pp">With a dice pool system linked to non-flexible bands of results, the 'target number' staple of many dice rolling systems is out (though you could engineer it back in if you feel like it). Instead, more difficult challenges in Wild Words are more easily represented by penalty or Cut.</p>
+                <div class="horiz-table">
+                    <span style="width:50%">
+                        <h4 class="ph4">Penalty</h4>
+                        <p class="pp">This allows difficult situations or poor choices to remove dice from a pool before they're rolled.</p>
+                    </span>
+                    <span style="border-left:solid black 1px;padding-left:20px;width:50%">
+                        <h4 class="ph4">Cut</h4>
+                        <p class="pp">This allows difficult situations or poor choices to remove results from a pool after the dice have been rolled (usually starting with the highest).</p>
+                    </span>
+                </div>
+                <h4 class="ph4">The Math vs The Feel</h4>
+                <ul class="pul">
+                    <li>Penalties are easier to math out for players and GM at the table, but they ultimately result in fewer dice being rolled. And people tend to really enjoy rolling dice.</li>
+                    <li>Cut is a little more dramatic, a little more cruel. It lets players roll the same number of dice, but by targeting high results after a roll it removes the chance of high-band successes and tends to bring outcomes further down the table. It's a bit gritty, but it's also dramatic - a player knows they were this close to an excellent result, and can bring that into their description of what goes wrong.</li>
+                </ul>
+                <p class="pp">Both systems can work here as an indicator of difficulty, but Core Wild Words leans toward the drama inherent in Cut (even if the maths is a little wonkier)</p>
+                <h4 class="ph4">Removed Dice/Results</h4>
+                <p class="pp">When using Penalty or Cut the dice or results removed are usually just discounted, lost to the aether - but they don't have to be. Consider adding a new dimension to dice pools by using these discarded dice or results for something new.</p>
+                <span class="example">In The Wildsea: Storm & Root, characters cut more results when under Scrutiny (the gaze of certain terrifying entities). The results they cut feed directly into the Scutiny system, allowing the GM to take particularly damaging actions based on whether the cut results were triumphs, conflicts, or disasters.</span>
+            </span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+body{
+  font-size:18px;
+  margin-left:35px;
+  margin-right:35px;
+  margin-bottom:50px;
+  background-color:#eee;
+  }
+h1{
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  font-size: 56px;
+  display: inline-block;
+  margin-top:0;
+  margin-bottom:0;
+  }
+  
+h2{
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  display: inline-block;
+  margin-top:0;
+  margin-bottom:0;
+  color:#4A6B6A;
+  }
+  
+h3{
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  margin-top:0;
+  font-size:32px;
+  margin-bottom:0;
+  }
+h4{
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  font-size:22px;
+  margin-top:0;
+  margin-bottom:0;
+  }
+p{
+  font-family:serif;
+  margin-top:0;
+  margin-bottom:5;
+  }
+ul{
+  margin-top:0;
+  margin-bottom:5;
+  }
+.horiz-table{
+  display: flex;
+  align-items: stretch;
+  width:100%;
+  flex-direction:row;
+  }
+.horiz-table-always{
+  display: flex;
+  align-items: stretch;
+  width:100%;
+  flex-direction:row;
+  }
+.horiz-table > div , .horiz-table-always > div{
+  display:block;
+  flex-grow:1;
+  margin-bottom:1em;
+  }
+.horiz-table > span , .horiz-table-always > span{
+  display:block;
+  flex-grow:1;
+  margin-bottom:1em;
+  }
+.emphasis{
+  display:block;
+  border:5px solid black;
+  border-radius:12px;
+  padding: 10px;
+  }
+.example{
+  font-style:italic;
+  display: block;
+  margin: auto;
+  margin-bottom:1em;
+  }
+.a-sub{
+  display:inline-block;
+  color:#83946A;
+  font-size:18px;
+  font-family: "Teko", sans-serif;
+  margin-left:10px;
+  font-weight: 500;
+  }
+@media (max-width: 800px){
+  .horiz-table{
+      flex-direction:column;
+    }
+  }

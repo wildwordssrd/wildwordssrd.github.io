@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButtonSel" onclick="">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">SKILLS&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Skills add dice to an action roll depending on their rank (a rank one skill adds 1d6, two ranks in a skill would add 2d6 etc) on any action roll they might apply to.</li>
+              <li>Only one skill can be used for a particular roll, and the maximum they can add is 3d6 at rank thre</li>
+              <li>Skills are more specific than edges, but still broad. A skill calledSwordsmanship might add dice for someone attacking with a blade, maintaining their weapon, or spouting off about the history of classic instruments of war. They're flexible, in that they can definitely do X but could also do Y or Z.</li>
+              <li>Players should find out exactly what a skill means to their character as the game progresses. Different characters might habitually use the same skill in slightly different ways.</li>
+            </ul>
+            <h4 class="ph4">Skills Define Actions</h4>
+            <p class="pp">Edges are broad so skills can be narrow. Skills have both mechanical and narrative purpose; they add dice to actions, and they help inform players of the kinds of actions they should be taking in game. If a character has a skill that helps with stealth, the player is more likely to choose stealthy approaches to situations in order to roll the most dice, and have the highest chance of success.</p>
+            <h4 class="ph4">Skills Define Worlds</h4>
+            <p class="pp">A good skill list acts as an introduction, or at least a reminder, to the average player on what the world is about. Is Shoot a skill? The setting has ranged weapons and that's important. Is Arcane a skill? Magic exists.</p>
+            <h4 class="ph4">Nothing Wrong With Overlap</h4>
+            <p class="pp">Creative approaches are the name of the game here, so some overlap and fuzziness on skills tends to help players (especially new players) explore the methods and limits of their character.</p>
+            <span class="example">In <b>The Wildsea</b>, the Sway skill is specifically there for convincing others to do as you want, usually by making friends and earning trust. But the Outwit skill could get you similar results, and dipping into the cultural information provided by a language could also help. So if a character doesn't have Sway, that doesn't mean they're inherently rubbish at making friends or convincing people - it just means they'll have to be creative in doing so, or that such events might need a little extra set-up, or the right situation.</span>
+            <h4 class="ph4">How Many Skills?</h4>
+            <p class="pp">There's no specific amount of skills required, but roughly double the number of edges is probably a good target to aim for. Keep in mind that the more you add, the more specialized they'll tend to be. Always think of skills with the setting in mind - if it's a world of hard-boiled detective types, there should be at least one skill (if not more) that would allow for the finding of clues or processing of information. If you're making a game about worms having a tea party, you probably don't need a skill for katana use.</p>
+            <h4 class="ph4">Skills, Languages, Lores...</h4>
+            <p class="pp">Skills are usually described with a verb (such as Tend, Fight, or Climb). If you want more specialized skills, they might be two words instead (Arcane Lore, Computer Use). But skills don't even really have to be... Well, skills. The ranks-give-dice set-up of skills could work for using a particular type of gear, or speaking a language, or being wise on a particular subject. There's nothing stopping you from having skills and 'something else that works the same as skills but is technically different'.</p>
+            <span class="example"><b>The Wildsea</b> has Skills and Languages, with skills named with verbs and languages given setting appropriate names. Wildsea skills tend more toward involving actions, while Wildsea languages allow understanding, communication, and also offer cultural information about certain groups of people. Mechanically both groups are treated the same, in that you can only add one skill OR one language to a roll.</span>
+            <span class="emphasis"><h3 class="ph3">THE INVERTED PYRAMID</h3><p class="pp">Edges, Skills, and Aspects in Wild Words are an inverted pyramid of specificity. Edges are very broad, and can be applied in many situations. Skills are more narrow, and help tell a player what kind of actions their character is good at. And aspects are even more narrow, containing specific abilities that usually help in specific situations or with particular types of action. Messing with this pyramid is entirely possible, but might have ramifications when it comes to playability. Having fewer edges or less flexible skills might leave players feeling like they're missing out if they're not taking a particular approach, for example. Making the scope of these things too broad might invite choice paralysis in terms of potential actions or approaches, slowing the pace of play.</p>
+            <p class="pp">As a designer, you'll know your own game and own world best, so feel free to tailor these elements of the engine (as with all others) to suit the feel you're going for. But keep in mind that these are designed, and ordered, to make the process of making a dice pool flow as easily as possible.</p></span>
+            <h4 style="#color:D25A31">Chop & Change - Skills</h4>
+            <p class="pp">When adding a skill system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have some skills available only to certain backgrounds or character types.</li>
+              <li>Have each rank of a skill give a particular bonus that goes beyond adding dice to an action roll.</li>
+              <li>Have players make custom skills for their character using a couple of words or a short description.</li>
+              <li>Restrict the number of ranks a starting character can take, choose, or buy in a particular skill.</li>
+              <li>If using a currency system to buy character elements, increase the cost of rank two or three skills.</li>
+              <li>Name particular skill ranks (such as 'Journeyman', 'Expert', or 'Master').</li>
+              <li>Split skills into smaller categories that are inherently tied to a particular Edge.</li>
+              <li>Remove skills entirely in favour of an entirely different kind of system for gaining additional dice.</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Rox Beltré Wilson</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="index.js"></script>
+    <span class="title">
+      <h1>
+      ⮑
+      <span class="v0">n</span>
+      <span class="v1">u</span>
+      <span class="v2">l</span>
+      <span class="v3">l</span>
+      <span class="v4">c</span>
+      <span class="v5">o</span>
+      <span class="v6">d</span>
+      <span class="v7">e</span>
+      .
+      </h1>
+      The audio works of Rox (Ryan) Beltré Wilson.<br>
+      email: wilsonrb@usc.edu <br>
+      discord: @nullcodemusic
+    </span>
+    
+    <br><br><br>
+    <div>
+      <h2>About</h2>
+<p><b>Hello! My name is Rox Wilson. I'm a game developer, sound designer and musician.</b>
+<br><br>
+For as long as I can remember, sound has captivated me. <b>I love to explore the stories you can tell with audio</b>, and the feelings it can evoke in people. I often find that audio is the key to bringing the juice of interactive experiences out to their maximum potential, and as a game designer and artist, that is very important to me and my craft. 
+<br><br>
+I first started dipping my toes into the world of audio at 13, exploring sound design, music, and digital signal processing. Since then, I have been fortunate enough to build my audio and leadership skills and learn on countless projects. Nowadays I am focused on expanding my skillset, and familiarizing myself with industry standard audio tools.
+<br><br>
+Presently, I am a student in the University of Southern California's game development program, and am currently serving as the audio lead for one of USC's capstone projects, managing a 5 person audio team.
+<br><br>
+My other interests include tabletop RPGs, programming, visual art, and modding games.</p>
+    </div>
+    
+    <br><br><br>
+    <div>
+      <h2>Large Projects</h2>
+        <span class="entry" id="bugnauts">
+          <a id="bugnauts" onclick="expandTxt(this)">+ BUGNAUTS! (2023-Current) <i>Audio Director</i></a>
+          <br>
+          <!-- Links here -->
+          <br>
+          <p>
+          <i>BUGNAUTS!</i> is a light-hearted action game where you fight magically enhanced bugs by throwing their projectiles back at them with the end goal of saving an island's ecosystem. On this project, I was tasked with planning out audio pipelines, implementing sounds, and managing a composer and sound designer. This project has been a good experience in learing both Wwise and Unreal, which I'm using to implement dynamic music and a range of audio functionality. <b style="color:yellow">Because the project is still in progress, there isn't much to show right now. Make sure to check back later! </b>
+          <p></p>
+          >Highlight: Cleaning Up Audio
+          <p>One of the things I'm proudest of doing on this project was a set of bird calls I extracted from an extremely noisy sample for use as ambient background audio. I started with some outdoor recordings that my mom gave me with cars, footsteps and wind in the background. Using a resonance extraction plugin, a multi-band noise gate, and a reverb, I was able to turn the sound from this:</p>
+          <br>
+            <audio controls>
+              <source src="Bugs/Ambient Demo Dry.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio> 
+          <br> <i style="color:#aaa">Muddy recording, full of extraneous, and suburban sounds.</i>
+          <br>
+          <p>To this:</p>
+          <br>
+            <audio controls>
+              <source src="Bugs/Ambient Demo Wet.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio> 
+          <br> <i style="color:#aaa">The bird noises, completely isolated, and able to be used in a larger soundscape.</i>
+          <br>
+        </span>
+        <br>
+        <span class="entry" id="bloompunk">
+          <a onclick="expandTxt(this)" id="bloompunk">+ Bloompunk (2022-23) <i>Sound Designer</i></a>
+          <br>
+          <video controls>
+            <source src="https://cdn.cloudflare.steamstatic.com/steam/apps/256978066/movie480_vp9.webm" type="video/webm">
+          </video>
+          <br>
+          <a href="https://store.steampowered.com/app/2456330/Bloompunk/" class="centered">Steam Page⇗</a>
+          <br>
+          <p><i>Bloompunk</i> is a high octane movement shooter where the world is in a constant struggle between <span style="color:#0A0">plant</span>, <span style="color:#B73">machine</span>, <span style="color:yellow">sun</span>, and <span style="color:magenta">corrupted energy</span>. In this project I designed sounds primarily for the enemies and player weapons. I was often tasked with bringing this forces to life and making them play into eachother, capturing what corrupted energy or liquid sunlight would feel like and turning it into sound. For this, I primarily used resampled plant foley, noises from machines from printers, to cars, to cash registers, and quite a few resonators.  
+          </p>
+          <b>> Sound Design Highlight: The Gun</b>
+          <p>For this project I made 3 types of gun sound. The main character's gun is a morphing, growing plant, and as the players stats change, so too does the sound. The base sound is something like an SMG, but as the player increases multishot or damage and accuracy, the sound blends into more heavy shotgun and sniper noises. 
+          <br><br>
+           <audio controls>
+            <source src="Bloom/GunDemoBase.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio> 
+          <br> <i style="color:#aaa">The base SMG-like gun sound</i>
+          <br><br>
+            <audio controls>
+              <source src="Bloom/GunDemoShotgun.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+              </audio> 
+          <br> <i style="color:#aaa">The shotgun has a bassy crackle, representing more bullets</i>
+          <br><br>
+            <audio controls>
+            <source src="Bloom/GunDemoSniper.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio> 
+          <br> <i style="color:#aaa">The sniper rings out, making it sound large scale and powerful</i>
+          <br><br>
+          As the clip gets empty, a hollow, metallic sound (sampled from a pringle can) is layered underneath. This allows the player to gauge information about the gun
+          <br><br>
+            <iframe src="https://www.youtube.com/embed/-vbocVb3QKc?si=WlH8azftO77-qRms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <br> <i style="color:#aaa">The layer that goes under the gun when it's getting empty is very minimal but adds much needed feedback.</i>
+          </p>
+          <b>> Other Example Sounds</b><br>
+          <p>
+           <audio controls>
+              <source src="Bloom/EnemyDemoStingershot.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa">The charge and attack sounds of our sniper enemies.</i>
+          <br><br>
+           <audio controls>
+              <source src="Bloom/EnemyDemoDeath.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa">A death sound made for larger foes.</i>
+          <br><br>
+           <audio controls>
+              <source src="Bloom/EnemyDemoSpawnerCharge.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa">The windup for our enemy that spawns flies.</i>
+          <br><br>
+           <audio controls>
+              <source src="Bloom/EnemyDemoLaunch.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa">An enemy windup and energetic launch through the air.</i>
+          <br><br>
+           <audio controls>
+              <source src="Bloom/EnemyDemoExplode.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa">An explosion for a self destructing bug.</i>
+          <br><br>
+          </p>
+        </span>
+        <br>
+        <span class="entry" id="beatreaper">
+          <a onclick="expandTxt(this)" id="beatreaper">+ Beat Reaper (2023) <i>Composer & Audio Programmer</i></a>
+          <br>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/h2L_F8Gh480?si=EIOVmp0iIw7OAf2a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <br>
+          <p><i>Beat Reaper</i> is a rhythm-based movement puzzle game inspired by crypt of the necrodancer where you have to avoid danger and assassinate three targets. In beat reaper, we wanted to focus on making the player have to deal with strange Rhythms, so I was tasked with creating the music, the art, and the rhythm tracking system for this game, while my classmate alec did the enemies and levels. I ended up making two tracks for this game, one of which started as a scrapped collab with a friend, and a dynamic.</p>
+          <b>> The Rhythm System</b>
+          <p>due to the lack of middleware, I had to get creative in programming the rhythm system and implementing the music. To do this I synced the music to to the gameplay in 3 different ways:
+           <ol>
+            <li><b>Playback-Based Time Measurement:</b> Compared to audio rate (40000+ hz), games run at a staggeringly slow 60 - 144 hz. If the game went purely off of frame based time measurement, it would go out of sync real fast. Rather than use the game's framerate to measure time, I opted to use the exact position in the audio file instead.</li>
+            <li><b>Synced Note Arrays:</b> This game's focus on songs with repeatable rhythms allowed me to use an array, tempo, time signature, and some math to track note positions. Given any point in time, the program can extrapolate from the array and determine when the next note in the array should be and when the previous note was, skipping any blank spaces in between. The use of looping arrays also meant that the code was highly expandable</li>
+            <li><b>Adjustment for Delta Time</b> Even using physics frames, there can still be some delay between when an input is logged and when the key is pressed. For faster and more precise rhythm tracking, this needs to be accounted for. While testing, I realized that this delay was the delta time of the frame when the input was logged, so finally, by subtracting this from the input time before passing it through any sync functions, I was able to make the system snappier and more responsive.</li>
+          </ol> 
+          <p>To arrive at this point, I did extensive playtests and collected metrics, using all info at my disposal to modify and refine the system.</p>
+        </span>
+        <br>
+        <span class="entry" id="wildsea">
+          <a onclick="expandTxt(this)" id="wildsea">+ The Wildsea (2021-22) <i>Composer</i></a> 
+          <br>
+          <p><i>The Wildsea</i> is a tabletop RPG where pirates and explorers ride giant chainsaw boats through a thrashing sea of vines, branches and leaves in an overgrown world full of monsters and strange happenings. On this project, I spent months working out a contract to deliver a soundtrack inspired by the works of darren korb. Along with my friend liam, I was tasked with bringing to life a world that previously was only experienced through words and still images. The Wildsea was my first experience altering my music style to fit the needs of a project and was honestly really tough. Despite the challenge, I did learn a lot, and grew as a composer.  
+          </p>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4mNxrJ23ljkhQOcnte4d6B?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <br>
+          <p></p>
+        </span>
+    </div>
+    <br><br><br>
+    <div>
+      <h2>Music Snippets</h2>
+      <audio controls>
+              <source src="snippets/Resonance of the Ruins.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa">The above track snippet is from The "Wildsea:Songs of Ruined Shores"</i>
+          <br><br>
+      <audio controls>
+              <source src="snippets/Beat Reaper.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa">The above track snippet is from "Beat Reaper"</i>
+          <br><br>
+      <audio controls>
+              <source src="snippets/Emerald Descent.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa"></i>
+          <br><br>
+      <audio controls>
+              <source src="snippets/Below.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa"></i>
+          <br><br>
+      <audio controls>
+              <source src="snippets/WIP 1.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa"></i>
+          <br><br>
+      <audio controls>
+              <source src="snippets/Belly of the Beast.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa"></i>
+          <br><br>
+      <audio controls>
+              <source src="snippets/Chase.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+              </audio> 
+              <br> <i style="color:#aaa"></i>
+          <br><br>
+    </div>
+    <br><br><br>
+    <div>
+      <h2>Links</h2>
+      <span class="links">
+        <a href="https://open.spotify.com/artist/5L12g4zY6gPT4NHVsheeXf?si=m0yBf0uRQ8COfXFYLjvBVw">Spotify⇗</a> -
+        <a href="https://soundcloud.com/nullcodemusic">Soundcloud⇗</a>
+        <a href="https://www.native-instruments.com/en/reaktor-community/reaktor-user-library/all/all/all/4518962/">Reaktor Community Library⇗</a>
+      </span>
+    </div>
+  </body>
+</html>

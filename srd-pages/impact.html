@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButtonSel" onclick="">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">IMPACT&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Impact represents the power, or level of effect, that something has on something else (most typically that a character's actions have on the world around them).</li>
+              <li>Impact can be applied both to marks (how many boxes are marked on a track) and effects (the more narrative elements of an action). It doesn't have to apply to both, but players will likely expect it to</li>
+              <li>There are several different ways impact can be handled - the box on the right delves into a couple of pre-made presentations that have a solid grounding.</li>
+              <li>The ability you give players to access different levels of impact, and how easily that acces comes, can have a huge impact on the power level of a game.</li>
+              <li>Low-impact events likely make a very small mechanical difference, if they make one at all, and high-impact occurences can often do a lot more mechanically than one might expect. This holds true for narrative effects as well, but it's important to remember that even a low-impact action can change the direction of a story.</li>
+            </ul>
+            <h4 class="ph4">Three Common Tiers</h4>
+            <p class="pp">However you set out an impact system, there are three tiers that players will expect once they know that the impact of their actions can vary - Low, Standard, and High. This is most easily explained with doors...</p>
+            <ul class="pul">
+              <li>Low Impact: A character attempts to kick in a door, but the action has low impact. It might take several kicks to force the door open, or they might only be able to knock a few planks or panels out of the door.</li>
+              <li>Standard Impact: A character attempts to kick in a door, and the action has standard impact. A solid kick is enough to break it open.</li>
+              <li>High Impact: A character attempts to kick in a door, and they have high impact on the action. They might smash the door into splinters, kick it straight off of its hinges, or destroy the frame along with the door.</li>
+            </ul>
+            <p class="pp">The examples above describe impact in anarrative form - the door is opened in all examples, but the feeling is very different.</p>
+            <h4 class="ph4">Two Additional Tiers</h4>
+            <p class="pp">optionally, you might want to specify that some options have No Impact (the door remains standing), or Massive Impact (the door, frame, and wall are destroyed). There's usually no point in a no-impact action.</p>
+            <h4 class="ph4">Narrative vs Mechanical</h4>
+            <p class="pp">The examples on the left deal with narrative impact, which can be tricky, but mechanical impact is much easier. An action or happening affects a track, and the level of impact determines how many boxes are marked (or cleared). See the sidebar on the right for more details.</p>
+            <h4 class="ph4">What Determines Impact?</h4>
+            <p class="pp">As a designer, whatever you want. It's a good idea to have character actions clock in at standard impact most of the time (it's in the name, after all), reserving high and low impact for moments it feels appropriate. You might make this a GM decision, which is fine, but there's nothing wrong with tying it to mechanical systems or character elements as well. Consider...</p>
+            <ul class="pul">
+              <li>Aspects that increase the impact of certain actions.</li>
+              <li>A metacurrency that can be spent to change impact.</li>
+              <li>Tying impact to a meter filling up.</li>
+              <li>Adding impact based on certain die results, like odd
+                numbers or doubles.</li>
+            </ul>
+            <span class="example">In <b>The Wildsea</b>, actions have standard impact as... well, as standard. A character might be able to increase their impact by being in the right situation, with the blessing of the GM, but they can more reliably increase it by taking certain aspects or by choosing to Cut results on an action roll, making it less likely they'll succeed but more impactful if they do.</span>
+            <span class="emphasis">
+              <h3 class="ph3">IMPACT PRESENTATIONS</h3>
+              <p class="pp">The examples below are pre-made systems based on impact, which can be adapted to your game if they fit</p>
+              <h4 class="ph4">Classic</h4>
+              <p class="pp">Most actions have standard impact. Actions that are unsuited to a situation have low impact, and ones that match it perfeclty have high impact. Impact affects narrative effects, and also changes the amount of boxes marked on a track (maybe 1 for low, definitely 1 for standard, 2 for high).</p>
+              <h4 class="ph4">Technical</h4>
+              <p class="pp">Most actions have standard impact. Impact can be increased through use of character elements, decreased by GM decree based on the resilience of what's being affected. Impact affects narrative effects, and also changes the amount of boxes marked (1 for low, 2 for standard, 3 for high).</p>
+              <h4 class="ph4">Unbound</h4>
+              <p class="pp">Impact is more track-based than narrative. Low impact doesn't exist. Standard impact marks 1 box, and every level of impact above this marks 1 box more. Characters are able to hyper-specialize, using impact to mark many boxes on a track at a time</p>
+              <h4 class="ph4">Story-Based</h4>
+              <p class="pp">All actions and interactions with the world mark 1 box. Impact levels can vary, but they only relate to the narrative effects of actions and events</p>
+            </span>
+            <h4 style="color: #D25A31;">Chop & Change - Impact</h4>
+            <p class="pp">When adding an impact system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Allow for Massive impact, marking all boxes on a track at once (The Wildsea handles impact this way)</li>
+              <li>Have impact work differently for characters than it does for hazards and elements of the world</li>
+              <li>Connect impact directly to a game's damage system, allowing for varying levels of damage</li>
+              <li>Randomize impact with a die roll</li>
+              <li>Restrict increasing impact to a function of consuming resources, limiting flexibility</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

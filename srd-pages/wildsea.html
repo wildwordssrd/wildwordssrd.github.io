@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wild Words SRD</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="/srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="/srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location ='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButtonSel" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page" style="background-color: #363940; border-color: #363940; color:#fff;">
+            <h2 style="color: #fff; margin-bottom: -5;">SYSTEM SUMMARY</h2> 
+            <h1 class="ph1" style="color: #fff;">THE WILDSEA</h1><br>
+            <p class="pp">Here's a technical breakdown of the very first Wild Words game, The Wildsea.</p>
+            <h3 class="ph3">Setting, Genre, and Tone</h3>
+            <p class="pp"><b>Setting</b>: A world of endless forests, a treetop sea sailed by chainsaw ships.<br><b>Genre</b>: Vibrant Post-Apocalypse (the world has ended, but the new world is actually better for a lot of people in terms of opportunity and freedom), New Weird (unusual ways of living and uncanny creatures are the norm, traditional magic is sidelined in favour of weirdness)<br><b>Tone</b>: Bright Horror (terrible things happen, but there's always hope)</p>
+            <h3 class="ph3">The Conversation</h3>
+            <p class="pp">The player roles for the Wildsea follow the traditional TTRPG split, of GM and Players with Characters.The Firefly, the Wildsea's GM figure, provides story seeds and hooks, controls hazards and NPCs, and helps direct the shared story of the world. The Firefly helps to direct focus from player to player during the game, and may track specific actions and reactions that are taken during high-tension scenes such as combat or chases. Players: Each player has a character of their own, but they can also take a smaller share of the GM role from time to time based on doubles in dice results. Player actions are fiction-first, with the rules coming into play in response to their wants. Player characters have no mechanical death-state - death is a narrative event, though serious injury is entirely possible via mechanical means.</p>
+            <h3 class="ph3">Scenes</h3>
+            <p class="pp">Split into three distinct types, Scenes, Montages, and Journeys. Scenes cover normal actions and exploration, Montages allow characters to complete a single task, and Journeys have the crew interact with their shared asset (the ship) in order to move from place to place across the leafy sea using stricter, ritualized rules.</p>
+            <h3 class="ph3">Tracks</h3>
+            <p class="pp">Used to measure damage to characters and hazards, and set by the Firefly in order to track changes and developments within the world of the game. Tracks are flexible by nature, and multiple boxes can be marked thanks to impact and the interaction of damage and weaknesses/resistances.</p>
+            <h3 class="ph3">Dice, Pools, and Rolls</h3>
+            <p class="pp">Most dice pools are made from between 1 and 6 d6s, and are rolled to find a result that sits within one of three bands - Disaster (1-3), Conflict (4-5), and Triumph (6). There's an additional band, Twist (accessed by rolling doubles) that allows players to take the narrative reins for a moment and add an unexpected benefit to an action (though twists favour uninvolved players above the ones that are rolling). Difficulty (and other problems) are addressed by cutting results, rather than cutting dice, starting with the highest result. If all results would be cut, instead roll 1d6 and treat triumphs as conflicts.</p>
+            <h3 class="ph3">Actions</h3>
+            <p class="pp">These are freeform, and a single action has no specified length - it should allow a character to do something of note, as a guideline. When an action is Difficult, Dangerous, or Dramatic, the dice are rolled. Tasks are longer actions, reserved for montage-type scenes.</p>
+            <h3 class="ph3">Backgrounds</h3>
+            <p class="pp">Players choose three for their character, but may take elements from within any background - the chosen three are merely a guide.</p>
+            <h3 class="ph3">Edges</h3>
+            <p class="pp">There are seven edges, themed after the setting in terms of name. Using an edge as part of an action roll gives 1d6.</p>
+            <h3 class="ph3">Skills</h3>
+            <p class="pp">Skills are broken down into two categories, skills and languages Each skill directly affects certain kind of actions, but can also be interpreted loosely to give benefits in related situations (rewards clever thinking). Each langauge records fluency in a spoken tongue and information about the cuture behind that language. Skills and languages have three potential ranks, and give 1d6 for each rank when used to add to a roll.</p>
+            <h3 class="ph3">Aspects</h3>
+            <p class="pp">Combine tracks (for absorbing damage and using special rules), types (which affect how tracks are cleared), narrative elements (with name and description allowing thematic uses), and special rules (which override the usual rules of the wildsea) into packets of information contained within backgrounds. Characters choose multiple aspects at creation, and they can be developed and added to throughout play. aspects add a d6 if they're relevant to an action, even in name or description only.</p>
+            <br>
+          </div>
+          <div class="page">
+            <h3 class="ph3">Meters</h3>
+            <p class="pp">Not used by the Wildsea core game.</p>
+            <h3 class="ph3">Impulses</h3>
+            <p class="pp">Split into Drives (which are positive) and Mirs (which are negative). Drives describe what a character strives for and satisfying or working towards drives can clear mire and add milestones (used for character progression). Mires represent the negative effects of a character losing faith in themselves or giving in to terror and cruelty. They each have a two-box track, which imposes narrative suggestions when one box is marked and cut-based mechanical requirements when both boxes are marked.</p>
+            <h3 class="ph3">Resources</h3>
+            <p class="pp">Split into four categories, Salvage, Specimens, Whispers, and Charts. Salvage is mostly used to build temporary gear, specimens to make food, drinks, and alchemical concoctions, whispers to change the world in small ways (the same way a twist can), and charts to aid with navigation and discovering new places during a journey. Resources can be used to add 1d6 to dice rolls for actions, but doing so risks the resource - if the roll goes well the resource remains, if it goe badly the resource is destroyed. Resources are also used for healing, and traded for other (more useful resources). They can have positive or negative tags that can make both of these activities easier or more difficult.</p>
+            <h3 class="ph3">Wealth</h3>
+            <p class="pp">Not used by the Wildsea core game - smaller non-resource interactions (such as buying drinks or food) si covered by the concept of Scratch, weird stuff kept in pockets that is always enough for basic, boring purposes.</p>
+            <h3 class="ph3">Metacurrency</h3>
+            <p class="pp">Milestones are earned during each sessions and aftetr the conclusion of large story arcs, named after the events that inspired them. Milestones are used to extend tracks, purchase new skills and languages, and combine, develop, or gain new aspects. Stakes, a metacurrency that you can trade cargo for, are used to create ships.</p>
+            <h3 class="ph3">Creation Methods</h3>
+            <p class="pp">Characters are made by making a number of choices at the beginning of a game, depending on the level of experience a Firefly and players want the characters to have. Ships are made by spending stakes, representing each characters contributions towards the ship.</p>
+            <h3 class="ph3">Twists</h3>
+            <p class="pp">Accessed by rolling doubles on dice or by using whispers during a scene. Decided by players uninvolved in the roll, confirmed by players that rolled and the Firefly.</p>
+            <h3 class="ph3">Damage (and Resistance)</h3>
+            <p class="pp">Multiple damage types are available, combined with ranges (CQ or LR) to make weapons for characters. Characters ahazards can have resistances, immunities, and weaknesses, but these are more impactful in terms of adding and removing marks when used by characters.</p>
+            <h3 class="ph3">Impact</h3>
+            <p class="pp">Marks made on tracks (and narrative effects) are governed by impact, either Low, Standard, High, or Massive.</p>
+            <h3 class="ph3">Shared Assets</h3>
+            <p class="pp">Characters are assumed to be part of a crew, and own a ship together. The ship is a shared asset, with track-based ratings, rooms, and weapons of its own, constructed by using stakes by all of the players at the table.</p>
+            <h3 class="ph3">Hazards</h3>
+            <p class="pp">Monsters, pirates, and elements of the environment. Hazards have names and descriptions, types, drives of their own, a presence entry (showing how they look, taste, smell etc), potential resources a character might get from besting them, aspects describing their special rules, and quirks that add optional aspects. Hazards are under the control of the Firefly by default, and act without rolling (prompting responses from targeted characters). Hazards don't have innate tracks, but Fireflies can either give them tracks for each of their aspects or use strategy tracks to measure the progress of a fight or encounter.</p>
+            <br>
+            <hr>
+            <h1 class="ph1">RULES BREAKDOWN</h1>
+            <h3 class="ph3">CHARACTER ELEMENTS</h3>
+            <h4 class="ph4">Edges</h4>
+            <p class="pp">
+                <b>Grace</b>: Elegance, precision, agility <br>
+                <b>Iron</b>: Force, determination, willpower <br>
+                <b>Instinct</b>: Sense, intuition, reaction <br>
+                <b>Sharps</b>: Logic, wit, planning <br>
+                <b>Teeth</b>: Savagery, passion, destruction <br>
+                <b>Tides</b>: Exploration, learning, lore <br>
+                <b>Veils</b>: Shadows, ciphers, secrecy <br>
+            </p>
+            <h4 class="ph4">Skills</h4>
+            <p class="pp">
+                <b>Brace</b>: Defend, determination, immobility <br>
+                <b>Break</b>: Break, smash, demolish <br>
+                <b>Concoct</b>: Chemical reactions, essence/crezzer extraction <br>
+                <b>Cook</b>: Spices, sustenance, meats, fruits, heat <br>
+                <b>Delve</b>: Explore ruins, bypass locks/traps, identify the past <br>
+                <b>Flourish</b>: Showmanship, performance, art <br>
+                <b>Hack</b>: Chop, identify unknown plant hazards, spin tales <br>
+                <b>Harvest</b>: Forage, identify plants, nurture plants/insects <br>
+                <b>Hunt</b>: Observe, track, shoot, render specimens <br>
+                <b>Outwit</b>: Sneak, infiltrate, deceive <br>
+                <b>Rattle</b>: Mend, maintain, invent <br>
+                <b>Scavenge</b>: Locate, collect, identify properties and value <br>
+                <b>Sense</b>: Detect, intuit, react <br>
+                <b>Study</b>: Discover, record, interpret, decipher <br>
+                <b>Sway</b>: Convince, argue, threaten <br>
+                <b>Tend</b>: Heal, calm, communicate with beasts <br>
+                <b>Vault</b>: Climb, leap, dodge, tumble  <br>
+                <b>Wavewalk</b>: Brachiate, swing, navigate the wilds <br>
+            </p>
+            <h4 class="ph4">Aspects</h4>
+            <p class="pp">Consist of a name, a type, a track and a special rule. Mark aspect tracks with a / as they get damaged or X if they are subjected to a permanent Burn (other tracks work the same way when marking progress). A character can have seven in total, not counting temporary aspects.</p>
+            <h4 class="ph4">Languages</h4>
+            <p class="pp">
+                <b>Language Ranks</b>: 1 (Smattering), 2 (Knowledge), 3
+                (Fluency). <i>Languages can be used to make friends, impress
+                others, gain extra information.</i><br><br>
+                <b>Low Sour</b>: A mongrel ‘common tongue’.<br>
+                <b>Cthonic</b>: Ancient human tongue.<br>
+                <b>Saprekk</b>: Thick, rolling ektus tongue<br>
+                <b>Gaudimm</b>: Gau language of soft clicks, subtle twitches, and pheromone bursts.<br>
+                <b>Knock</b>: Hissing, chittering tzelicrae language.<br>
+                <b>Brasstongue</b>: Clipped and precise trader tongue.<br>
+                <b>Raka Spit</b>: Rapid patter of hunters and levianthaneers.<br>
+                <b>Lyre-Bite</b>: Lilting tongue of poets and songwriters.<br>
+                <b>Old Hand</b>: Sign language.<br>
+                <b>Signalling</b>: Code language delivered with flags, flares, signal lamps.<br>
+                <b>Highvin</b>: Primarily written language often found on pre-
+                verdant ruins.<br>
+            </p>
+            <h4 class="ph4">Mires & Drives</h4>
+            <p class="pp">
+                <b>Mire</b>: Marked in response to an event you're caught in, something you're forced to do against your judgement or as a consequence of discovering or witnessing something truly disturbing.<br><br>If you act contrary to a mire, automatically cut a number of dice equal to the marks on its track.<br><br>
+                <b>Drive</b>: Advancing or satisfying a drive lets you choose
+                one of the following...<br>
+                <ul class="pul">
+                    <li>Gain a whisper</li>
+                    <li>Clear a mark of mire</li>
+                    <li>Gain a minor milestone (once per session only)</li>
+                    <li>Gain a major milestone, remove and replace it (once per session only)</li>
+                </ul>
+            </p>
+            <h3 class="ph3">SCENE RULES</h3>
+            <h4 class="ph4">Action Rolls</h4>
+            <p class="pp">
+                Edge (1d6) <br>
+                + Skill or Language (up to 3d6) <br>
+                + Advantage (up to 2d6) <br>
+                Advantage includes pieces of the environment, resources, aspects, favourable situations, and helpful assistance - usually 1d6 (2d6 for multiple advantages). Helping Hands: Two crewmembers working together on the same task choose which provides the edges, advantages, or skill ranks. Both are affected by any negatives that result.
+            </p>
+            <h4 class="ph4">Reading the Dice</h4>
+            <p class="pp">
+                Use the highest single die and note if you have doubles. Triples or above only count as doubles.
+            </p>
+            <h4 class="ph4">Action Roll Results</h4>
+            <p class="pp">
+                <b>6 - Triumph</b>: Complete success, no drawbacks. Mark or clear a box on a track.<br>
+                <b>5, 4 - Conflict</b>: 5, 4 - Conflict: Success with a drawback. Usually marks or clears a box.<br>
+                <b>3, 2, 1 - Disaster</b>: Failure and narrative complication or drawback. Usually doesn't mark/clear a box.<br>
+                <b>Doubles - Twist</b>: Adds a small, potentially useful twist, suggested by any player. Firefly has final say.<br>
+            </p>
+            <h4 class="ph4">Cut</h4>
+            <p class="pp">
+                Removes results after the roll, starting with the highest.
+                <b>Cut for Difficulty</b>: Firefly lets you know if a roll is particularly difficult.<br>
+                <b>Cut for Precision</b>: Cut 1 result to aim at a location/part. Declare before roll.<br>
+                <b>Cut for Impact</b>: Cut for extra Impact, increasing to the next tier. Declare intent before rolling.<br>
+            </p>
+            <h4 class="ph4">Impact</h4>
+            <p class="pp">
+                <b>Low</b>: Action is weaker/has less effect, marks less boxes, downgrades power.<br>
+                <b>Normal</b>: Most actions. Marks one box.<br>
+                <b>High</b>: More effect/power. Marks an extra box.<br>
+                <b>Massive</b>: Hugely potent, e.g. ship-scale armament. Marks all boxes in a track.<br>
+            </p>
+            <h3 class="ph3">SCENE RULES</h3>
+            <h4 class="ph4">Tracking Focus</h4>
+            <p class="pp">
+                Narrative dictates the order.<br>
+                <b>Hijacking Focus</b>: If you hijack a Player’s focus, they have to agree first. Focus always returns to whatever it was hijacked from when action is done.<br>
+            </p><h4 class="ph4">Attacking and Damage</h4>
+            <p class="pp">
+                Players usually choose if they inflict damage (and on which track) or an effect. Sometimes it’s both. Attacks normally mark 1 track box. Increased Impact or a more effective Damage Type marks an extra box.
+            </p><h4 class="ph4">Damage Types</h4>
+            <p class="pp">
+                <b>Blunt</b>: Crushing - stun and break<br>
+                <b>Keen</b>: Cutting - slice and bleed<br>
+                <b>Spike</b>: Piercing - penetrate and impale<br>
+                <b>Hewing</b>: Chopping - split and break<br>
+                <b>Serrated</b>: Sawing - rip and tear<br>
+                <b>Toxin</b>: Poison - sicken and confuse<br>
+                <b>Acid</b>: Corrosive - melt and sear<br>
+                <b>Blast</b>: Explosive - stun and shatter<br>
+                <b>Volt</b>: Electrical - shock and paralyze<br>
+                <b>Frost</b>: Cold - slow and freeze<br>
+                <b>Salt</b>: Crystalline - dry and banish<br>
+                <b>Flame</b>: Burning - melt and inspire fear<br>
+            </p><h4 class="ph4">Range</h4>
+            <p class="pp">
+                Weapons are either close Quarters (CQ) or Long Range (LR)<br>
+                Using LR in CQ combat (or vice versa) inflicts a Cut.
+            </p><h4 class="ph4">Attack Roll Results</h4>
+            <p class="pp">
+                <b>6 - Triumph</b>: Powerful blow. Deal damage and might inflict an effect.<br>
+                <b>5, 4 - Conflict</b> Attack deals damage and maybe associated effect, but you might take some damage, suffer an effect, lose a resource or be put in a less favourable position.<br>
+                <b>3, 2, 1 - Disaster</b>: Attack misses or does no damage. You definitely take some damage or an effect, and might lose a resource or be put in a less favourable position too.<br>
+                <b>Doubles - Twist… or Critical</b>: Unexpected narrative effect/critical with increased impact.
+            </p><h4 class="ph4">Defending</h4>
+            <p class="pp">
+                Players roll to defend, opponents do not roll to attack.
+            </p><h4 class="ph4">Defence Roll Results</h4>
+            <p class="pp">
+                <b>6 - Triumph</b>: Completely avoid the threat (though some powerful opponents may have aspects that make even a triumph dangerous).<br>
+                <b>5, 4 - Conflict</b>: Avoid the worst but take damage, an effect, a negative change in position, or destruction (or temporary denial) of a resource.<br>
+                <b>3, 2, 1 - Disaster</b>: Take damage, and likely associated effect and loss of resource or position as well.<br>
+                <b>Doubles - Twist… or Counter</b>: Unexpected narrative effect, or counter with a mark of damage against them (if in range).
+            </p><h4 class="ph4">Resistance, Immunity, & Weakness</h4>
+            <p class="pp">
+                <ul class="pul">
+                    <li>Resistance reduces damage to a hazard by one mark, damage to a character by two marks. Can reduce or eliminate injury.</li>
+                    <li>Immunity is full protection.</li>
+                    <li>Weakness increases damage to a hazard by one mark, damage to a character by two marks. Injuries may be more detrimental or last longer.</li>
+                </ul>
+                <b>Stacking</b>: If you have two resistances to a certain type of damage, count that as an immunity. If you have an immunity and a weakness, treat it as a resistance. If you have a weakness and a resistance, they cancel each other out.<br>
+            </p><h4 class="ph4">Injuries</h4>
+            <p class="pp">
+                Caused by hazards (such as monsters), disease, large amounts of damage, etc. They might:
+                <ul class="pul">
+                    <li>Force a Cut on some actions.</li>
+                    <li>Take away a Skill or sense.</li>
+                    <li>Add negative effects to actions.</li>
+                </ul>
+                Injuries are represented by temporary tracks.
+            </p>
+            <h3 class="ph3">MONTAGE RULES</h3>
+            <p class="pp">Narrative is condensed into <b>Tasks</b>. Required Resources still count as Advantages, including teamwork.</p>
+            <h3 class="ph3">Task Types</h3>
+            <h4 class="ph4">Exploration</h4>
+            <p class="pp">
+                Tracking down individuals/services, chasing down leads, indulging curiosity, gaining local knowledge, discovering routes and options. Uses various Skills.
+            </p>
+            <h4 class="ph4">Acquisition</h4>
+            <p class="pp">
+                Acquires Resources in appropriate areas with three approaches:<br>
+                <b>Scavenging</b>: Salvage.<br>
+                <b>Hunting or Gathering</b>: Specimens.<br>
+            </p>
+            <h4 class="ph4">Acquisition Results</h4>
+            <p class="pp">
+                <b>6 - Triumph</b>: Gain a solid untainted resource.<br>
+                <b>5, 4 - Conflict</b>: Gain a resource with a negative tag.<br>
+                <b>3, 2, 1 - Disaster</b>: Resource not found or ruined during collection.<br>
+                <b>Doubles - Twist</b>: Gain a resource with a unique or positive tag suggestedby you or another player.<br>
+            </p>
+            <h4 class="ph4">Sample Resource Tags</h4>
+            <p class="pp">
+                <b>(Salvage) Sturdy</b>: Repairs extra damage mark.<br>
+                <b>(Salvage) Ornate</b>: Has far more worth.<br>
+                <b>(Salvage) Broken</b>: Almost useless.<br>
+                <b>(Specimen) Pure/Medicinal</b>: Heals extra mark.<br>
+                <b>(Specimen) Heirloom</b>: Has far more worth.<br>
+                <b>(Specimen) Rotten</b>: Makes you sick if you eat it.<br>
+                <b>(Whisper) Echoing</b>: Use twice before fading.<br>
+                <b>(Whisper) Hungry</b>: Removes an element of the world,
+                rather than adding one.<br>
+                <b>(Chart) Faded</b>: Almost impossible to read.<br>
+                <b>(Any) Pre-Verdant</b>: Ancient.<br>
+            </p>
+            <h4 class="ph4">Creation</h4>
+            <p class="pp">
+                Combines Resources to create temporary Aspects for self or others. Each temporary Aspect will have a name, track, useful ability, and is used up forever when the track is filled. Uses the Creation Roll Results table.
+                <b>Concocting</b>: Requires 2 Resources (any type). Makes a related potion.<br>
+                <b>Cooking</b>: Requires 2 Specimens. Makes a full meal with
+                related property.<br>
+                <b>Concocting</b>: Requires 2 Salvage. Makes a piece of useful
+                temporary Gear.<br>
+            </p>
+            <h4 class="ph4">Creation Roll Results</h4>
+            <p class="pp">
+                <b>6 - Triumph</b>: Recipient gains temporary benefit related to resources used.<br>
+                <b>5, 4 - Conflict</b>: Recipient gains temporary 2-track aspect with downsides, or no downside, but it doesn’t quite do what was intended.<br>
+                <b>3, 2, 1 - Disaster</b>: Creation might be a bizarre ornament/culinary curiosity, but gives no benefits.<br>
+                <b>Doubles - Twist</b>: Creation has small, unexpected benefit in addition to the usual result.<br>
+            </p>
+            <h4 class="ph4">Recovery</h4>
+            <p class="pp">
+                Each option requires a Resource or safe, appropriate environment (allowing the Resource to be spent and automatically take the Conflict result if desired). Uses the Recovery table:
+                <b>Healing</b>: Healing: Requires an appropriate Specimen. Clears marks from Traits or animals.<br>
+                <b>Repairing</b>: Requires appropriate Salvage. Clears marks from Gear or mechanicals.<br>
+                <b>Relaxing</b>: Requires an appropriate Whisper. Clears marks from Mires.<br>
+            </p>
+            <h4 class="ph4">Recovery Roll Results</h4>
+            <p class="pp">
+                <b>6 - Triumph</b>: Heal two marks of damage to an aspect, ship rating, injury track or mire.<br>
+                <b>5, 4 - Conflict</b>: Heal one mark of damage to an aspect, ship rating, injury track or mire.<br>
+                <b>3, 2, 1 - Disaster</b>: Add an extra mark of damage to an aspect, ship rating, injury track or mire.<br>
+                <b>Doubles - Twist</b>: You don’t consume the resource used to carry out your recovery.<br>
+            </p>
+            <h4 class="ph4">Projects</h4>
+            <p class="pp">
+                Fall outside the timescale of Actions or Tasks and take several or more of the latter. To mark them:
+                <b>Time</b>: Mark a box for each appropriate span of effort or study.<br>
+                <b>Rolls</b>: Roll as per normal Actions.<br>
+                <b>Resources</b>: Might be required and might help the process.<br>
+                <b>Aid</b>: Others may offer help or expertise.<br>
+            </p>
+            <h3 class="ph3">JOURNEY RULES</h3>
+            <h4 class="ph4">Sequence</h4>
+            <p class="pp">
+                <b>Departure</b>: Set destination, run a Montage, Scene, or Checklist of preparations.<br>
+                <b>Progress & Encounters</b>: Crewmembers can choose to take turns At the Helm and On Watch. Boxes are marked on the Firefly's secret Progress, Risk, Pathfinding (if someone is Cartographizing) and Riot (if poor leadership, crew treatment, or excessive danger might bring mutiny) tracks. FIlling a Progress track ends the journey. Filling a Risk track means a powerful foe or threat has found you. Filling a Pathfinding track provides the cartographer with a relevant Chart. Filling a Riot track results in potential mutiny.<br>
+                <b>Arrival</b>: Arrival at the final destination when the Progress
+                track is complete.<br>
+            </p>
+            <h4 class="ph4">At the Helm</h4>
+            <p class="pp">
+                Choose an option:
+                <ul>
+                    <li><b>Cut a Path</b>: Travel at decent speed, as safely as possible. Mark a single Progress box. When the Watch Roll is made, you can choose to Encounter or steer clear easily.</li>
+                    <li><b>Forge Ahead</b>: Swift but rough passage. Mark 2 Progress boxes. When the Watch Roll is made, the ship usually blunders into an encounter or avoids it with some damage.</li>
+                    <li><b>Drop Anchor</b>: Stop to rest, no Progress, minimum fear of interruption. Undercrew take watch and the crew can take a Montage.</li>
+                </ul>
+                <b>Challenging Terrain</b>: This can force a Ratings Roll to progress.
+            </p>
+            <h4 class="ph4">Ratings Roll</h4>
+            <p class="pp">
+                Used to avoid obstacles, in tricky maneuvers, to progress in a chase, etc.
+            </p>
+            <h4 class="ph4">Ratings Roll Results</h4>
+            <p class="pp">
+                <b>6 - Triumph</b>: Bypass the obstacle safely.<br>
+                <b>5, 4 - Conflict</b>: Bypass the obstacle but mark 1 Rating damage.<br>
+                <b>3, 2, 1 - Disaster</b>: Fail to bypass the obstacle and mark 1 Rating damage.<br>
+                <b>Doubles - Twist</b>: An unexpected event in addition to the result.<br>
+            </p>
+            <h4 class="ph4">On Watch</h4>
+            <p class="pp">
+                Choose an option:
+                <ul>
+                    <li><b>Make a Discovery</b>: Choose a Chart, add a Whisper, interpret. Both are then lost.</li>
+                    <li><b>Watch the Waves</b>:  Make a random roll on Watch Roll Results.</li>
+                </ul>
+            </p>
+            <h4 class="ph4">Threat</h4>
+            <p class="pp">
+                The Firefly secretly rolls 1d6 (2d6, take the highest result if the crew has a Chart of the area) to determine the Threat level of any Encounters: 6 is a danger-free opportunity; 5 or 4 is a hazardous encounter with a useful pay-off; a 3, 2 or 1 indicates that there’s an immediate danger with little pay-off. The Firefly usually gives clues to the level of any threat.
+            </p>
+            <h4 class="ph4">Ratings Roll Results</h4>
+            <p class="pp">
+                <b>6 - Peace</b>: Montage, Meeting, Tall Tale (gain a Whisper), Tree Shanty, Undercrew Issue, Reflection (heal Mire).<br>
+                <b>5, 4 - Order</b>: Nearby Ship, Outpost, Survivor Needing Rescue, Wreck or Ruin, Cache of Cargo/Supplies, Conspiracy.<br>
+                <b>3, 2, 1 - Nature</b>: Weather, Natural Feature, Wonder (heal Mire), Horror, Unsettled Landfall, True Wilds.<br>
+            </p>
+            <h4 class="ph4">Tending the Engine [Optional]</h4>
+            <p class="pp">
+                Choose an option:
+                <ul>
+                    <li><b>Tend to the Engine</b>: Immediately hijack focus if there are any problems relating to the engine to attempt an instant fix/bypass.</li>
+                    <li><b>Overload the Engine</b>:  Uses a resource suitable for fuel. Increase impact on a roll to take advantage of the ship's temporary power/speed, or mark an additional box on the journey track.</li>
+                    <li><b>Muffle the Engine</b>:  Uses a soft, muffling resource. Increase impact on a roll made to take advantage of the ship's quieter profile or stealthily leave an area without making a roll (if you haven't been spotted).</li>
+                </ul>
+            </p>
+            <h4 class="ph4">Cartographizing [Optional]</h4>
+            <p class="pp">Slowly create a chart of the area you're travelling through - every time you find a particularly important landmark the Pathfinding track created by the Firefly gets marked. When the track is fully marked you gain a chart - add it to your resources and name it.</p>
+            <h4 class="ph4">Watching the Weather [Optional]</h4>
+            <p class="pp">Roll 1d6 on Weather-Watching Results.</p>
+            <h4 class="ph4">Weather-Watching Results</h4>
+            <p class="pp">
+                <b>6 - Clear Skies</b>: Weather clears.<br>
+                <b>5, 4 - Continuation</b>: Weather continues as it is.<br>
+                <b>3, 2, 1 - A Change for the Worse</b>: Driving rain/hail (lowers visibility), blazing sunshine (potential heathstroke), living storm or bizarre weather phenomenon.<br>
+            </p>
+            <h4 class="ph4">Encounters</h4>
+            <p class="pp">
+                <b>Avoiding an Encounter</b>: May or may not require a Ratings Roll.
+                <b>Engaging an Encounter</b>:
+                <ul>
+                    <li><b>Choice</b>: The crew chooses from options provided by the Firefly.</li>
+                    <li><b>Challenge</b>: A threat to the ship. Player At the Helm may need to make Ratings Rolls.</li>
+                    <li><b>Scene Encounter</b>: Usually when the players leave the ship.</li>
+                </ul>
+            </p>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

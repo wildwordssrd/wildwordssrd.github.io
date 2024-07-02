@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twists</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navButton" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navButton">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navButton">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navButton" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButtonSel" onclick="">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">TWISTS&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Twists are a subsytem, most often linked to dice rolls, that encourage players to take the reins of the narrative in small ways.</li>
+              <li>The 'standard' twist comes in the form of a player (or their character) reshaping or altering an element of the world, or bringing something unexpected into the narrative that changes the progression of a game's plot</li>
+              <li>Twists do have some built-in limits, as there's an element of conversational agreement that comes into their planning and execution.</li>
+              <li>Most importantly, Twists are player-focused, not GM-focused. The GM might get a say, maybe even the final say, but the generation of a twist comes from the players.</li>
+            </ul>
+            <h4 class="ph4">The Standard Twist</h4>
+            <p class="pp">No matter how it appears in-universe, the most standard
+              version of a twist allows a player to state that something
+              unexpected happens as a result of one of their actions
+              (usually as a result of <a href="srd-pages/dice-pools-rolls.html">rolling doubles</a>). There are a few conventions to follow here...</p>
+            <ul class="pul">
+              <li><b>Twists Should Be Small</b>: The unexpected outcomes can be game-changers, but they shouldn't be game-killers. An unexpected outcome of falling off of a wall may well be crashing through the floor below into a previously undiscovered secret rom, but it shouldn't be falling directly onto the head of a campaign's big bad and killing them outright. They add flavour and spice, not an entire side of beef.</li>
+              <li><b>Twists Should Be Player-First</b>: Twists might be decided by the player that rolls them (if you're linking twists to dice, which we recommend), but a better conventon is to throw them open to the table - let other players offer their ideas for twists, and let the initial player and GM decide on which one they like best. Twist are literally there to facilitate collaborative storytelling.</li>
+              <li><b>Twists Should Be Narrative</b>: ... But they don't have to be. Sometimes there aren't any good ideas for a a twist based on a particular action. In that case the GM might elect to offer a resource instead, or to up the impact of the action itself.</li>
+            </ul>
+            <h4 class="ph4">Unexpected Outcomes</h4>
+            <p class="pp">The best way to keep a twist unexpected is to have it supplied by someone other than the initial player or GM. But why keep them unexpected in the first place?</p>
+            <p class="pp">Because Wild Words games are games for the GM as much as they are for the other players, and nothing's more thrilling than an unforeseen twist in a narrative that you're enjoying. Twists allows the average player a little taste of that GM storytelling magic, but they also allow the GM to react to unexpected narrative developments in the same way a player might.</p>
+            <span class="example">Klash lets off a firework, rolling a twist as they attempt to impress the audience with their display. One of the players suggests that the burst of the firework reveals a danger in the night sky, and the group loves it. The GM had no plans for there to be danger there, so they could just say it doesn't quite work... But they roll with it, adapting to the change with glee.</span>
+            <h4 class="ph4">Twists Don't Have To Be Positive</h4>
+            <p class="pp">While it might seem sensible to colour twists in ways that they help everyone at the table, the core Wild Words rules don't specify that twists have to be positive, just unexpected. Make that clear in your rules - it often leads to some of the most exciting moments of play.</p>
+            <span class="example">Hent's player rolls doubles as their character leaps onto a rising airship. The roll was a success, so Hent makes it on, but the twist is opened up to the table and one of the other players suggests that Hent's weight is just enough to overbalance the ship. Suddenly there's a crisis, a decision to be made - if Hent stays, maybe the entire ship goes down.</span>
+            <span class="emphasis">
+              <h4 class="ph4">Twists Without the Randomness</h4>
+              <p class="pp">Twists are tied to the dice in Core Wild Words, but they don't have to be earned this way exlusively - or at all! Having resources or aspects that can grant twists can add an element of control to the uncontrollable, and tying them to impulses can also make for some great collaborative storytelling experiences.</p>
+              <span class="exmaple">In <b>The Wildsea</b>, Whispers are a resource that represent living words, and can be released into the world in a number of ways. One of these is to speak them aloud, essentially allowing the player that does so to change or bring in a narrative element to the scene related to the name of the whisper; a twist, essentially, but under their control. Whispers can also be shouted, creating a high-impact change that's entirely up to the GM.</span>
+              <span class="example">In <b>Streets By Moonlight</b>, a bad roll made when confronting an impulse will damage the character. But how? This is up to other playrs at the table to determine, not the GM - investigators play an active part in the downfall of their colleagues, and themselves.</span>
+            </span>
+            <h4 class="ph4">The Limits of Twists</h4>
+            <p class="pp">This is a tough one, and is very much up to you as a designer. What we will say is that it's easier to provide guidelines and examples here than rules, as most tables will settle on a level of power for twists that feels right to them.</p>
+            <h4 style="color: #D25A31;">Chop & Change - Twists</h4>
+            <p class="pp">When adding a twist system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Remove the GM from every part of the conversation where a twist is involved</li>
+              <li>Specify that particular players handle the twists of specific other players, perhaps in relation to their character bonds</li>
+              <li>Tie twists into another system, allowing them to be built up to or earned in some way</li>
+              <li>Allow a player to 'save' twists when rolled, not using them immediately but saving them for a more dramatic moment</li>
+              <li>Corrupt twists to always give negative outcomes, but to reward a pkayer in other ways (The Wildsea: Storm & Root does this with an optional subsystem, Snaps)</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters: Overview</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonSel" onclick="">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <span class="emphasis" style="background-color: #363940; border-color: #363940; color:#fff;">
+              <h1 class="ph1">CHARACTER ELEMENTS</h1>
+              <p class="pp">There are multiple elements that make up an average Wild Words character, most made from combinations and interplays of the previous core systems described within this document. Whether you use all of these for your own game is entirely your choice - the following categories can be chopped, changed, or even left out entirely if they don't fit the kind of game you're going for - but including something close to the following presentation gives a solid base.</p>
+            </span>
+            <h3 class="ph3">What Are Character Elements?</h3>
+            <p class="pp"><b>The narrative and mechanical pieces that come together to make a playable Wild Words character, usually presented for players in the form of a character sheet for ease of use during play.</b></p>
+            <p class="pp">The average Wild Words character is made from the following components...</p>
+            <ul class="pul">
+              <li><b>Backgrounds</b>, to describe who and what a character is within the setting or world</li>
+              <li><b>Edges</b>, to describe broad areas of competency that help start action rolls</li>
+              <li><b>Skills</b>, which give more focused competencies and act as the middle contributor action rolls</li>
+              <li><b>Aspects</b>, which contain special rules, act as health, and work like permanent resources in terms of adding dice to action rolls</li>
+              <li><b>Meters</b>, which track a build-up of something setting-related that may have ramifications</li>
+              <li><b>Impulses</b>, which set narrative goals and drawbacks for a character that definitely affect the roleplay, and may play into the game mechanics</li>
+              <li><b>Resources</b>, which are a fluid system of named, temporary equipment, useful for barter, creation, and enabling certain actions</li>
+              <li><b>Wealth</b>, which tracks how a character can gain or spend some kind of income</li>
+              <li><b>Metacurrency</b>, a player-facing resource that impacts the setting mechanically</li>
+              <li>And a <b>Creation Method</b>, an additional page that helps you decide on the way you want players to actually make their character using all of the aforementioned elements</li>
+            </ul>
+            <p class="pp">We'll tackle these one by one, and give examples of how they might appear in different games or genres. Most of these sections refer to certain core rules, so make sure you've read those first.</p>
+            <h3 class="ph3">Other Considerations</h3>
+            <p class="pp">Those may be the main bits of a character, but there are a couple of other things you might want to consider as well. We've listed them on this page, along with a little guidance on how you might want to interact with them.</p>
+            <h3 class="ph3">NAMES</h3>
+            <p class="pp">A character's name distinguishes them from the player that's controlling them. Names can usually be anything, unless you're going for a particular feel for the world or setting - if this is the case, advice for names (along with examples) can often help players as they make their choices.</p>
+            <span class="example">In <b>The Wildsea</b>, characters can be called just about anything. However, there are sample names listed for the various languages that a character might speak in the book's appendix, giving aid to players that want a solid, appropriate, in-universe name.</span>
+            <span class="example"><b>Streets By Moonlight</b> is set in some version of the real world, and expects characters to have 'realistic' names. However, it also makes it clear that nicknames are entirely acceptable, especially for underworld types.</span>
+            <h3 class="ph3">SET-UP QUESTIONS</h3>
+            <p class="pp">A quick way of having a player think about the history of their character is to sprinkle a few questions into some of the options presented. These questions might be for a player to muse over alone, or to share with the group in order to build some kind of shared backstory.</p>
+            <span class="example"><b>The Wildsea</b> does this in two ways - with questions in each background about a character's history, and with a round of 'Unsetting Questions' at the start of a session that helps players get into the same creative space as they discuss rumours and possibilities connected to elements of the world.</span>
+            <h3 class="ph3">BONDS</h3>
+            <p class="pp">Characters might have bonds with each other, or with important NPCs or factions within the setting. A character might even be bonded to a particular element of the world, such as a religion or a place.</p>
+            <p class="pp">If you want to include bonds in a Wild Words game, we recommend that they're narrative first, mechanical second. They might strengthen other attributes of a character in certain situations, or give permissions to take certain types of action that would otherwise be unavailable, but the roleplay benefit of them should shine more than anything.</p>
+            <span class="example">In <b>The Sword Spiral</b>, characters are bonded to each other in various ways, both positive and negative - they might be siblings, rivals, or even lovers. Roleplaying these bonds allows for a mechanical boost toward healing and recovery during downtime.</span>
+            <span class="example">In <b>Drift</b>, the impulse system revolves around the Bonds characters have with other NPCs and elements of the setting. Characters can call on these bonds to establish connections in unfamiliar places.</span>
+            <span class="example">In <b>Streets By Moonlight</b>, the death of one character leads directly to the creation of the next - a new investigator steps into the shoes of their dead friend or colleague. This mechanic, the Call, sets up a series of Bonds from character to character created by the same player, strengthening each character in a lineage.</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

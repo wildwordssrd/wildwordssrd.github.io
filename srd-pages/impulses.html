@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulses</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButtonSel" onclick="">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">IMPULSES&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Impulses are narrative-first signals to a player that their character should act a certain way. This might come in the form of goals to be chased, rules to be followed, or vices to be indulged in.</li>
+              <li>Impulses might have a mechanical component to them, but likely not at all times. They exist to suggest play decisions, not necessarily to force them.</li>
+              <li>Impulses may have a track attached to determine their strength over or importance to a character.</li>
+              <li>A player following a character's impulse should be rewarded in some way (even if that impulse might be detrimental to the character).</li>
+            </ul>
+            <h4 class="ph4">Scope</h4>
+            <p class="pp">Ideally, impulses are there to help a player decide what their character might do in a given situation. If they have an impulse that leads them to indulging in something, and that thing is presented, it makes narrative sense for their character to be drawn to that thing.</p>
+            <p class="pp">But that doesn't mean a character should have to engage with it - that's a player agency concern. Ther are a few ways you can handle this...</p>
+            <ul class="pul">
+              <li>Leave it completely narrative.</li>
+              <li>Reward engaging with an impulse.</li>
+              <li>Penalize resisting an impulse.</li>
+              <li>Let the dice decide what happens.</li>
+            </ul>
+            <span class="example">In <b>The Wildsea</b>, impulses are split into two sections - Drives and Mires. Drives are positive impulses that describe a character's goals, and working towards them rewards a player with milestones to advance their character. Mires are negative impulses with a small attached track - they don't affect the character until the track starts to fill, but once it does there's a mechanical penalty on actions that might be affected by that impulse.</span>
+            <span class="example">In <b>Rise</b>, impulses are coded as the wants of a nation-state's citizens, and have a single box that's either marked or unmarked. If the box of a want is marked (such as 'Hungry'), there's a mechanical penalty associated with actions related to that impulse.</span>
+            <span class="example">In <b>PICO</b>, a bug has one grand goal that they'll likely never achieve. There's no mechanical tie to this goal, it's just there as a little bit of flavour for the character.</span>
+            <h4 class="ph4">Deciding on Impulses</h4>
+            <p class="pp">Like all elements of a character, the impulses should be tied to the world you're creating. A setting revolving around the mean streets of a major city might have characters pulled towards engaging with their vices, or earning rewards and advancement by rising above them. Think about what social pressures, cultural expectations, and grand goals might matter to the inhabitants of your world, and craft an impulse system around that.</p>
+            <span class="example">In <b>The Sword Spiral</b>, honour in combat is important. The impulses here are codes of conduct to follow that might get in the way of success, reinforced by cultural expectations - attacking an enemy that's unarmed or unaware might not have a mechanical downside, or might even have a mechanical upside, but will damage a character's Honour... And it's that honour that a player uses to add to the dice pool of rolls that benefit their allies.</span>
+            <span class="example">In <b>Streets by Moonlight</b>, characters are inherently flawed. Their impulses are impossible to resist - if they come across them, they must engage with them. Whether they survive or not is down to the luck of the dice.</span>
+            <h4 class="ph4">Leaving Out Impulses</h4>
+            <p class="pp">Of all the potential character elements, impulses is the one that can most easily be left out of a Wild Words game. It's there to create conflict and drama, and to guide decision-making in an unfamiliar setting, but if your world is a more familiar one or you want absolute player agency over a character's thoughts, feelings, and actions, leaving it out might be the better choice.</p>
+            <h4 class="ph4">Impulses as Flags</h4>
+            <p class="pp">For a GM, a player choosing a particular impulse likely means that they want it featured in the game. If a player chooses for their character to have an unsatiable yearning for dark knowledge, the setting and game should allow them to engage with that (even if that engagement is resisting it).</p>
+            <h4 class="ph4">Impulse Tracks</h4>
+            <p class="pp">Consider giving an impulse a track that can be marked and cleared if you want it to affect a character over time. Meters work particularly well for this. Dice rolls related to an impulse may even depend on how many boxes of the track are marked, or unmarked.</p>
+            <span class="example">In <b>Drift</b>, the impulse system is known as the Chain. The Chain sets out six important people, places, and life events that a character can draw strength from or rely upon in darker or more confusing moments. A 'chain roll' allows them to roll a number of dice equal to the unmarked boxes on the chain to resist the unsettling effects of the living city they live in. The more that chain has been damaged (and thus marked), the fewer dice the player will have to roll with, and the less stable that character will be in these moments.</span>
+            <h4 style="color: #D25A31;">Chop & Change - Impulses</h4>
+            <p class="pp">When adding an impulse system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have players create their own positive or negative impulses during character creation.</li>
+              <li>Have impulses reflect the bonds between characters.<li>
+              <li>Have impulses as hard narrative rules a player must adhere to, or be penalized for stepping outside of.</li>
+              <li>Have impulses tied to advancing, or even using, skills or aspects.</li>
+              <li>Have impulses resisted by expending resources or currency.</li>
+              <li>Have impulses hidden from the players, entirely in the realm of the GM.</li>
+              <li>Have impulses change once they've been engaged with once to keep the system fresh.</li>
+              <li>Have impulses change a character permanently, for better or worse.</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

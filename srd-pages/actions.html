@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actions</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButtonSel" onclick="" >Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">ACTIONS&nbsp;</h1><h2 class="ph2">CORE SYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>In its simplest form, an action is anything that a player has their character do within the game.</li>
+              <li>Some actions that are difficult, dangerous, or dramatic in nature (as described on the previous page) should likely intersect with the rules in terms of dice.</li>
+              <li>Core Wild Words assumes that most actions are freeform in nature - they're decided on and described before the rules come into play.</li>
+            </ul>
+            <h4 class="ph4">What Are Actions</h4>
+            <b>Anything a character does during a game.</b>
+            <p class="pp">... Well, probably.</p>
+            <p class="pp">For most Wild Words games, anything a character does within a scene is an action. They're assumed to work out if they suit the world and story, unless the outcome or performance of that action runs into the territroy of the three Ds, in which case dice are usually involved.</p>
+            <span class="example">Harley has her character walk across the room and leaf through a book, looking for the date it was published. This is an action that doesn't require a roll - the information is there in the book, and it won't be that hard to find. In terms of the narrative, it can be assumed that Harley's character will find this information without too much trouble.</span>
+            <p class="pp">The example above describes an action that doesn't need to involve the dice. But, if the circumstances were a little different...</p>
+            <span class="example">Harley needs her character to find the date a particular book was published, and she's only got moments to spare before dire consequences ensue. She describes how her character leafs frantically through the pages - she knows the information is in there, but where? The GM asks for a roll based on her character's skills.</span>
+            <p class="pp">Though the action in this second example was pretty much the same, the simple act of finding information is made dramatic by the looming consequences and time-critical nature of the scene.</p>
+            <p class="pp">When writing your rules, make this distinction clear. It helps both players and GMs settle into a good rhythm.</p>
+            <h4 class="ph4">Flexible Actions (Fiction-First)</h4>
+            <p class="pp">Wild Words is a fiction-first system at its heart, meaning that it prioritizes story and creativity over mechanics. Even in mechanics-heavy games, the narrative and the choices of those around the table should be dictating when the rules come into play.</p>
+            <p class="pp">This is most easily demonstrated with a flexible action system. A character describes what they're trying to do, and then either they or the GM decide whether that needs to involve the dice and the elements of their character.</p>
+            <p class="pp">Sometimes a player will describe what they want to do based on something their character has access to, and that's absolutely fine. But they should never feel limited to choosing actions specifically because their character is good at something - edges, skills, aspects, resources, all of these should be more weighted toward offering options rather than imposing mandatory moves and choices.</p>
+            <span class="example">In <b>The Wildsea</b> a specific skill, wavewalk, determines how good a character is at moving through the leafy waves on their own, without the aid of a ship. The action of wavewalking isn't closed off to characters that lack ranks in this skill, they're just a lot more likely to take damage or run into narrative trouble while doing so (due to their inherently lower die results, and wavewalking being the kind of dangerous activity that will almost always require a roll).</span>
+            <span class="emphasis">
+              <h3 class="ph3">"HOW MUCH CAN I DO?"</h3>
+              <p class="pp">One of the most frequently-asked questions when it comes to actions is how many things a character can do with one of them, or what they might encompass, or how many in-game seconds they represent.</p>
+              <p class="pp">Chuck all of that out of a window for Wild Words, we've got a single critical rule:</p>
+              <p class="pp"><b>An action is long enough to give a player time to make their character shine.</b></p>
+              <p class="pp">What does this mean? In essence, that every action should be a character doing something interesting, or even just cool or tone-setting. Walking across the room to read a book isn't two actions, it's one - the act of walking isn't particularly cool. Striding across a room with a flourish of your cape might be an action on its own, because it shows off something about that character - but that's up to the player.</p>
+            </span>
+            <h4 class="ph4">Forced Actions (Mechanics-First)</h4>
+            <p class="pp">The partial exception to the flexible axtion standard is where impulses are concerned (pg XX). These are specificially designed to encourage (or in some cases require) certain reactions or behaviours from characters, either narratively or mechanically. But even in these situations, the action suggested by an impulse should ultimately be flexible.</p>
+            <span class="example">In Streets By Moonlight, characters are compelled to interact with certain dangerous occult objects and individuals by their impulses. There isn't a roll to resist this, but instead to determine how well they weather such encounters - they are required, narratively, to engage, but it's up to them to colour the action and describe how this actually comes about.</span>
+            <p class="pp">You might have more mechanics-first moments in your game, but try not to rely on them too heavily. They can be great for structuring certain scenes, but they are inherently restrictive.</p>
+            <h4 class="ph4">Adding Action Types</h4>
+            <p class="pp">Though actions are a useful catch-all for 'characters doing something', you might want to add a little more structure to proceedings by classifying some types of action as narratively or mechanically different to others. Here are a few pre-made examples of differently-typed actions that you might find helpful when designing the moment-to-moment gameplay of a Wild Words game.</p>
+            <h4 style="color: #4A6B6A;" class="ph4">Reactions</h4>
+            <p class="pp">A specific type of action that's called for by the GM in response to a character becoming the target of damage or an effect from the world.</p>
+            <p class="pp">Reactions are still quite fluid - a character should be able to decide how they react rather than be forced into a particular specific action - but they're good at representing immediacy and urgency.</p>
+            <span class="example">In <b>The Wildsea</b>, when a hazard attacks one of the characters the GM doesn't roll. Instead, the GM describes what's happening and asks the player to roll a reaction, stating how they mitigate or escape the incoming attack. A player might have teir character dodge, block, or use the environment in a clever way, but if they choose not to react they just get hit with the full potential force of whatever is coming their way</span>
+            <h4 style="color: #4A6B6A;" class="ph4">Tasks</h4>
+            <p class="pp">Sometimes a time-scale is important. Tasks are longer actions, covering larger periods of time than an average action and allowing characters to accomplish more complex, multi-stage procedures (likely still with a single roll, if a roll is required at all).</p>
+            <p class="pp">Tasks are usually best kept to their own type of scene that allows only tasks to be performed, such as a montage, but this doesn't technically have to be the case.</p>
+            <span class="example">In <b>Drift</b>, characters that want to explore a station in between journeys will usually do so by using a task. A single player might be able to have their character wander around, find a shop, and purchase something all with a single roll.</span>
+            <p class="pp">Sometimes an accomplishment, like building a house, might take multiple separate tasks to complete. This is usually known as a project, and likely has a track of its own that needs filling before completion.</p>
+            <h4 style="color: #4A6B6A;" class="ph4">Decisions</h4>
+            <p class="pp">Shorter than a usual acton, and far more restrictive, these usually take the form of the GM (or an element of the world) demanding a choice between A or B. A decision might happen at the speed of thought, or need some physical action from a character to be effective.</p>
+            <p class="pp">Decisions are perfect for scenes with stricter rules or a ritualized format to follow.</p>
+            <span class="example">In <b>The Wildsea</b>, part of a journey is working out which character takes the helm and which goes on watch. These are simple decisions that the players have to make - even if, narratively, the entire crew is gathered around the helm poring over maps and controls, there's still a single player whose character is 'at the helm', and who decides the speed a ship is travelling.</span>
+            <h4 style="color: #4A6B6A;" class="ph4">Flashbacks</h4>
+            <p class="pp">Useful if you want layers to be able to plunge into situations with the minimum of downtime, but you also want the characters to benefit in-universe from the idea of planning.</p>
+            <p class="pp">A flashback action involves a player describing something that their character did in the past that sets up a useful event or moment in the present narrative. Depending on the type of game you're creating flashbacks might not be a thing at all, or they might be freely available to use, or perhaps even tied to the spending of a <a href="srd-pages/metacurrency.html">metacurrency</a> of some sort.</p>
+            <span class = "example">In <b>Rise</b>, a metacurrency (moments) can be spent during combat between nation states to establish that the populace belonging to one player had worked on or achieved something that's secret to the other players, with the action skinned as this project being revealed at just the right time.</span>
+            <h4 class="ph4">Actions and Focus</h4>
+            <p class="pp">As previously mentioned, when a character has the spotlight they should be able to do something cool.</p>
+            <p class="pp">But how often do they get to do those cool things?</p>
+            <p class="pp">Usually the balance of who gets the spotlight will sort itself out naturally at the table - some scenes might put certain characters at the fore, others a different set. That's the nature of stories. But in a tense action-based scene such as a fight or chase, GMs won't want to leave players out.</p>
+            <p class="pp">To aid them with this, you can use the idea of a focus tracker - an optional system that records which characters have acted, and how many times they've had the spotlight (if you're using actions and reactions, one action is roughly equal to two reactons due to the amound of player agency involved). Here's an example...</p>
+            <ul class="pul">
+              <li><b>Garth</b>: AARA</li>
+              <li><b>Cho</b>: RRAAR</li>
+            </ul>
+            <p class="pp">The A on these tracks stands for action, the R for reaction. Garth hasn't had as much time in the spotlight as Cho, but has had more agency - more self-determined actions. A GM seeing this might give Garth a reaction next, or Cho an action. THis is something for a GM to worry about, but you as a designer to potentially suggest.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

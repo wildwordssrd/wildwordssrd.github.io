@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creation Method</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButtonSel" onclick="">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">CREATION METHODS&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Once you've decided every element that a character should have, you need to work out how they get put together.</li>
+              <li>There are two main creation methods - point-buy and choice-based. You might use one, the other, or a mix of both. or something entirely different that I haven't thought of!</li>
+              <li>The creation method you choose will impact how information is organized and presented to the player - keep the flow of character creation in mind when deciding on this.</li>
+            </ul>
+            <h4 class="ph4">Point-Buy vs Choice-Based</h4>
+            <p class="pp"><b>Point-buy systems</b> give players a certain amount of points (or any other metacurrency) to spend during character creation. Each option costs a certain number of points, and when the player is out of points their character is finished.</p>
+            <ul class="pul">
+              <li><b>Benefits</b>: Allows for extremely modular characters, allows for different balances of character elements, easy to fold this naturally into a progression system</li>
+              <li>Drawbacks: Players need to read and digest a lot of options, players need to track the points they're spending, may end up with unbalanced characters, economy of character elements needs to be finely-tuned</li>
+            </ul>
+            <p class="pp"><b>Choice-Based</b> systems rely on the rules stating that a number of options have to be chosen, usually from distinct categories (two things from here, six from here etc). Characters may get a different amount of choices to make depending on the level of play, but all players go through the same kinds of choices.</p>
+            <ul class="pul">
+              <li><b>Benefits</b>: Easy to organize a step-by-step process, no/minimal numbers to track, should result in balanced characters, may reduce the amount a player needs to read and choose from, players aren't at risk of 'running out of points' by overspending on early options</li>
+              <li><b>Drawbacks</b>: More restrictive in terms of how much of one thing a character can have, doesn't support varying power levels as well in terms of granularity, much harder to dovetail into a progression system.</li>
+            </ul>
+            <h4 class="ph4">The Power of Choice</h4>
+            <p class="pp">Character creation is important. Players are going to spend at least a couple of hours, if not weeks, months, or years, with the characters they create. Whether you choose point-buy, choice-based, or a hybrid of the two, allowing players to create the kinds of character they want is the most important thing.</p>
+            <p class="pp">And hybrids <i>are</i> possible - maybe a player chooses two things from one section, and then has 6 points to spend in another. Or perhaps players are making more than just a single character, and you use one system for characters and another for whatever else they create.</p>
+            <span class="example"><b>The Wildsea</b> is choice-based when it comes to characters, point-buy in terms of ship creation. When making a character, a player makes a certain number of choices based on the elements of the backgrounds they choose. When making a ship, which is a group activity, each player has a personal metacurrency (stakes) to spend, and the group also get some stakes to share. These stakes are spent on things for the ship as whole, and on things that make the ship better for each player's particular character.</span>
+            <h4 class="ph4">Using Metacurrencies</h4>
+            <p class="pp">Point-based character creation is one of the most common ways of bringing in a <a href="srd-pages/metacurrency">metacurrency</a> Perhaps leftovers get converted into an in-game type of wealth or resource, or saved for future character progression.</p>
+            <span class="emphasis">
+              <h3 class="ph3">ADVANCEMENT</h3>
+              <p class="pp">Also known as character progression, advancement allows characters to 'level up' - they gain more skills, develop aspects, maybe even change their impulses.</p>
+              <ul class="pul">
+                <li>Tied to completing a certain number of sessions, with all players being able to advance their characters at the same time.</li>
+                <li>Related to the earning and spending of a metacurrency, or even in-game wealth.</li>
+                <li>Something that is represented in-game, with characters training to master new skills and aspects.</li>
+              </ul>
+              <p class="pp">The Golden Rule of advancement for Wild Words is that it should be able to build on what already exists. Consider combining aspects, broadening the use of particular skills, and locking certain resources in to being a permanent part of a character's kit as ways a character might advance.</p>
+              <p class="pp">...And let them take new stuff too, of course.</p>
+            </span>
+            <h4 style="color: #D25A31;">Chop & Change - Metacurrencies</h4>
+            <p class="pp">When adding a creation method system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have different characters start at different levels of power and experience.</li>
+              <li>Allow 'undecided' choices, where a character can save part of character creation to use in-game as a reveal or the answer to a problem.</li>
+              <li>Introduce an element of randomness to proceedings, with rolls for how many points might be spent in a point-buy system, or how many choices made in a choice-based one.</li>
+              <li>Enforce uniqueness - a minor advancement as the end of the character creation process, so that all players come with a character that transcends the options in the book in some way.</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

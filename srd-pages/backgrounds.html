@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgrounds</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButtonSel" onclick="">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">BACKGROUNDS&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Backgrounds are both a character element and a book organizational tool - distinct sets of aspects and other elements, or suggestions for them, based around a particular theme (such as a character's job).</li>
+              <li>Backgrounds have a narrative element, in that they help tell a player who and what their character is.</li>
+              <li>Wild Words assumes characters will have multiple background choices mixed together into a single background.</li>
+            </ul>
+            <h4 class="ph4">Compartmentalization</h4>
+            <p class="pp">A character's background describes who they are, in broad strokes, but it has a mechanical purpose too. Backgrounds in Wild Words are used to compartmentalize special abilities and suggested skills, splitting all of the cool things you can have a character learn to do into more manageable chunks than pages and pages of lists would achieve.</p>
+            <span class="example"><b>The Wildsea </b>has three different types of background: Bloodline, Origin, and Post. Each of these work the same way - they contain suggestions of edges, skills, languages, resources, drives, and mires, along with a list of aspects that relate to that background - but describes a different part of the character's life. It's the combination of one bloodline, one origin, and one post that makes a traditional Wildsea character.</span>
+            <h4 class="ph4">Hard Limits or Suggestions?</h4>
+            <p class="pp">Backgrounds are mostly used during character creation, as a way of narrowing down the choices a player has to make. But how narrow do you want these choices?</p>
+            <ul class="pul">
+              <li>Hard Limits force a player to choose only from the options within the backgrounds they've chosen.</li>
+              <li>Soft Limits allow a player to take the options within their chosen backgrounds, but may allow them to take from other backgrounds too - maybe in a limited way, or by spending additional character creation metacurrency (more on that later).</li>
+              <li>No Limits treats a background as a suggestion or guide. Players can choose anything from anywhere when building their character.</li>
+            </ul>
+            <span class = example><b>The Wildsea </b>has no limits on character creation. Players choose three backgrounds, but can go outside of them as they like when making their decisions.</span>
+            <h4 class="ph4">How Many Background Choices?</h4>
+            <p class="pp">Core Wild Words assumes characters will be made from multiple background choices, each determining something important about them. Three is a good number here, allowing the building of a character to ideally consist of picking equally from among three distinct collections of 'cool stuff' - enough for a lot of variation, but not enough to be overwhelming. Two could also work, especially if you want characters to exhibit some sort of duality, but four or five is likely too many</p>
+            <span class="example">In <b>Streets by Moonlight</b>, characters are paranormal investigators among the abyrinthine lanes of New Knossos. Their early lives don't matter much, as characters aren't expected to last more than a few sessions before madness takes them, so each is comprised of only two backgrounds: their Job, and their Talent.</span>
+            <span class="example">In <b>The Wildsea</b>, character backgrounds are split into the more traditional three choices. These are defined as Bloodline (determining what a character is physically), Origin (which describes their early life and formative years), and Post (for clarifying what they do on the ship they crew, the skills and abilities that make them useful for sailing the rustling waves).</span>
+            <span class="example">In <b>PICO</b>, there are no backgrounds. Instead, cool stuff and abilities are grouped according to the parts a player chooses for their bug to have (like spikes or hard shells). Although appearing different from the usual background set-up of Wild Words, the function is the same - collections of cool stuff are split into manageable sections by theme.</span>
+            <h4 class="ph4">What Goes In a Background?</h4>
+            <p class="pp"><b>A mixture of narrative and mechanical information.</b></p>
+            <p class="pp"><b>Narrative</b>: What does taking this background mean for the character? Where does it put them in the settin, and what does it say about their history and who they are?</p>
+            <p class="pp"><b>Mechanical</b>: What special things does this background give access to? Are there aspects that only characters with this background can take, or special rules that only they can benefit (or suffer) from?</p>
+            <span class="example">Backgrounds in <b>Streets by Moonlight</b> are focused on the bad as much as the good. Characters get benefits from them, but also drawbacks that will likely lead to their eventual downfall.</span>
+            <h4 class="ph4">Does My Game Need Backgrounds</h4>
+            <p class="pp">No, but they're useful for the core presentation of Wild Words. If you're using playbooks for character choices, these will take the place of backgrounds. If you're doing a point-buy system, you might replace backgrounds with themed lists. Just be aware that the fewer 'big' choices like background that a player has to make during character creation, the more 'small' choices they'll end up reading through - and this can lead to choice paralysis or unintended complexity.</p>
+            <h4 style="color: #D25A31;">Chop & Change - Backgrounds</h4>
+            <p class="pp">When adding a background system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have certain backgrounds accessible only to characters that have a particular achievement or event in their history.</li>
+              <li>Change the cost of purchasing other character elements depending on whether they feature in a chosen background.</li>
+              <li>Allow different characters to take different numbers of backgrounds.</li>
+              <li>Not allow background duplication between characters.</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

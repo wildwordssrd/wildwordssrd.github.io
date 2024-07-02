@@ -1,0 +1,184 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+body {
+  background-color: #121213;
+  color: white;
+  font-family: monospace;
+}
+div{
+  max-width:800px;
+  background-color: #1A1A1B;
+  margin: auto;
+  padding: 15px;
+  border-radius: 2px;
+  }
+h1{
+  font-family: monospace;  
+  color: #E3DDDA;
+}
+video{
+  display:block;
+  width:90%;
+  margin: auto;
+  border-radius:12px
+  }
+iframe{
+  display:block;
+  width:90%;
+  margin: auto;
+  border-radius:12px
+  }
+h4{
+  color: #555;
+}
+audio{
+  display:block;
+  width:90%;
+  margin: auto;
+  border-radius:12px
+}
+a{
+  display:inline-block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  color:white;
+  text-decoration:none;
+  cursor:pointer;
+  user-select: none
+}
+p{
+  margin: 1em;
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.25em;
+}
+/*
+ Custom Class Stuff
+*/
+.title{
+  max-width:800px;
+  margin:auto;
+  display:block;
+  }
+.links{
+  text-align:center;
+  }
+.v0{
+  display:inline-block;
+  animation-delay: 0s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.centered{
+  text-align:center;
+  margin: auto;
+  display:block;
+  width:20%;
+  outline:white solid 2px;
+  padding-bottom:3px;
+  padding-left:6px;
+  padding-right:6px;
+  border-radius: 6px;
+  }
+.v1{
+  display:inline-block;
+  animation-delay: 0.3s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.v2{
+  display:inline-block;
+  animation-delay: 0.6s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.v3{
+  display:inline-block;
+  animation-delay: 0.9s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.v4{
+  display:inline-block;
+  animation-delay: 1.2s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.v5{
+  display:inline-block;
+  animation-delay: 1.5s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.v6{
+  display:inline-block;
+  animation-delay: 1.8s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.v7{
+  display:inline-block;
+  animation-delay: 2.1s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.v8{
+  display:inline-block;
+  animation-delay: 2.4s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.v9{
+  display:inline-block;
+  animation-delay: 2.7s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.v10{
+  display:inline-block;
+  animation-delay: 3s;
+  animation-name: vibe;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes vibe {
+    0%{
+      transform: translateY(0px);
+    }
+    25%{
+      transform: translateY(-3px) translateX(3px);
+    }
+    100%{
+      transform: translateY(0px);
+    }
+}
+.entry{
+  display:block;
+  overflow:hidden;
+  max-height:3.5em;
+  background-color: #333;
+  border:solid 3px #333;
+  padding:5px;
+  padding-bottom:3px;
+  padding-top:1px;
+  transition: all 100s;
+  border-radius: 6px;
+}

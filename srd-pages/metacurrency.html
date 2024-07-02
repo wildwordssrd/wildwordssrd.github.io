@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metacurrency</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="appendToStack('../srd-pages/licensing')">Licensing</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButtonSel" onclick="">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">METACURRENCY&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Metacurrencies aren't an element of the world of the game. Instead they're spent by players to affect their characters, alter rolls, or change elements of a scene - they're an element of the rules.</li>
+              <li>Metacurrencies are usually recorded on a character sheet, but they're not something a character has access to, they're for that character's player to use.</li>
+              <li>Earning a metacurrency might be done by making certain choices, or it might be linked to entirely out-of-world actions (like beginning a session of play).</li>
+              <li>A metacurrency might be numerical, like wealth, or descriptive, like a Resource.</li>
+            </ul>
+            <h4 class="ph4">Metawhat?</h4>
+            <p class="pp">If it's something a player gains or uses rather than a character, it's probably a metacurrency. It doesn't appear as an element of the world or story, but can be used to affect those things.</p>
+            <span class="example">In <b>The Mountain Road</b>, each player gets a point of Divine Favour at the beginning of a session. This can be spent when their character is about to take serious damage or consequences from an action. Spending Divine Favour allows a player to describe how their character avoids this outcome, regardless of the rest of the rules.</span>
+            <p class="pp">Some metacurrencies are recorded and spent as basic numbers like Wealth, or have individual names and qualities like Resources. They can be qualitative or quantitative, but remember that this changes how they're recorded on a character sheet.</p>
+            <span class="example"><b>The Wildsea</b> uses a metacurrency for character advancement, known as Milestones. They're earned by satisfying drives and taking part in big moments, and they're recorded on a character sheet in the form of a small phrase that harkens back to the event that earned them. 'Defeated the Pinwolves' might be a milestone, or 'Survived the Sinking of the Heron'. Characters aren't aware that they've earned a milestone, they're just happy they weren't eaten by pinwolves or consigned to the Under-Eaves.</span>
+            <h4 class="ph4">Made for Flexibility</h4>
+            <p class="pp">Metacurrencies exist to give players a little flexibility. Their character might be in an impossible situation, but that doesn't mean that they are as a player if they have some kind of game-affecting metacurrency to spend.</p>
+            <span class="example">Galstaf is bound securely in the back of a bandit's cart. He's got no way of escape, and can't reach any of his gear. His player, however, has a point of Divine Favour to spend - she spends it, and the cart jostles over a stone in the path. It allows Galstaf to shift position just enough to roll out of the back of the cart. He's still trussed up, but at least he's not being taken back to a bandit camp.</span>
+            <h4 class="ph4">The Uses and Limits of Metacurrency</h4>
+            <p class="pp">...Are pretty much whatever you want them to be. They might add dice, change rules, turn back the clock... Anything you want. Something important to consider here though is that metacurrency spending can actually take players out of the game - it stops them thinking about what their character might do and gets them thinking about what they as a player might do. It puts the rules above the fiction for a moment, if handled poorly.</p>
+            <p class="pp">A good golden rule to follow is this: metacurrency should never affect a character that isn't your own, at least not without that character's player giving their consent.</p>
+            <h4 class="ph4">GM Metacurrencies</h4>
+            <p class="pp">It's not just players that might gain and spend metacurrency throughout a session! GMs might be able to as well, earning it after certain player actions or decisions and spending it to introduce complications to the world or story.</p>
+            <span class="example">In <b>The Wildsea: Storm & Root</b>, acting under scrutiny might mark a particular track. The Firefly can clear these marks to introduce dangerous stuff to a scene, like an instance of damage or the appearance of a hazard. Players might be able to unamrk them to, through the actions of their characters - it adds a kind of race to proceedings that's unique to this area of the game mechanics.</span>
+            <h4 class="ph4">Is Metacurrency Right For Your Game?</h4>
+            <p class="pp">The big question to ask yourself when it comes to metacurrency is 'do my mechanics need it'. Only you can answer that.</p>
+            <span class="example">The base game of The Wildsea doesn't use a metacurrency system for anything outside of developing characters and adding to ships, and even the metacurrency for adding to ships is mostly gained through trading away in-world cargo (a special kind of resource) to shipwrights at port</span>
+            <h4 style="color: #D25A31;">Chop & Change - Metacurrencies</h4>
+            <p class="pp">When adding a metacurrency system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have it so the GM can only introduce certain elements to a scene by spending a metacurrency</li>
+              <li>Have a metacurrency that's tracked for an entire group of players, rather than player by player</li>
+              <li>Have metacurrency earned through player actions rather than character actions, if you want to evoke a very 80s 'but I brought the pizza' vibe</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

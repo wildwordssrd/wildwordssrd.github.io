@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracks</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButtonSel" onclick="">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">TRACKS&nbsp;</h1><h2 class="ph2">CORE SYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>A track is a named string of boxes or circles that are filled, or ‘marked’, to measure progress towards an event, accomplishment, or danger.</li>
+              <li>They're one of most fundamental and flexible tools you can use when designing a Wild Words game.</li>
+              <li><a href="srd-pages/impact.html">Impact&nbsp;</a>relates to how many boxes are marked at a time, especially when character actions are involve</li>
+            </ul>
+            <h4 class="ph4">What Are Tracks For?</h4>
+            <p class="pp"><b>Anything iterative that either the players or GM need to keep track of.</b></p>
+            <p class="pp">Tracks are an excellent visual reminder of change or opportunity. When creating a Wild Words game, think about what elements of the game you want tracks to be integral for, and also which situations you'd suggest a GM uses them in.</p>
+            <p class="pp">Some common elements for an integrally used track are...</p>
+            <ul class="pul">
+              <li>The uses or resilience of <a href="srd-pages/aspects.html">aspects</a></li>
+              <li>The attributes or benefits of a <a href="srd-pages/shared-assets.html">shared asset</a></li>
+              <li>The time until an <a href="srd-pages/impulses.html">impulse</a> takes effect</li>
+              <li>The health or potency of a <a href="srd-pages/hazards.html">hazard</a></li>
+              <li>The health, stamina, stress, or magic of a character (Core Wild Words assumes these are handled by the tracks on aspects, but individual tracks can handle these elements if you're aiming for a more traditional TRPG experience)</li>
+            </ul>
+            <p class="pp">Tracks are also an excellent GM tool. Consider advising GMs to use tracks to aid in keeping track of certain elements of the world, which might be marked by...</p>
+            <ul class="pul">
+              <li>A character's actions</li>
+              <li>The passage of time</li>
+              <li>The results of a die roll</li>
+              <li>A decision made</li>
+              <li>The use of a resource</li>
+              <li>Events in the wider world</li>
+              <li>An advancing story or plotline</li>
+            </ul>
+            <h4 class="ph4">Marking a Track</h4>
+            <p class="pp">Marking a track is as simple as putting a line through one of the boxes. It usually represents the idea thatsomething has happened, and that whatever it was is leading up to a bigger something. The bigger something will usually be prompted by the final box on the track being marked.</p>
+            <div class="horiz-table">
+              <div>Here's an example of an empty track...<br><b>Taming the Megashrew </b>&nbsp;<img src="../graphics/track-empty.png" style="height:1em;width:auto;transform:translate(0,4px);display:inline-block"></div>
+              <div>A partially filled track...<br><b>Taming the Megashrew </b>&nbsp;<img src="../graphics/track-marked.png" style="height:1em;width:auto;transform:translate(0,4px);display:inline-block"></div>
+              <div>And a fully marked track.<br><b>Taming the Megashrew </b>&nbsp;<img src="../graphics/track-full.png" style="height:1em;width:auto;transform:translate(0,4px);display:inline-block"></div>
+            </div>
+            <span class="example">In the above examples, a party is trying to tame a savage megashrew. No matter what method they use, a success of some kind marks a box on the track. When the track is empty the megashrew is completely wild, when it's partially marked it may regard them with wariness, and when it's fully marked the beast has come to trust them.</span>
+            <h4 class="ph4">Burning a Track</h4>
+            <p class="pp">If you want the game or GM to be able to mark a track permanently, or at least with something extremely hard to remove, the option to burn a box on a track is there too. This is shown with a cross through the box rather than a slash, and represents a change that's almost impossible to undo (or that would take significant effort or serious narrative attention).</p>
+            <p class="pp">Here's a partially burned track.<br><b>Taming the Megashrew </b>&nbsp;<img src="../graphics/track-burned.png" style="height:1em;width:auto;transform:translate(0,4px);display:inline-block"></p>
+            <h4 class="ph4">Clearing a Track</h4>
+            <p class="pp">Marks on a track are temporary - they can usually be removed in some way (by healing if a track represents damage, for example, or by passing time if a track represents something that needs constant upkeep). To clear a mark on a track, simply erase the line that goes through the rightmost box.</p>
+            <p class="pp">For some tracks, like those on a character sheet, this removal of marks is often as important as how they're made. For other tracks (like one leading up to the start of a local festival) you might simply remove the entire track once it's fully marked, and not worry about how a single mark might be cleared.</p>
+            <span class="example">As an example, once the megashrew is tamed your rules might offer the GM an option - is the track removed, and the beast remains tamed for the forseeable future, or is the track kept despite being fully marked, representing the possibility of the creature returning to a wilder state as passing time or specific actions clear some of those marks? In the second example, giving the players the ability to burn a box on the megashrew's track would ensure it would likely never return to a completely savage state, even if marks started getting cleared.</span>
+            <p class="pp">As a good rule of thumb, clearing a mark from a track should be <i>a little more difficult</i> or in-game-time-consuming than making one. For example, if a character uses an action to mark a track, removing that mark might take an action plus a resource of some kind. Basically, reversing a change should usually be a little harder than making it (though this is, of course, situational).</p>
+            <p class="pp">While clearing a <i>mark</i> should be relatively easy, clearing a <i>burn</i> should be something as memorable as the burn itself, and should usually take a significant amount of additional effort. This might come in the form of...</p>
+            <ul class="pul">
+              <li>A small quest or specific activity aside from the main narrative</li>
+              <li>The use of a particularly rare or limited resource</li>
+              <li>An effort from every character working together</li>
+              <li>An achievement that means something to the character</li>
+            </ul>
+            <h4 class="ph4">Track Length</h4>
+            <p class="pp">If tracks are intended to be marked one or two boxes at a time, the following rough guide should help.</p>
+            <p class="pp"><b>1-2 boxes</b>: Likely to be filled by a single action roll or event in the world. Not meant to hang around for long.</p>
+            <p class="pp"><b>3-5 boxes</b>: Will need multiple things happening, usually, to end up fully marked. Good for elements of a character, such as aspects.</p>
+            <p class="pp"><b>6+ boxes</b>: Will usually define something for a good amount of time, and take multiple interactions to fill</p>
+            <p class="pp">If multiple boxes on a track can be marked at once, especially if that track represents an obstacle players are trying to bypass or a threat from the world that needs to feel hefty, double or triple these values. This gives you a track that can withstand multiple instances of increased <a href="srd-pages/impact.html">impact</a>, and that might be suitable for <b>track breaks.</b></p>
+            <h4 class="ph4">Open, Hidden, or Secret?</h4>
+            <p class="pp">As a designer you'll need to decide how much information players know about the tracks that are in play.</p>
+            <p class="pp">An <b>open</b> track can be seen by anyone at the table, and are most often found on character sheets and scribbled down on pieces of paper to track world events that the players have a good amount of knowledge about.</p>
+            <p class="pp">A <b>hidden</b> track can only be seen by one person, usually the GM. These are most often used for things like the health of an NPC or the resilience of a hazard, where the effect the characters are having need to be recorded but you don't want them to know how close they are to a 'win' to avoid spoiling the surprise.</p>
+            <p class="pp">A <b>secret</b> track can usually only be seen by the GM, and the players don't know it exists.</p>
+            <span class = "example">In Streets By Moonlight, the big bad of a campaign grows in power as the investigators try to discover and stop it. This growth is known to the players, but how much time they have left is hidden... until they're close to the end.</span>
+            <h4 class="ph4">Track Breaks</h4>
+            <p class="pp">Track breaks allow you as a designer (or the GM) to create tracks representing multiple states of a situation, or to combine what would have been several small tracks into one longer track. For example, the tracks...</p>
+            <div class="horiz-table">
+              <span style="flex-grow: 3;"><b>The Rumbling Begins</b></span>
+              <span style="flex-grow: 2;"><img></span>
+            </div>
+            <div class="horiz-table">
+              <span style="flex-grow: 3;"><b>Surviving the Earthquake</b></span>
+              <span style="flex-grow: 2;"><img></span>
+            </div>
+            <p class="pp">Might be combined into a single track...</p>
+            <div class="horiz-table">
+              <span style="flex-grow: 3;"><b>The Earth is Moving</b></span>
+              <span style="flex-grow: 2;"><img></span>
+            </div>
+            <p class="pp">When there are no marks on the track, the situation is calm. When the track is first marked, the early warning signs of an earthwuake appear. The players will have time to react to these before the second mark is made, upon which time the track break is reached and the earthquake truly begins. The third, fourth, and fifth marks cover the duration of the earthquake, with the event ending after the fifth mark is made.</p>
+            <p class="pp">Track breaks save space and offer options, both in terms of tracking narrative and in terms of creating a more complex mechanical base for your game</p>
+            <h4 class="ph4">Gauges</h4>
+            <p class="pp">A special kind of track that has an associated level, gauges are useful in situations where a track filling will have ongoing, but not permanent, effects. A gauge might look something like this...</p>
+            <p class="pp"><b>Stress</b><img></p>
+            <p class="pp">In this example, the stress gauge has no boxes filled and stress is sitting at level 1. If all of the boxes are filled, the stress level might increase to 2 - perhaps a character now has a mechanical penalty due to their growing stress, which remains until they can decrease that stress level to 1 (or even zero). Boxes are cleared so the track can be filled again.</p>
+            <span class="example">In Drift, the Paradox Gauge tracks how much a character has been affected by the weirdness of the city. every time the paradox gauge goes up a level, they take a special kind of injury that can only be healed through a particular in-universe event.</span>
+            <h4 class="ph4">Ratings</h4>
+            <p class="pp">A way to tie tracks into a game's dice system, a rating is a track that allows a specific number of dice to be rolled depending on the amount of boxes it has and whether those boxes are filled or not</p>
+            <p class="pp">Here's an example...</p>
+            <p class="pp"><b>Speed</b><img></p>
+            <p class="pp">If a character wanted to roll something related to speed using this rating, they's usually roll 3d6 (dice equal to the number of boxes on the track.) However, in the above example one of the boxes is marked - because of this, the character would roll 2d6 instead (dice equal to the number of unmarked boxes).</p>
+            <p class="pp">Rating allow you to vary dice rolls depending on how a track interacts with a situation. You might even have it so that a certain part of the rules allows a player to roll dice equal to how many marks there are on a track instead. Be careful with ratings - anything above a six-track has the capacity to allow players to roll a doce pool that will always result in doubles.</p>
+            <span class="example">In The Wildsea, a crew's ship has six ratings. They start with
+              one box on each track, and the way a ship is constructed allows them to gain five additional boxes. Ratings rolls allow a player to roll dice equal to the unmarked boxes on a rating, to determine how well the ship performs in a certain situation related to that rating.</span>
+            <span class="example">In Streets By Moonlight, a character has a rating to track their Insight - the level of understanding they have when it comes to the occult forces that secretly run their city. Marks on this track represent their deepening knowledge, but filling the track also represents their dwindling sanity. An Insight roll allows them to roll dice equal to the number of marks on an insight track, turning their horrifying realizations into a useful source of information.</span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

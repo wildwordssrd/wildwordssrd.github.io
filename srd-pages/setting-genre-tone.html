@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting, Genre, & Tone</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+      <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButtonSel" onclick="">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">SETTING, GENRE, & TONE&nbsp;</h1><h2 class="ph2">INITIAL CHOICE</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Wild Words was created to power The Wildsea, a narrative-heavy game with a bit of crunch to it that rewards player creativity. The setting is weird fantasy, focusing on the unusual and rarely-explored, and the tone is one of bright horror - terrible things happen, but the crew of characters should always be able to triumph in some way.</li>
+              <li>... But your game doesn't have to be anything like that. Wild Words can (and has been used) to support different settings, tones, genres, and even methods of play.</li>
+            </ul>
+            <h4 class="ph4">You've Likely Made These Choices Already</h4>
+            <p class="pp">And that's absolutely fine. Great, actually - the clearer your vision of what you want to design is, the easier this SRD will be to use.</p>
+            <p class="pp">And if you haven't made all of these choices yet, that's fine too - keep them in mind for the rest of this page, while I tell you why each of these fiction-based components is important for more than just set dressing and themes.</p>
+            <span class="example">While working on <b>The Wildsea</b>,  tone changed dramatically due to early playtesting - and the rules change with it. The world stayed just as potentially harsh, but player characters were given more options and tools do deal with or mitigate that harshness.</span>
+            <h4 class="ph4">Deciding on Setting</h4>
+            <p class="pp">Wild Words is made to be setting-first, and it's flexible enough that the setting doesn't have to be 'sea of trees'.</p>
+            <p class="pp">But on top of all the usual worldbuilding-style setting questions you'll be asking and answering as you create a game, you should keep the player-facing mechanics in mind. We recommend theming certain elements (especially the names of some systems and roles) to your world. Not too much! There's a reason skills are still called skills in The Wildsea, after all. But just enough that players can lose themselves a little in the uniqueness of what you're making.</p>
+            <span class="example"><b>Iron on Stone</b>, a mech-based combat game, renames certain character elements to better fit its world. Aspects (which track damage and give special abilities) are referred to as Components, to fit with a tech-heavy setting.</span>
+            <h4 class="ph4">Deciding on Genre</h4>
+            <p class="pp">Though setting might have a decent amount of impact on the way you present things, genre will likely have a larger one on the actual <i>mechanics</i> you choose (and how you might adapt them).</p>
+            <p class="pp">If you're making something that evokes hard-boiled private eye fiction, you'll want to choose scene types that reflect the activities core to that genre. Perhaps a unique scene for investigation, or for sifting through clues and making connections. Whatever rules the game runs on, the pace and mechanics used in those types of scene will proably be different from those used for a brawl in a back-alley when the mob catches up to the characters.</p>
+            <span class="example">In <b>The Sword Spiral</b>, which draws from classical knightly quests and dramatic character bonds, there are distinct scenes for combat that follow honourable rules. These scenes are similar to, but slightly mechanically different from, scenes that include combat against wild beasts or honourless bandits. They're also run on a very different set of mechanics than those that describe settling in for a night in the woods, huddling around the campfire or under tent-canvas to have attendants polish armour while characters drink, boast, pay compliments to each other, and deepen those PC on PC relations.</span>
+            <p class="pp">Pace is particularly important here too. Some genres take a more measured and methodical approach to unfolding events, others want fluidity and momentum. Try to balance the archetypes of the genre you choose with the play experience at the table, and remember that emulating every feature of a particular genre isn't always the best idea. Not everything translates.</p>
+            <h4 class="ph4">Deciding on Tone</h4>
+            <p class="pp">Tone can impact a vast array of functions within Wild Words, everything from who shoulders narrative weight in particular situations to whether additional safety tools are needed.</p>
+            <p class="pp">Tone also impacts the writing style of a book or document, or at least it should. Weird fantasy, for example, tends to stray a little further from the more anthropological dryness of some high fantasy games, and games created to evoke or recall a particular era might (or arguably, should) thread the language and art styles of that era throughout.</p>
+            <p class="pp">Tone also has mechanical impact. If you want something laid-back and relaxing, do you need mechanics for death or serious injury? If you're going hell for leather with blood and guts, a specific system for stress or horror might be on the table.</p>
+            <span class="example"><b>Streets by Moonlight</b> has a Lovecraftian hue to proceedings, where characters are doomed from the outset merely by interacting with the horrors and mysteries of the world. The tone is lurid when it comes to the trials they go through, detached when it comes to their deaths - for when an investigator falls (and they fall often), another can be ready to replace them by the beginning of the next scene.</span>
+            <h4 class="ph4">Adapting Existing Work</h4>
+            <p class="pp">If you're hacking something that already exists into the Wild Words Engine, the majority of these decisions are already made for you. Emulate the tone of the source material, and adapt the rules to fit as you need to.</p>
+            <h4 class="ph4">Striking Out Alone</h4>
+            <p class="pp">And if you're doing something entirely of your own, I have a single piece of advice for you.</p>
+            <p class="pp"><i>Don't be afraid to get weird with it.</i></p>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

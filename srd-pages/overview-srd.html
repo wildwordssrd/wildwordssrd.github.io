@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wild Words SRD</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page" style="background-color: #363940; border-color: #363940; color:#fff;">
+            <h2 style="color: #fff; margin-bottom: -5;">PART TWO</h2> 
+            <h1 class="ph1">INITIAL CHOICES AND CORE SYSTEMS</h1><br>
+            <h3 class="ph3">General Overview</h3>
+            <p class="pp">The following pages detail the choices you should make before beginning to develop a Wild Words game. These core systems are essential to understand - even if you don't end up using them, multiple smaller elements of the game refer to or rely on these in order to function. And we'll say it here, but you'll find reminders dotted through the text as well: this is a rough guide, not a full instruction manual. Whatever you choose, even if you hew as closely to an existing game (like The Wildsea) as possible, you'll have some choices to make and some things you'll want to change.</p>
+            <p class="pp">This section covers...</p>
+            <ul class="pul">
+              <li><a href="srd-pages/setting-genre-tone">Setting, Genre, and Tone</a></li>
+              <li><a href="srd-pages/the-conversation">The Conversation</a></li>
+              <li><a href="srd-pages/scenes">Scenes</a></li>
+              <li><a href="srd-pages/tracks">Tracks</a></li>
+              <li><a href="srd-pages/dice-pools-rolls">Dice, Pools, and Rolls</a></li>
+              <li><a href="srd-pages/actions">Actions</a></li>
+              <li><a href="srd-pages/backgrounds">Backgrounds</a></li>
+              <li><a href="srd-pages/edges">Edges</a></li>
+              <li><a href="srd-pages/skills">Skills</a></li>
+              <li><a href="srd-pages/aspects">Aspects</a></li>
+              <li><a href="srd-pages/meters">Meters</a></li>
+              <li><a href="srd-pages/impulses">Impulses</a></li>
+              <li><a href="srd-pages/resources">Resources</a></li>
+              <li><a href="srd-pages/wealth">Wealth</a></li>
+              <li><a href="srd-pages/metacurrency">Metacurrency</a></li>
+              <li><a href="srd-pages/creation-methods">Creation Methods</a></li>
+              <li><a href="srd-pages/twists">Twists</a></li>
+              <li><a href="srd-pages/damage-resistance">Damage (and Resistance)</a></li>
+              <li><a href="srd-pages/impact">Impact</a></li>
+              <li><a href="srd-pages/shared-assets">Shared Assets</a></li>
+              <li><a href="srd-pages/hazards">Hazards</a></li>
+            </ul>
+            <h3 class="ph3">A Few Words on Setting Creation</h3>
+            <p class="pp">You can use whatever setting, style, or genre you like for the Wild Words Engine, but I've found that setting creation works best when you have Pillars, Details, and Not Much In Between.</p>
+            <h4 class="ph4">Pillars</h4>
+            <p class="pp">These are the big ideas that are easy to grasp, and that hold the rest of the setting and the basics of the narrative up. Players should be able to latch onto and use them to understand the basics of a weird or unusual world very quickly. Three is probably a good minimum, seven or so a good maximum (especially if some of the pillars stand close to each other in terms of theme), and ideally they should be laid out as close to the start of a book as you can get them to act as a good foundation for later details.</p>
+            <p class="pp">Remember, there's no inherent depth to pillars. They might imply depth, but that comes later. They're big, bold, and even if they're kind of weird they should be easy enough to grasp.</p>
+            <p class="pp">Example: <b>The Wildsea</b> has seven pillars, ranging from 'the sea is made of trees' and 'plants grow fast and rampant' to 'open flames are forbidden' and 'the world is extremely weird, but not traditionally magical'.</p>
+            <h4 class="ph4">Details</h4>
+            <p class="pp">These are the tiny but intriguing bits that make up the rest of the setting, and should ideally be scattered throughout the book. They come in a hundred forms (well, not quite a hundred) - fictive inserts, setting-based writing, character building options, creatures, resource names... the list goes on. If it's specific but optional, it's a detail.</p> 
+            <p class="pp">Why? Because no single player ever really needs to know more than the details that apply to their own character. If every player knows their own details due to character creation and having the character sheet in front of them, the action and story naturally rises out of a combination of those same details (plus the details of the other player characters and the specific details that the GM gives when crafting or guiding elements of the story).</p>
+            <h4 class="ph4">Not Much In Between</h4>
+            <p class="pp">Wild Words settings ideally have very little in the 'medium' range of ideas that's essential to play. In the case of <b>The Wildsea</b>, play might take place in a Reach - a more detailed and in-depth area of the sea complete with NPCs, places, and specific factions. But every reach is optional - if the players or GM don't want the Foxloft or the Kremich Surge in their world, those places simpy aren't there.</p>
+            <p class="pp">Why? Because these are the bits that are hard to remember, and that have to be checked in the book by newer players or GMs. For some styles of play they can be really useful, but (in general, for narrative-led experiences) the medium-sized stuff that sits in between pillar and detail is created by the GM and players working together, through the conversation and narrative.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

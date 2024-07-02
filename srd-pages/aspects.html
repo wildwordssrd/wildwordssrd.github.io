@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspects</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButtonSel" onclick="">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">ASPECTS&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Aspects combine information about a character, special rules, tracks, and the ability to add an extra 1d6 to action rolls. Most characters have multiple aspects, and they're usually split into groups based on background choices.</li>
+              <li>The track of an aspect gets marked as a character takes damage, or sometimes as they tap into the power of the aspect itself. Tracks typically range from one to eight boxes in length. When an aspect's track is fully marked, the character loses access to the special rules that aspect provides, and it can't be used to add advantage dice to a roll.</li>
+              <li>Aspects are very specific in nature, describing the most important traits or pieces of gear that a player never wants their character to be completely without. Aspects have a type word to help describe what they are (such as 'gear').</li>
+              <li>An aspect's ability to add 1d6 to an action roll is determined by its name and presentation, not the special rules. Special rules should do something more interesting than just adding dice.</li>
+              <li>Aspects change as a character grows in power and experience, and are at the core of the Wild Words character progression system.</li>
+            </ul>
+            <h4 class="ph4">The Look</h4>
+            <p class="pp">Aspects have a name, type, track, and special rule (and maybe a bit of flavour text). They are generally set out similarly to the example below...</p>
+            <span class="emphasis">
+              <h4 class="ph4">Acid Tongue </h4><span class="a-sub">3-Track Trait</span>
+              <p class="pp">The truths you spit cut to the core. Treat conflicts as triumphs when engaged in an argument, and you can mark this aspect to create a whisper based on any topic you've recently argued over.</p>
+            </span>
+            <h4 class="ph4">Aspects Define Actions</h4>
+            <p class="pp">Edges are broad, skills are narrower, and aspects are specialized. An aspect is a unique thing; a feature of a character's learning or biology, or a piece of gear they rely on, or a companion that accompanies them. Players can use them to help choose the actions their character might take.</p>
+            <span class="example">In <b>The Sword Spiral</b>, the 'Grit' edge lets us know that a character can approach things in a rough and ready way. The 'Bladework' skill informs us that this character has some familiarity with edged weapons. And the 'Bastard Sword' aspect tells us that if there's a problem to be solved, this character might well try to slice their way through it - the existence of the sword as an aspect helps the character rely on those edge and skill choices.</span>
+            <h4 class="ph4">Aspects are Special</h4>
+            <p class="pp">Technically a character can have as many aspects as they like, and more aspects means a more powerful character. But it also means a more complex character - it's better to have players combine or improve their character's aspects as they advance rather than just gaining more and more.</p>
+            <span class="example">In <b>The Wildsea</b>, characters might have four or six aspects to start with, depending on their level of experience. No character can have more than eight aspects at a time (excluding temporary aspects).</span>
+            <span class="example">In <b>Streets by Moonlight</b>, characters are made to be simple to play and easy to use. They each have two aspects - one from their Job, and one from their Talent.</span>
+            <h4 class="ph4">Aspects are Eternal</h4>
+            <p class="pp">When a player chooses an aspect, it's central to their character. It's an assumption of the Wild Words engine that an aspect can never be taken away from a character (though the benefits it offers might be denied them for a time through damage or special rules). Even if, narratively, an aspect is lost, it should always be able to be found again if the player wants that.</p>
+            <span class="example">Angier fully marks their grappling hook, describing how the rope snaps. When it gets repaired, this is framed narratively as the rope being mended or a new hook being added.</span>
+            <span class="emphasis"><h3 class="ph3">DO I NEED ASPECTS?</h3>
+            <p class="pp">Technically, no. Like any other element of the Wild Words system, you can slightly alter, completely change, or even remove aspects as you like.</p>
+            <p class="pp">... But I woudn't recommend it.</p>
+            <p class="pp">Aspects may not be a 'core element' of the Wild Words system, but they are a good example of tying other core systems together, a kind of emergent complexity. They marry a fiction-first approach with special rules, they incorporate tracks, they remove the need for a separate HP or wound system, they act as the 'narrow end' of the inverted pyramid of specificity mentioned in the skills section, and they're a great flag for the GM that a player wants a particular thing to feature in the game so that they can shine.</p>
+            </span>
+            <h4 class="ph4">Aspect Types</h4>
+            <p class="pp">Most games will have a lot of aspects to choose from. Giving the aspects a type helps manage some other special rules that exist around them (like the ability to clear marks from them with certain actions) or makes them susceptible or resistant to other elements of the world (such as a pirate's ability to disarm an opponent only working on 'gear' type aspects). Some types may even have their own built-in special rules that aren't mentioned in the text of every aspect that has them (likely to save space on the page). The type of an aspect should fit the setting it's used in.</p>
+            <span class="example">In <b>The Wildsea</b>, there are three types of aspect - trait, gear, and companion. Marks on a trait are cleared by healing, marks on gear by repair, and marks on a companion by whichever of those two options makes more sense. Companions also have shorter tracks than most aspects, but benefit from the special rule that they can all act autonomously, which might be a great narrative help.</span>
+            <span class="example">Aspects don't have a type in <b>Streets by Moonlight.</b> There aren't too many of them to choose from, and players clear a mark from each at the end of a session rather than with some type-dependent healing rules.</span>
+            <h4 class="ph4">What Can Aspect-Based Special Rules Do?</h4>
+            <p class="pp"><b>Big question, easy answer - they allow a character to engage with, or even break, the rules of the game.</b></p>
+            <p class="pp">An aspect that describes a sword might have a damage type, or even an amount of damage that it deals when used. This would play into another set of rules within the game, concerning combat and damage.</p>
+            <p class="pp">An aspect that describes an unusual sensory organ might give the character a new method of seeing or hearing that most other character's wouldn't have access to. This allows new narrative opportunities, and maybe helps mechanically in certain situations where they have to rely on this new sense.</p>
+            <p class="pp">An aspect that describes a helpful robotic companion that blocks bullets for you might give the character the ability to treat the dice differently when they're rolling to escape harm. This breaks the usual rules of the game, telling the player that their dice work in a special way when this aspect is concerned.</p>
+            <p class="pp">Ultimately, the kind of rules you might add to an aspect will depend on the setting it's made for, the power level you want it to have, the kinds of narrative options you want to offer players, and the rules you want them to be able to bend or break.</p>
+            <h4 class="ph4">What's a Bad Aspect?</h4>
+            <p class="pp">Anything that takes away the agency of another player, or another character, that they had no choice in. Here's an example...</p>
+            <span class="emphasis">
+              <h4 class="ph4">Human Shield </h4><span class="a-sub">4-Track Trait</span>
+              <p class="pp">Once per scene, choose an ally to take the damage of an incoming attack that's aimed at you.</p>
+            </span>
+            <p class="pp">This is a bad aspect, because it allows you to negatively affect another character at the table without the permission of their player. You could fix it by changing the wording to allow another player to volunteer their character for taking that damage, or by directing the damage to an NPC (thus not removing player agency).</p>
+            <h4 class="ph4">Strong Aspect, Short Track</h4>
+            <p class="pp">The special rules of an aspect are essentially traded for by you, the designer. For every special thing an aspect can do, remove some boxes from the aspect's track - that aspect is now more fragile or can be used less often. The stronger the thing, the more boxes get removed.</p>
+            <span class="example">When designing aspects for The Wildsea, each starts with a five-box track and no special rules. Weak special rules remove one or two boxes, strong special rules three or four. If the rule has a limit on when or how it is used, or forces the player to mark the track for using it, that adds a box or two back on. This way, stronger aspects that can only be used rarely can be (roughly) balanced against cheaper ones that get used freely.</span>
+            <h4 class="ph4">Example Special Rules</h4>
+            <p class="pp">The scope of an aspect's special rule (or rules) depends on the rest of the rules for the game. Here are a few suggestions that rely on core features of the Wild Words Engine...</p>
+            <ul class="pul">
+              <li>Deal a certain type of damage at a particular range.</li>
+              <li>Learn information about a particular thing (this might give the player the option to make the information themselves, or rely on the GM).</li>
+              <li>Treat a bad dice result as a better one, or reroll dice in a certain situation.</li>
+              <li>Gain resistance or immunity to a type of damage or hazardous element of the setting.</li>
+              <li>Treat one kind of resource as another (useful for setting up other special rules that affect each other).</li>
+              <li>Gain a sense or way of interacting with the world that wouldn't normally be available.</li>
+              <li>Bolster another player's character in some way.</li>
+              <li>Allow a change of shape, size, or material for narrative effect.</li>
+              <li>Create a resource of some kind, either by inventing it or by pulling one from a pre-made list.</li>
+              <li>Add a special rule to, or raise or lower the impact of, a particular type of action relevant to the setting.</li>
+              <li>Allow things that would normally take a long time to be done quickly.</li>
+            </ul>
+            <h4 style="color: #D25A31;">Chop & Change - Aspects</h4>
+            <p class="pp">When adding an aspect system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have players name, flavour, or even entirely create aspects themselves as they make their character.</li>
+              <li>Allow permanent damage or change to an aspect that can't be reversed.</li>
+              <li>Decouple tracks from aspects - they can't be damaged and are always effective.</li>
+              <li>Decouple special rules from aspects and have them simply act as flavoured HP bars.</li>
+              <li>Have aspects bought with a kind of currency, either in-world or meta.</li>
+              <li>Have aspects that can only be taken after certain other aspects have been taken, or after achieving something setting-specific.</li>
+              <li>Have new aspects gained by combining in-world resources and metacurrency.</li>
+              <li>Tie skills to an aspect, so if the aspect is fully marked a character loses access to the linked skills.</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

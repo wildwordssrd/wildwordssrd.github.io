@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Conversation</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButtonSel" onclick="">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">THE CONVERSATION&nbsp;</h1><h2 class="ph2">CORE SYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>The conversation describes and encapsulates the dynamic at play at the actual gaming table (or medium of your choice). When and how players talk to each other to get things done, and what elements of the game, rules, and world they control.</li>
+              <li>It's a natural part of playing a TRPG that all but the newest players will be familiar with, but there are still a few conventions that the Wild Words engine follows in this regard.</li>
+              <li>At its core, think of the conversation as the action of playing the game itself - a verbal exchange that drives a narrative forward.</li>
+            </ul>
+            <h4 class="ph4">What Is The Conversation For?</h4>
+            <p class="pp">Telling stories! But also bringing the narrative to places where it interacts with the rules.</p>
+            <p class="pp">There's nothing wrong with collaborative storytelling, but the Wild Words Engine has rules for a reason - they help to direct play, to solve problems, to offer opportunities, and to define limits. The conversation is what brings those rules into play, and helps reinforce them during a game.</p>
+            <p class="example">As an example, most scenes in <b>Drift</b> are narratively quite free. Players have their characters explore the world, interact with NPCs, and generally move the story of the game along at their own pace. But when one of them wants to have their character do something difficult, dramatic, or dangerous, the rules need to come into play. The rules are introduced to the fiction, and the conversaton containing them continues.</p>
+            <h4 class="ph4">Flags</h4>
+            <p class="pp">A flag is the idea of a player signalling that they want something in particular to happen, which can help the GM and the other players adapt both the conversation and the general narrative of the game to fulfil those wants. If someone describes how their finger is on the trigger, and they're ready for anything, they probably don't want a leisurely stroll through the park. If your game is all about leisurely strolls through the park, they're likely going to be disappointed.</p>
+            <p class="pp">Make the kind of experience your game offers as clear as possible - through art, through text, through GM advice and resources, and particularly through character options. It makes flags easier to read and react to in play.</p>
+            <h4 class="ph4">Control</h4>
+            <p class="pp">This can be a tricky thing at times, but it's absolutely essential for smooth play - as a designer, you need to know which elements of the game are controlled by which people at the table. Narrative control is usually weighted toward a GM figure, and moment-to-moment decisions toward players with characters, but this doesn't necessarily need to be the case.</p>
+            <p class="example">For example, many systems have a GM in control of almost every aspect of the narrative that isn't touched on by direct character actions. The Wildsea doesn't do this - it specifically includes systems that spread some narrative agency around the table in terms of establishing fictions and truths about the setting, and sometimes even an immediate locale.</p>
+            <p class="pp">It's also useful to work out if there are any mechanical elements of a game that might be treated in an unexpectedly narrative-first fashion, or vice-versa. All but the newest players come to the table with a lot of preconceptions, and knowing how your rules will appear (and how easily they might be followed) by particular styles of player can have an impact on the raw playability of your game.</p>
+            <p clas="example">Though damage and injury in <b>The Wildsea</b> are handled mechanically, character death is an explicitly narrative event that's completely under the control of a character's player. If it's not the right time for a character to die, they don't - as far as the Wildsea is concerned, moments with such gravity should always be in service of the story, not potentially in spite of it. Damage and decisions still have consequences, sometimes terrible ones, but none that signal the end of a character without the player's permission.</p>
+            <span class="emphasis">
+            <h3 class="ph3">Focus</h3>
+            <p class="pp">The 'narrative spotlight' of the conversation, focus passes from player to player as they interact with the world. It can also be held by the GM when they're describing things, playing NPCs or enforcing rules (or just joining in with the general chatter at the table - the GM is as much of a player as anyone else, just with a different set of resources!).</p>
+            <p class="pp">Focus moves naturally from player to player, but a GM can direct it at a particular individual if they need to. Similarly, as a designer you can direct and control focus by writing rules that rely on it. The most common of these would be a fixed initiative system, perhaps determined by a stat or roll, for a given scene - if characters act in a particular order, focus moves in that order as they speak.</p>
+            <p class="pp">That said, Wild Words treats focus as inherently pretty fluid. If a GM needs a way to 'balance' time in the spotlight, especially for high-stakes situations like combat or chase scenes, there's the option to use a Focus Tracker (a subsystem that combines the core systems of focus and <a href="tracks.html">tracks</a>).</p>
+            <h4 class="ph4">Hijacking Focus</h4>
+            <p class="pp">You might also write abilities that allow focus to be 'hijacked' - taken away from another player or element of the world if a specific condtion is met. Unless you're intending on making a very adversarial game, we recommend...</p>
+            <ul class="pul">
+              <li>Players having focus hijacked from them by another player have to agree to it</li>
+              <li>The focus always returns to whatever it was hijacked from when the hijacking is finished</li>
+            </ul>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

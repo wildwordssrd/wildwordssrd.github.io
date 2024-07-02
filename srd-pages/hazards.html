@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazards</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButtonSel" onclick="">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">HAZARDS&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Hazards are dangerous elements of the world that a GM might introduce to challenge players.</li>
+              <li>Hazards might come in the form of monsters, illnesses, environmental features, or dangerous NPCs.</li>
+              <li>Players can deal with hazards in a number of ways, but they usually involve filling either aspect or strategy tracks to represent the hazard being bypassed or bested in some way.</li>
+              <li>The nature and presentation of hazards depends very much on the kind of setting or world you're using, as does their potential lethality.</li>
+              <li>Hazards might be pre-made for GMs to use, or designed to be pieced together quickly at the table.</li>
+            </ul>
+            <h4 class="ph4">Designing Hazards</h4>
+            <p class="pp">Even if you intend for the GM to create hazards themselves, having a few examples (along with a step-by-step guide of how to design them) is extremely useful.</p>
+            <p class="pp">But that assumes you know how to make hazards yourself, and that's going to be hard to do unless you know the components they're made from.</p>
+            <p class="pp">At their base, hazards have two essential components.</p>
+            <ul class="pul">
+              <li><b>Appearance</b>: How does this hazard look, and what kind of thing is it?</li>
+              <li><b>Effect</b>: What makes this hazardhazardous? What kind of danger does it represent?</li>
+            </ul>
+            <p class="pp">All hazards should start out with these two questions in mind, and they relate heavily onto the kind of world and game you're crafting. For a traditional hack-and-slash fantasy romp, hazards might be dire wolves and mythical beasts that pose a direct danger to life and limb. For a slow-burning investigative tale, hazards might be criminal masterminds, street toughs, or even the investigation itself, and the effects they have might come in the form or prison time, spoiled clues, back-alley brawls, or stolen resources.</p>
+            <span class="example">In <b>Streets By Moonlight</b>, each arc concerns the investigation of a single hazard, usually an eldritch force or creature, that is present in the background throughout the arc and has multiple effects on the narrative and characters. Smaller hazards may also make an appearance, posing a more immediate physical or mental threat.</span>
+            <h4 class="ph4">Hazard Components</h4>
+            <p class="pp">Once you know the rough form a hazard will take, and the effect you want it to have, you need to fill out the narrative and mechanical sides of it so that it can actually be used in a game. Hazards don't need all of the components listed below, so choose the ones that make sense for your setting and work with the rest of your rules and GM advice.</p>
+            <ul class="pul">
+              <li><b>Name</b>: It's rather rude to kill characters before
+                introducing yourself.</li>
+              <li><b>Type</b>: Does the hazard fal into a class or category of thing? This might cover size, genus, or qualities.</li>
+              <li><b>Description</b>: Helps GMs introduce and run a hazard, and gives extra meat for players that enjoy reading whole books.</li>
+              <li><b>Drives</b>: What does the hazard want? Why is it likely to be in the path of the characters?</li>
+              <li><b>Presence</b>: A focus on sight, smell, taste, sound... Anything the GM might use to make an encounter more vivid.</li>
+              <li><b>Rewards</b>: What do the characters get for besting the hazard, if anything?</li>
+              <li><b>Aspects</b>: Just like a character aspect, these describe the special things a hazard can do. These aspects may have tracks of their own, or the hazard might run on a strategy track (see the box on the right).</li>
+              <li><b>Quirks</b>: Optional aspects that a GM could use to spice up an encounter with a hazard for more experienced players.</li>
+              <li><b>Example Encounters</b>: Brief overviews of how an encounter with the hazard may begin or run.</li>
+            </ul>
+            <span class="emphasis">
+              <h3 class="ph3">ASPECT Vs STRATEGY TRACKS</h3>
+              <p class="pp">If you're using tracks to measure the health or staying power of a hazard, there are two main ways you can do it. The first is with aspect tracks, the second strategy tracks. Both have their pros and cons.</p>
+              <h4 class="ph4">Aspect Tracks</h4>
+              <p class="pp">With aspect tracks, each unique thing the hazard can do (special abilities described by a hazard's aspects) has a track of its own, just like a character's aspects. When an aspect's track is fully marked the hazard loses access to that special rule, and when they're all fully marked the hazard is dead, beaten back, or rendered harmless.</p>
+              <p class="pp"><b>Pros</b>: Granular and easy to understand. Allows for a subsystem of characters targeting specific aspects with their attacks or other actions. Easy to represent visually. Tracks can be pre-made for GMs, keeping mental load and on-the-spot-design requirements low.</p>
+              <p class="pp"><b>Cons</b>: Hazard has a set difficulty based on the established tracks. Targeting certain tracks may be difficult, especially for characters unsuited to this type of hazard (for example, non-combat characters engaging a physical threat may feel overwhelmed or useless).</p>
+              <h4 class="ph4">Strategy Tracks</h4>
+              <p class="pp">With a strategy track, the GM can set a track with a number of boxes and break points that they feel works for the situation and the power level of the characters. Boxes on a strategy track can be filled by many different kinds of action, anything that would affect the hazard in some way. Reaching break points may represent the hazard using unique moves or changing behaviour. When the strategy track is full, the hazard is overcome.</p>
+              <p class="pp"><b>Pros</b>: Extremely flexible, set by the GM to suit the exact situations and the condition of characters and players. Helps involve all characters in a hazardous encounter (for example, helpful actions taken by non-combat characters in a fight should still mark the strategy track). Measures more the overall status of a hazard than one specific thing, such as damage or stress.</p>
+              <p class="pp"><b>Cons</b>: GM must set the track. Leads to more complex encounters and more on-the-fly rulings. Targeting specific aspects potentially more difficult.</p>
+            </span>
+            <h4 class="ph4">The Danger of Hazards</h4>
+            <p class="pp">So what can a hazard do that makes it hazardous? There's a bit of advice on the previous page, but you should consider...</p>
+            <ul class="pul">
+              <li><b>Direct Damage</b>: The hazard can attack characters, damaging their aspects (or other tracks). <i>A rampaging orc might swing axes around, inflicting grievous harm on fleshy characters.</i></li>
+              <li><b>Resource Damage</b>: Either through destruction or the addition of negative tags. <i>A potent storm might soak all paper-based resources to the point of illegibility.</i></li>
+              <li><b>Narrative Effect</b>: This could change the position of a character or give them an additional problem to worry about, perhaps <a href="dice-pools-rolls">inflicting cut</a>. <i>Being pursued by police might force characters to use the rooftops rather than the streets to get around, and add cut on rolls with them interacting with law-abiding citizens.</i></li>
+              <li><b>Denial</b>: This could render some edges, skills, aspects, or resources impossible to use, or shut off narrative options usually present for a character. <i>A computer virus might rip through commonly-accessed systems on a starship, making computer-based skills impossible to use and shutting down warp travel for a time.</i></li>
+            </ul>
+            <h4 class="ph4">Tackling Hazards</h4>
+            <p class="pp">Whether a hazard is monstrous, enviornmental, or just deeply strange, the aspects and skills of a character should be effective against it in some way. Consider the effects of damage from character weapons (and how that might tie into an impact or type system, pg XX), how the environment might be of use (or become a hindrance), and if certain hazards are unique or omnipresent enough that they might be called out in aspects or skill descriptions.</p>
+            <span class="example">In <b>Rise</b>, barbarians are a specific type of hazard that all nation-states will have to contend with at some point. Many aspects change how a player will be able to affect these barbarians. Floods and other natural disasters, on the other hand, are rare - there are few skills or aspects that aid in combating them, and the effects are more narrative.</span>
+            <h4 class="ph4">Weakness and Resistance</h4>
+            <p class="pp">If you're damage types, consider having aspects that describe the weaknesses and resistances of hazards. Also consider how they work -are they the same as character weaknesses and resistances, or is this element asymmetrical?</p>
+            <span class="example">In <b>The Wildsea</b>, hazards deal larger chunks of damage than wildsailors usually do. When a character has a resistance against damage, they reduce the amount of marks they'd make by two. When a hazard has a resistance, they only reduce it by one - this addresses the imbalance in damage potential without losing granularity when it comes to tracks.</span>
+            <h4 class="ph4">Nebulous and Eternal Hazards</h4>
+            <p class="pp">Not all hazards can be dealt with up close and personal. Some might require elements of a story to be completed in order to be rendered ineffective, or even completely lack aspect or strategy tracks of their own to represent an omnipresent threat in certain areas of the world.</p>
+            <p class="pp">In The Wildsea, travelling through the canopy of the world-forest without a ship is inherently dangerous. In some ways, the entire sea is a hazard - it can deal damage, have effects, impose cut - but it has no tracks. It's just there to be dealt with by characters that don't have the safety of a vessel (and is so important to the world that several skills and many aspects directly describe how they interact or affect it)</p>
+            <h4 style="color: #D25A31;">Chop & Change - Hazards</h4>
+            <p class="pp">When adding hazards to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have hazards that directly relate to the characters themselves, built by the GM after character creation</li>
+              <li>Have hazards evolve and change over time if not beaten back or destroyed</li>
+              <li>Use hazards to represent a mystery or puzzle that the characters need to solve, with tracks as a time limit rather than something they want to fill</li>
+              <li>Give ownership of hazards out to particular players to control alongside their character rather than the GM, especially if they're elements of the weather or environment</li>
+              <li>Have single-paragraph simple hazards for a GM to use as inspiration (The Wildsea does this for each type of hazard)</li>
+            </ul>
+            <h4 class="ph4">Example Hazard Entry</h4>
+            <p class="pp">This is a lot of information, so a visual example of a hazard entry might help here. Below is a cut-down version of one of the classic Wildsea hazards, the pinwolf.</p>
+            <span class="emphasis">
+              <h3 class="ph3">Pinwolves</h3>
+              <span class="a-sub" style="display:inline"><br>[Medium] Swift Staccato Predators</span>
+              <p class="pp">Vicious pack hunters with stiletto limbs, pinwolves are a seemingly omnipresent threat across the various reaches and territories of the wildsea. Their habits and cunning, combined with their natural speed and vicious natures, make them a serious threat to even experienced sailors.</p>
+              <h4 class="ph4">Drives</h4>c
+              <p style="background-color:#E0E5DC"><b>Hunt Incautious Sailors</b>: Of all the beasts of the rustling waves, pinwolves are perhaps the most adept at understanding and exploiting the habits of wildsailors.</p>
+              <h4 class="ph4">Presence</h4>
+                <span class="horiz-table-always" style="background-color:#E0E5DC">
+                  <span style="width:20%"><b>Sight:</b></span>
+                  <span style="width:80%">Bursts of uncanny movement. Long twitching tongues.</span>
+                </span>
+                <span class="horiz-table-always">
+                  <span style="width:20%"><b>Sound:</b></span>
+                  <span style="width:80%">The sharp impacts of their pin-like limbs. Scraping and skittering. Ominous hissing.</span>
+                </span>
+                <span class="horiz-table-always" style="background-color:#E0E5DC">
+                  <span style="width:20%"><b>Smell:</b></span>
+                  <span style="width:80%">Musky - a mixture of sweat and blood.</span>
+                </span>
+              <h4 class="ph4">Resources</h4>
+                <span class="horiz-table-always" style="background-color:#E0E5DC">
+                  <span style="width:20%"><b>Specimens:</b></span>
+                  <span style="width:80%">Pin-Limb, Flexible Tongue, Beast Bones</span>
+                </span>
+                <span class="horiz-table-always">
+                  <span style="width:20%"><b>Whispers:</b></span>
+                  <span style="width:80%">Unsettling Movement, Approaching Pack</span>
+                </span>
+              <h4 class="ph4">Aspects</h4>
+              <p style="background-color:#E0E5DC"><b>Pin-Limbs</b>: Pinwolves can climb any surface their limbs can punch into, with the strongest able to puncture even metal. These limbs deal light to medium CQ Spike damage, and charges can deal medium Blunt damage.</p>
+              <p class="pp"><b>Staccato Movement</b>: Pinwolves move in swift, unpredictable bursts, making them difficult to evade. Add cut to actions taken to dodge or otherwise escape a pinwolf while it has full freedom of movement.</p>
+              <h4 class="ph4">Quirks</h4>
+              <p style="background-color:#E0E5DC"><b>Armoured Hide</b>: The pinwolf’s fur is matted and spiked, giving it resistance to Keen and Blunt damage.</p>
+              <p class="pp"><b>Mottled</b>: The pinwolf’s hide shifts and flickers, giving it efficient camouflage against the rustling waves.</p>
+            </span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subsystems</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonSel" onclick="">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">TWISTS&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Twists are a subsytem, most often linked to dice rolls, that encourage players to take the reins of the narrative in small ways.</li>
+              <li>The 'standard' twist comes in the form of a player (or their character) reshaping or altering an element of the world, or bringing something unexpected into the narrative that changes the progression of a game's plot</li>
+              <li>Twists do have some built-in limits, as there's an element of conversational agreement that comes into their planning and execution.</li>
+              <li>Most importantly, Twists are player-focused, not GM-focused. The GM might get a say, maybe even the final say, but the generation of a twist comes from the players.</li>
+            </ul>
+            <h4 class="ph4">The Standard Twist</h4>
+            <p class="pp">No matter how it appears in-universe, the most standard
+              version of a twist allows a player to state that something
+              unexpected happens as a result of one of their actions
+              (usually as a result of <a href="srd-pages/dice-pools-rolls.html">rolling doubles</a>). There are a few conventions to follow here...</p>
+            <ul class="pul">
+              <li><b>Twists Should Be Small</b>: The unexpected outcomes can be game-changers, but they shouldn't be game-killers. An unexpected outcome of falling off of a wall may well be crashing through the floor below into a previously undiscovered secret rom, but it shouldn't be falling directly onto the head of a campaign's big bad and killing them outright. They add flavour and spice, not an entire side of beef.</li>
+              <li><b>Twists Should Be Player-First</b>: Twists might be decided by the player that rolls them (if you're linking twists to dice, which we recommend), but a better conventon is to throw them open to the table - let other players offer their ideas for twists, and let the initial player and GM decide on which one they like best. Twist are literally there to facilitate collaborative storytelling.</li>
+              <li><b>Twists Should Be Narrative</b>: ... But they don't have to be. Sometimes there aren't any good ideas for a a twist based on a particular action. In that case the GM might elect to offer a resource instead, or to up the impact of the action itself.</li>
+            </ul>
+            <h4 class="ph4">Unexpected Outcomes</h4>
+            <p class="pp">The best way to keep a twist unexpected is to have it supplied by someone other than the initial player or GM. But why keep them unexpected in the first place?</p>
+            <p class="pp">Because Wild Words games are games for the GM as much as they are for the other players, and nothing's more thrilling than an unforeseen twist in a narrative that you're enjoying. Twists allows the average player a little taste of that GM storytelling magic, but they also allow the GM to react to unexpected narrative developments in the same way a player might.</p>
+            <span class="example">Klash lets off a firework, rolling a twist as they attempt to impress the audience with their display. One of the players suggests that the burst of the firework reveals a danger in the night sky, and the group loves it. The GM had no plans for there to be danger there, so they could just say it doesn't quite work... But they roll with it, adapting to the change with glee.</span>
+            <h4 class="ph4">Twists Don't Have To Be Positive</h4>
+            <p class="pp">While it might seem sensible to colour twists in ways that they help everyone at the table, the core Wild Words rules don't specify that twists have to be positive, just unexpected. Make that clear in your rules - it often leads to some of the most exciting moments of play.</p>
+            <span class="example">Hent's player rolls doubles as their character leaps onto a rising airship. The roll was a success, so Hent makes it on, but the twist is opened up to the table and one of the other players suggests that Hent's weight is just enough to overbalance the ship. Suddenly there's a crisis, a decision to be made - if Hent stays, maybe the entire ship goes down.</span>
+            <span class="emphasis">
+              <h4 class="ph4">Twists Without the Randomness</h4>
+              <p class="pp">Twists are tied to the dice in Core Wild Words, but they don't have to be earned this way exlusively - or at all! Having resources or aspects that can grant twists can add an element of control to the uncontrollable, and tying them to impulses can also make for some great collaborative storytelling experiences.</p>
+              <span class="exmaple">In <b>The Wildsea</b>, Whispers are a resource that represent living words, and can be released into the world in a number of ways. One of these is to speak them aloud, essentially allowing the player that does so to change or bring in a narrative element to the scene related to the name of the whisper; a twist, essentially, but under their control. Whispers can also be shouted, creating a high-impact change that's entirely up to the GM.</span>
+              <span class="example">In <b>Streets By Moonlight</b>, a bad roll made when confronting an impulse will damage the character. But how? This is up to other playrs at the table to determine, not the GM - investigators play an active part in the downfall of their colleagues, and themselves.</span>
+            </span>
+            <h4 class="ph4">The Limits of Twists</h4>
+            <p class="pp">This is a tough one, and is very much up to you as a designer. What we will say is that it's easier to provide guidelines and examples here than rules, as most tables will settle on a level of power for twists that feels right to them.</p>
+            <h4 style="color: #D25A31;">Chop & Change - Twists</h4>
+            <p class="pp">When adding a twist system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Remove the GM from every part of the conversation where a twist is involved</li>
+              <li>Specify that particular players handle the twists of specific other players, perhaps in relation to their character bonds</li>
+              <li>Tie twists into another system, allowing them to be built up to or earned in some way</li>
+              <li>Allow a player to 'save' twists when rolled, not using them immediately but saving them for a more dramatic moment</li>
+              <li>Corrupt twists to always give negative outcomes, but to reward a pkayer in other ways (The Wildsea: Storm & Root does this with an optional subsystem, Snaps)</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">SHARED ASSETS&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Most Wild Words games will likely have a character for each player, with information recorded on some kind of character sheet. A shared asset is something that all players have equal stake in, often represented on a separate sheet that's shared by everyone at the table.</li>
+              <li>Shared assets are the best way to represent something like a home base or vehicle that exists for all character</li>
+              <li>Shared assets might be available at all times, or restricted to certain scenes. The frequency of use and complexity of these assets will likely have a large impact on speed of play, especially if they're represented by a single sheet.</li>
+            </ul>
+            <h4 class="ph4">What is a Shared Asset?</h4>
+            <p class="pp">Anything that multiple characters own and interact with might be a shared asset, but we recommend only giving such things a sheet of their own if they can be altered or improved during play. A shared asset works particularly well for representing...</p>
+            <ul class="pul">
+              <li><b>A Vehicle</b>: Something that moves all players from place to place in the world, especially if there are rooms or fittings on that vehicle that they can interact with during a game.</li>
+              <li><b>A Base</b>: Such as a building or underground hideout that the characters retire to in between certain scenes.</li>
+              <li><b>A Faction</b>: Not all shared assets have to be physical - if all characters belong to a single group or faction, a sheet for this shared asset might record the opinions of NPCs or how the faction's connections or training benefits characters.</li>
+            </ul>
+            <span class="example">
+              In <b>Iron on Stone</b>, all players share a hangar bay that their mechs return to after a mission. The hangar bay is where characters can unsuit and mingle, having roleplay-first interactions, but also where mechs are repaired and upgraded.
+            </span>
+            <span class="example">
+              In <b>Rise</b>, the shared asset is the world that the nation-states share. The sheet for this shared asset tracks thing like changes in era, barbarian activity, and the changing types of resources available to be claimed. Though the asset is shared it's not always a place for cooperation, and players might have their nation states claim certain elements of the shared asset for themselves from time to time.
+            </span>
+            <h4 class="ph4">Equal Opportunities</h4>
+            <p class="pp">The most important element of a shared asset is that it can be used by everyone at the table in some form. Certain character choices or narrative roles might allow it to be used in different ways, but its called a shared asset for a reason.</p>
+            <p class="pp">Ratings (page XX) are extremely useful when it comes to shared assets. They ensure that what an asset can do is at the same power level or usefulness for everyone, no matter which character or player is interacting with it. This isn't necessary - you might prefer certain characters have an easier or more rewarding time interacting with a shared asset - but it does help with table balance.</p>
+            <span class="example">In <b>The Wildsea</b>, all characters can make a ratings roll using the ratings on their ship sheet. The edges and skills of the character rolling have no effect, as it's the capabilities of the vessel they're determining with their roll, but some particularly sea-focused characters might have their aspects come into play during these rolls.</span>
+            <h4 class="ph4">Developing a Shared Asset</h4>
+            <p class="pp">This might be done through the application of resources, the spending of metacurrency, or merely tied to in-game narrative or the duration of play. But developing a shared asset helps make it more unique, and increases the feeling of group ownership at the table.</p>
+            <span class="example">In <b>The Sword Spiral</b>, the asset that everyone shares is a legend that tells of their heroic triumphs and grisly failures. This legend is updated at the end of every session, and narrative elements that have been added to the legend can be called upon for mechanical boosts in subsequent sessions.</span>
+            <h4 style="color: D25A31;">Chop & Change - Shared Assets</h4>
+            <p class="pp">When adding a shared asset to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have it used as a storage space for certain types of resources that aren't owned by an individual character (The Wildsea does this with Cargo)</li>
+              <li>Have it out of reach for the majority of a game, accessible only in a limited way for powerful bonuses</li>
+              <li>Use the shared asset as a reward or goal that can only be accessed after a smaller story or arc is completed</li>
+              <li>Treat the shared asset as an NPC that characters must manage their relationship with</li>
+              <li>Have several shared assets that are under the control
+                of pairs of characters, unique from each other</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">IMPACT&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Impact represents the power, or level of effect, that something has on something else (most typically that a character's actions have on the world around them).</li>
+              <li>Impact can be applied both to marks (how many boxes are marked on a track) and effects (the more narrative elements of an action). It doesn't have to apply to both, but players will likely expect it to</li>
+              <li>There are several different ways impact can be handled - the box on the right delves into a couple of pre-made presentations that have a solid grounding.</li>
+              <li>The ability you give players to access different levels of impact, and how easily that acces comes, can have a huge impact on the power level of a game.</li>
+              <li>Low-impact events likely make a very small mechanical difference, if they make one at all, and high-impact occurences can often do a lot more mechanically than one might expect. This holds true for narrative effects as well, but it's important to remember that even a low-impact action can change the direction of a story.</li>
+            </ul>
+            <h4 class="ph4">Three Common Tiers</h4>
+            <p class="pp">However you set out an impact system, there are three tiers that players will expect once they know that the impact of their actions can vary - Low, Standard, and High. This is most easily explained with doors...</p>
+            <ul class="pul">
+              <li>Low Impact: A character attempts to kick in a door, but the action has low impact. It might take several kicks to force the door open, or they might only be able to knock a few planks or panels out of the door.</li>
+              <li>Standard Impact: A character attempts to kick in a door, and the action has standard impact. A solid kick is enough to break it open.</li>
+              <li>High Impact: A character attempts to kick in a door, and they have high impact on the action. They might smash the door into splinters, kick it straight off of its hinges, or destroy the frame along with the door.</li>
+            </ul>
+            <p class="pp">The examples above describe impact in anarrative form - the door is opened in all examples, but the feeling is very different.</p>
+            <h4 class="ph4">Two Additional Tiers</h4>
+            <p class="pp">optionally, you might want to specify that some options have No Impact (the door remains standing), or Massive Impact (the door, frame, and wall are destroyed). There's usually no point in a no-impact action.</p>
+            <h4 class="ph4">Narrative vs Mechanical</h4>
+            <p class="pp">The examples on the left deal with narrative impact, which can be tricky, but mechanical impact is much easier. An action or happening affects a track, and the level of impact determines how many boxes are marked (or cleared). See the sidebar on the right for more details.</p>
+            <h4 class="ph4">What Determines Impact?</h4>
+            <p class="pp">As a designer, whatever you want. It's a good idea to have character actions clock in at standard impact most of the time (it's in the name, after all), reserving high and low impact for moments it feels appropriate. You might make this a GM decision, which is fine, but there's nothing wrong with tying it to mechanical systems or character elements as well. Consider...</p>
+            <ul class="pul">
+              <li>Aspects that increase the impact of certain actions.</li>
+              <li>A metacurrency that can be spent to change impact.</li>
+              <li>Tying impact to a meter filling up.</li>
+              <li>Adding impact based on certain die results, like odd
+                numbers or doubles.</li>
+            </ul>
+            <span class="example">In <b>The Wildsea</b>, actions have standard impact as... well, as standard. A character might be able to increase their impact by being in the right situation, with the blessing of the GM, but they can more reliably increase it by taking certain aspects or by choosing to Cut results on an action roll, making it less likely they'll succeed but more impactful if they do.</span>
+            <span class="emphasis">
+              <h3 class="ph3">IMPACT PRESENTATIONS</h3>
+              <p class="pp">The examples below are pre-made systems based on impact, which can be adapted to your game if they fit</p>
+              <h4 class="ph4">Classic</h4>
+              <p class="pp">Most actions have standard impact. Actions that are unsuited to a situation have low impact, and ones that match it perfeclty have high impact. Impact affects narrative effects, and also changes the amount of boxes marked on a track (maybe 1 for low, definitely 1 for standard, 2 for high).</p>
+              <h4 class="ph4">Technical</h4>
+              <p class="pp">Most actions have standard impact. Impact can be increased through use of character elements, decreased by GM decree based on the resilience of what's being affected. Impact affects narrative effects, and also changes the amount of boxes marked (1 for low, 2 for standard, 3 for high).</p>
+              <h4 class="ph4">Unbound</h4>
+              <p class="pp">Impact is more track-based than narrative. Low impact doesn't exist. Standard impact marks 1 box, and every level of impact above this marks 1 box more. Characters are able to hyper-specialize, using impact to mark many boxes on a track at a time</p>
+              <h4 class="ph4">Story-Based</h4>
+              <p class="pp">All actions and interactions with the world mark 1 box. Impact levels can vary, but they only relate to the narrative effects of actions and events</p>
+            </span>
+            <h4 style="color: #D25A31;">Chop & Change - Impact</h4>
+            <p class="pp">When adding an impact system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Allow for Massive impact, marking all boxes on a track at once (The Wildsea handles impact this way)</li>
+              <li>Have impact work differently for characters than it does for hazards and elements of the world</li>
+              <li>Connect impact directly to a game's damage system, allowing for varying levels of damage</li>
+              <li>Randomize impact with a die roll</li>
+              <li>Restrict increasing impact to a function of consuming resources, limiting flexibility</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">SHARED ASSETS&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Most Wild Words games will likely have a character for each player, with information recorded on some kind of character sheet. A shared asset is something that all players have equal stake in, often represented on a separate sheet that's shared by everyone at the table.</li>
+              <li>Shared assets are the best way to represent something like a home base or vehicle that exists for all character</li>
+              <li>Shared assets might be available at all times, or restricted to certain scenes. The frequency of use and complexity of these assets will likely have a large impact on speed of play, especially if they're represented by a single sheet.</li>
+            </ul>
+            <h4 class="ph4">What is a Shared Asset?</h4>
+            <p class="pp">Anything that multiple characters own and interact with might be a shared asset, but we recommend only giving such things a sheet of their own if they can be altered or improved during play. A shared asset works particularly well for representing...</p>
+            <ul class="pul">
+              <li><b>A Vehicle</b>: Something that moves all players from place to place in the world, especially if there are rooms or fittings on that vehicle that they can interact with during a game.</li>
+              <li><b>A Base</b>: Such as a building or underground hideout that the characters retire to in between certain scenes.</li>
+              <li><b>A Faction</b>: Not all shared assets have to be physical - if all characters belong to a single group or faction, a sheet for this shared asset might record the opinions of NPCs or how the faction's connections or training benefits characters.</li>
+            </ul>
+            <span class="example">
+              In <b>Iron on Stone</b>, all players share a hangar bay that their mechs return to after a mission. The hangar bay is where characters can unsuit and mingle, having roleplay-first interactions, but also where mechs are repaired and upgraded.
+            </span>
+            <span class="example">
+              In <b>Rise</b>, the shared asset is the world that the nation-states share. The sheet for this shared asset tracks thing like changes in era, barbarian activity, and the changing types of resources available to be claimed. Though the asset is shared it's not always a place for cooperation, and players might have their nation states claim certain elements of the shared asset for themselves from time to time.
+            </span>
+            <h4 class="ph4">Equal Opportunities</h4>
+            <p class="pp">The most important element of a shared asset is that it can be used by everyone at the table in some form. Certain character choices or narrative roles might allow it to be used in different ways, but its called a shared asset for a reason.</p>
+            <p class="pp">Ratings (page XX) are extremely useful when it comes to shared assets. They ensure that what an asset can do is at the same power level or usefulness for everyone, no matter which character or player is interacting with it. This isn't necessary - you might prefer certain characters have an easier or more rewarding time interacting with a shared asset - but it does help with table balance.</p>
+            <span class="example">In <b>The Wildsea</b>, all characters can make a ratings roll using the ratings on their ship sheet. The edges and skills of the character rolling have no effect, as it's the capabilities of the vessel they're determining with their roll, but some particularly sea-focused characters might have their aspects come into play during these rolls.</span>
+            <h4 class="ph4">Developing a Shared Asset</h4>
+            <p class="pp">This might be done through the application of resources, the spending of metacurrency, or merely tied to in-game narrative or the duration of play. But developing a shared asset helps make it more unique, and increases the feeling of group ownership at the table.</p>
+            <span class="example">In <b>The Sword Spiral</b>, the asset that everyone shares is a legend that tells of their heroic triumphs and grisly failures. This legend is updated at the end of every session, and narrative elements that have been added to the legend can be called upon for mechanical boosts in subsequent sessions.</span>
+            <h4 style="color: #D25A31;">Chop & Change - Shared Assets</h4>
+            <p class="pp">When adding a shared asset to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have it used as a storage space for certain types of resources that aren't owned by an individual character (The Wildsea does this with Cargo)</li>
+              <li>Have it out of reach for the majority of a game, accessible only in a limited way for powerful bonuses</li>
+              <li>Use the shared asset as a reward or goal that can only be accessed after a smaller story or arc is completed</li>
+              <li>Treat the shared asset as an NPC that characters must manage their relationship with</li>
+              <li>Have several shared assets that are under the control
+                of pairs of characters, unique from each other</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">HAZARDS&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Hazards are dangerous elements of the world that a GM might introduce to challenge players.</li>
+              <li>Hazards might come in the form of monsters, illnesses, environmental features, or dangerous NPCs.</li>
+              <li>Players can deal with hazards in a number of ways, but they usually involve filling either aspect or strategy tracks to represent the hazard being bypassed or bested in some way.</li>
+              <li>The nature and presentation of hazards depends very much on the kind of setting or world you're using, as does their potential lethality.</li>
+              <li>Hazards might be pre-made for GMs to use, or designed to be pieced together quickly at the table.</li>
+            </ul>
+            <h4 class="ph4">Designing Hazards</h4>
+            <p class="pp">Even if you intend for the GM to create hazards themselves, having a few examples (along with a step-by-step guide of how to design them) is extremely useful.</p>
+            <p class="pp">But that assumes you know how to make hazards yourself, and that's going to be hard to do unless you know the components they're made from.</p>
+            <p class="pp">At their base, hazards have two essential components.</p>
+            <ul class="pul">
+              <li><b>Appearance</b>: How does this hazard look, and what kind of thing is it?</li>
+              <li><b>Effect</b>: What makes this hazardhazardous? What kind of danger does it represent?</li>
+            </ul>
+            <p class="pp">All hazards should start out with these two questions in mind, and they relate heavily onto the kind of world and game you're crafting. For a traditional hack-and-slash fantasy romp, hazards might be dire wolves and mythical beasts that pose a direct danger to life and limb. For a slow-burning investigative tale, hazards might be criminal masterminds, street toughs, or even the investigation itself, and the effects they have might come in the form or prison time, spoiled clues, back-alley brawls, or stolen resources.</p>
+            <span class="example">In <b>Streets By Moonlight</b>, each arc concerns the investigation of a single hazard, usually an eldritch force or creature, that is present in the background throughout the arc and has multiple effects on the narrative and characters. Smaller hazards may also make an appearance, posing a more immediate physical or mental threat.</span>
+            <h4 class="ph4">Hazard Components</h4>
+            <p class="pp">Once you know the rough form a hazard will take, and the effect you want it to have, you need to fill out the narrative and mechanical sides of it so that it can actually be used in a game. Hazards don't need all of the components listed below, so choose the ones that make sense for your setting and work with the rest of your rules and GM advice.</p>
+            <ul class="pul">
+              <li><b>Name</b>: It's rather rude to kill characters before
+                introducing yourself.</li>
+              <li><b>Type</b>: Does the hazard fal into a class or category of thing? This might cover size, genus, or qualities.</li>
+              <li><b>Description</b>: Helps GMs introduce and run a hazard, and gives extra meat for players that enjoy reading whole books.</li>
+              <li><b>Drives</b>: What does the hazard want? Why is it likely to be in the path of the characters?</li>
+              <li><b>Presence</b>: A focus on sight, smell, taste, sound... Anything the GM might use to make an encounter more vivid.</li>
+              <li><b>Rewards</b>: What do the characters get for besting the hazard, if anything?</li>
+              <li><b>Aspects</b>: Just like a character aspect, these describe the special things a hazard can do. These aspects may have tracks of their own, or the hazard might run on a strategy track (see the box on the right).</li>
+              <li><b>Quirks</b>: Optional aspects that a GM could use to spice up an encounter with a hazard for more experienced players.</li>
+              <li><b>Example Encounters</b>: Brief overviews of how an encounter with the hazard may begin or run.</li>
+            </ul>
+            <span class="emphasis">
+              <h3 class="ph3">ASPECT Vs STRATEGY TRACKS</h3>
+              <p class="pp">If you're using tracks to measure the health or staying power of a hazard, there are two main ways you can do it. The first is with aspect tracks, the second strategy tracks. Both have their pros and cons.</p>
+              <h4 class="ph4">Aspect Tracks</h4>
+              <p class="pp">With aspect tracks, each unique thing the hazard can do (special abilities described by a hazard's aspects) has a track of its own, just like a character's aspects. When an aspect's track is fully marked the hazard loses access to that special rule, and when they're all fully marked the hazard is dead, beaten back, or rendered harmless.</p>
+              <p class="pp"><b>Pros</b>: Granular and easy to understand. Allows for a subsystem of characters targeting specific aspects with their attacks or other actions. Easy to represent visually. Tracks can be pre-made for GMs, keeping mental load and on-the-spot-design requirements low.</p>
+              <p class="pp"><b>Cons</b>: Hazard has a set difficulty based on the established tracks. Targeting certain tracks may be difficult, especially for characters unsuited to this type of hazard (for example, non-combat characters engaging a physical threat may feel overwhelmed or useless).</p>
+              <h4 class="ph4">Strategy Tracks</h4>
+              <p class="pp">With a strategy track, the GM can set a track with a number of boxes and break points that they feel works for the situation and the power level of the characters. Boxes on a strategy track can be filled by many different kinds of action, anything that would affect the hazard in some way. Reaching break points may represent the hazard using unique moves or changing behaviour. When the strategy track is full, the hazard is overcome.</p>
+              <p class="pp"><b>Pros</b>: Extremely flexible, set by the GM to suit the exact situations and the condition of characters and players. Helps involve all characters in a hazardous encounter (for example, helpful actions taken by non-combat characters in a fight should still mark the strategy track). Measures more the overall status of a hazard than one specific thing, such as damage or stress.</p>
+              <p class="pp"><b>Cons</b>: GM must set the track. Leads to more complex encounters and more on-the-fly rulings. Targeting specific aspects potentially more difficult.</p>
+            </span>
+            <h4 class="ph4">The Danger of Hazards</h4>
+            <p class="pp">So what can a hazard do that makes it hazardous? There's a bit of advice on the previous page, but you should consider...</p>
+            <ul class="pul">
+              <li><b>Direct Damage</b>: The hazard can attack characters, damaging their aspects (or other tracks). <i>A rampaging orc might swing axes around, inflicting grievous harm on fleshy characters.</i></li>
+              <li><b>Resource Damage</b>: Either through destruction or the addition of negative tags. <i>A potent storm might soak all paper-based resources to the point of illegibility.</i></li>
+              <li><b>Narrative Effect</b>: This could change the position of a character or give them an additional problem to worry about, perhaps <a href="dice-pools-rolls">inflicting cut</a>. <i>Being pursued by police might force characters to use the rooftops rather than the streets to get around, and add cut on rolls with them interacting with law-abiding citizens.</i></li>
+              <li><b>Denial</b>: This could render some edges, skills, aspects, or resources impossible to use, or shut off narrative options usually present for a character. <i>A computer virus might rip through commonly-accessed systems on a starship, making computer-based skills impossible to use and shutting down warp travel for a time.</i></li>
+            </ul>
+            <h4 class="ph4">Tackling Hazards</h4>
+            <p class="pp">Whether a hazard is monstrous, enviornmental, or just deeply strange, the aspects and skills of a character should be effective against it in some way. Consider the effects of damage from character weapons (and how that might tie into an impact or type system, pg XX), how the environment might be of use (or become a hindrance), and if certain hazards are unique or omnipresent enough that they might be called out in aspects or skill descriptions.</p>
+            <span class="example">In <b>Rise</b>, barbarians are a specific type of hazard that all nation-states will have to contend with at some point. Many aspects change how a player will be able to affect these barbarians. Floods and other natural disasters, on the other hand, are rare - there are few skills or aspects that aid in combating them, and the effects are more narrative.</span>
+            <h4 class="ph4">Weakness and Resistance</h4>
+            <p class="pp">If you're damage types, consider having aspects that describe the weaknesses and resistances of hazards. Also consider how they work -are they the same as character weaknesses and resistances, or is this element asymmetrical?</p>
+            <span class="example">In <b>The Wildsea</b>, hazards deal larger chunks of damage than wildsailors usually do. When a character has a resistance against damage, they reduce the amount of marks they'd make by two. When a hazard has a resistance, they only reduce it by one - this addresses the imbalance in damage potential without losing granularity when it comes to tracks.</span>
+            <h4 class="ph4">Nebulous and Eternal Hazards</h4>
+            <p class="pp">Not all hazards can be dealt with up close and personal. Some might require elements of a story to be completed in order to be rendered ineffective, or even completely lack aspect or strategy tracks of their own to represent an omnipresent threat in certain areas of the world.</p>
+            <p class="pp">In The Wildsea, travelling through the canopy of the world-forest without a ship is inherently dangerous. In some ways, the entire sea is a hazard - it can deal damage, have effects, impose cut - but it has no tracks. It's just there to be dealt with by characters that don't have the safety of a vessel (and is so important to the world that several skills and many aspects directly describe how they interact or affect it)</p>
+            <h4 style="color: #D25A31;">Chop & Change - Hazards</h4>
+            <p class="pp">When adding hazards to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have hazards that directly relate to the characters themselves, built by the GM after character creation</li>
+              <li>Have hazards evolve and change over time if not beaten back or destroyed</li>
+              <li>Use hazards to represent a mystery or puzzle that the characters need to solve, with tracks as a time limit rather than something they want to fill</li>
+              <li>Give ownership of hazards out to particular players to control alongside their character rather than the GM, especially if they're elements of the weather or environment</li>
+              <li>Have single-paragraph simple hazards for a GM to use as inspiration (The Wildsea does this for each type of hazard)</li>
+            </ul>
+            <h4 class="ph4">Example Hazard Entry</h4>
+            <p class="pp">This is a lot of information, so a visual example of a hazard entry might help here. Below is a cut-down version of one of the classic Wildsea hazards, the pinwolf.</p>
+            <span class="emphasis">
+              <h3 class="ph3">Pinwolves</h3>
+              <span class="a-sub" style="display:inline"><br>[Medium] Swift Staccato Predators</span>
+              <p class="pp">Vicious pack hunters with stiletto limbs, pinwolves are a seemingly omnipresent threat across the various reaches and territories of the wildsea. Their habits and cunning, combined with their natural speed and vicious natures, make them a serious threat to even experienced sailors.</p>
+              <h4 class="ph4">Drives</h4>c
+              <p style="background-color:#E0E5DC"><b>Hunt Incautious Sailors</b>: Of all the beasts of the rustling waves, pinwolves are perhaps the most adept at understanding and exploiting the habits of wildsailors.</p>
+              <h4 class="ph4">Presence</h4>
+                <span class="horiz-table-always" style="background-color:#E0E5DC">
+                  <span style="width:20%"><b>Sight:</b></span>
+                  <span style="width:80%">Bursts of uncanny movement. Long twitching tongues.</span>
+                </span>
+                <span class="horiz-table-always">
+                  <span style="width:20%"><b>Sound:</b></span>
+                  <span style="width:80%">The sharp impacts of their pin-like limbs. Scraping and skittering. Ominous hissing.</span>
+                </span>
+                <span class="horiz-table-always" style="background-color:#E0E5DC">
+                  <span style="width:20%"><b>Smell:</b></span>
+                  <span style="width:80%">Musky - a mixture of sweat and blood.</span>
+                </span>
+              <h4 class="ph4">Resources</h4>
+                <span class="horiz-table-always" style="background-color:#E0E5DC">
+                  <span style="width:20%"><b>Specimens:</b></span>
+                  <span style="width:80%">Pin-Limb, Flexible Tongue, Beast Bones</span>
+                </span>
+                <span class="horiz-table-always">
+                  <span style="width:20%"><b>Whispers:</b></span>
+                  <span style="width:80%">Unsettling Movement, Approaching Pack</span>
+                </span>
+              <h4 class="ph4">Aspects</h4>
+              <p style="background-color:#E0E5DC"><b>Pin-Limbs</b>: Pinwolves can climb any surface their limbs can punch into, with the strongest able to puncture even metal. These limbs deal light to medium CQ Spike damage, and charges can deal medium Blunt damage.</p>
+              <p class="pp"><b>Staccato Movement</b>: Pinwolves move in swift, unpredictable bursts, making them difficult to evade. Add cut to actions taken to dodge or otherwise escape a pinwolf while it has full freedom of movement.</p>
+              <h4 class="ph4">Quirks</h4>
+              <p style="background-color:#E0E5DC"><b>Armoured Hide</b>: The pinwolf’s fur is matted and spiked, giving it resistance to Keen and Blunt damage.</p>
+              <p class="pp"><b>Mottled</b>: The pinwolf’s hide shifts and flickers, giving it efficient camouflage against the rustling waves.</p>
+            </span>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

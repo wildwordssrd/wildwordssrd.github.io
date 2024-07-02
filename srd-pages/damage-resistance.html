@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damage & Resistance</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButtonSel" onclick="">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">DAMAGE (& RESISTANCE)&nbsp;</h1><h2 class="ph2">SUBSYSTEM</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>If you're creating a game in which combat can take the main stage from time to time, a dedicated system of damage is not essential, but likely helpful.</li>
+              <li>Damage in Wild Words is recorded by marking tracks, and in the Core version of the rules relates to Aspects (for player characters, pg XX) and Strategy Tracks (for in-universe hazards, pg XX). Damage may also have associated effects, more narrative outcomes of a hit in combat that might change a target's attitude or positioning</li>
+              <li>Damage also relates to Impact (pg XX), and contains (sub)subsystems for Weakness, Resistance, and Immunity.</li>
+            </ul>
+            <h4 class="ph4">Assigning Damage to Characters</h4>
+            <p class="pp">One of the first questions to ask yourself about damage is who assigns it, and to where.</p>
+            <p class="pp">For characters, damage is usually taken by marking aspects. If they can't mark an aspect, a character will likely take an injury instead (a specific temporary aspect with a number of boxes equal to the damage dealt, that may have narrative or mechanical consequences until healed). You might have damage assigned by the GM (where they choose the aspect affected) or by the player, and large amounts of damage might be able to be split between different tracks or only taken in one chunk</p>
+            <span class="example">In <b>The Wildsea</b>, players assign damage to whichever of their aspects they feel best suits the moment. Damage must be taken in a single chunk (so if a character takes 4 marks of damage, it all has to be marked on a single aspect), and if damage runs over the end of the aspect this results in an injury.</span>
+            <h4 class="ph4">Assigning Damage to Hazards</h4>
+            <p class="pp">Depending on how hazards are organised, damage can be assigned in different ways. If a hazard has a strategy track, damage is simply marked on it box by box. If a hazard has multiple tracks arranged as specific aspects, players might be able to choose which part of a hazard they deal damage to.</p>
+            <span class="example">In <b>The Sword Spiral</b>, hazards have several small tracks tied to their abilities, much like a character's aspects. A particularly successful attack allows players to determine which track their damage is assigned to.</span>
+            <h4 class="ph4">Damage Amounts</h4>
+            <p class="pp">As standard, characters deal one mark of damage at normal impact. A high-impact attack may deal two marks, and a low-impact attack might deal one mark or have a non-damaging but still-useful effect.</p>
+            <p class="pp">These numbers are easily changed. For a more granular system, characters might deal one mark of damage at low impact, two at normal impact, and three at high impact. For a less complex damage system, characters might deal one mark of damage no matter their impact, with impact changing additional effects instead.</p>
+            <span class="example"><b>Drift</b> assumes that low-impact attacks deal one mark of damage, standard impact two marks, and high impact three marks.</span>
+            <h4 class="ph4">Damage Types</h4>
+            <p class="pp">Damage might be split into various types, each of them useful in different situations or when affecting different hazards. Damage types might also have additional effects that are unique to them.</p>
+            <span class="example">In <b>Butterfly Steel</b>, damage is split into two types - kinetic and psychic. Kinetic damage is purely physical, and psychic purely mental. Both have different effects associated with them, from leaving bleeding wounds to knocking targets down, and from temporarily denying senses or certain actions to control over thoughts and nightmares.</span>
+            <p class="pp">The more damage types you have, the less important a weakness, resistance, or immunity is (as it will likely come into play less often). This might change the cost of aspects that grant such abilities.</p>
+            <span class="emphasis">
+              <h3 class="ph3">Weakness, Resistance, Immunity</h3>
+              <p class="pp">If you're using damage types, allowing characters (and hazards) to gain weakness, resistance, or immunity to certain types adds an additional dimension with few extra rules.</p>
+              <ul class="pul">
+                <li>When a character is weak to a damage type, they take more marks when hit by it and effects might be more dramatic.</li>
+                <li>When a character is resistant to a damage type, they take fewer marks from it and effects might be weaker, or ignored altogether.</li>
+                <li>When a character is immune to a damage type, they take no marks no matter how strong a hit dealing that damage type is, and completely ignore associated effects.</li>
+              </ul>
+              <p class="pp">These three options aren't exclusive, merely useful. You might not want to use anything other than simple resistances, or maybe you want to make it more complex and add automatic counters or reflections for certain damage types, or the ability to absorb a type and heal.</p>
+            </span>
+            <h4 style="color: #D25A31;">Chop & Change - Damage Methods</h4>
+            <p class="pp">When adding a damage method to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Split types by theme, or have certain types effective against certain keywords.</li>
+              <li>Have damage types apply asymmetrically, so either only characters or only hazards have to take damage types into account.</li>
+              <li>Create a two-tier system, with a small number of 'main' damage types and then additional subtypes within those.</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

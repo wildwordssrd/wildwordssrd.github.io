@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+
+h1{
+  font-size:50px;
+  text-align:left;
+  color:#fdf6e3;
+  margin-top:20px;
+  font-style:normal;
+  margin-bottom:0px;
+  font-family: "Teko", sans-serif;
+  }
+h2{
+  font-family: "Teko", sans-serif;
+  }
+html{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+  font-weight: 500;
+  background-color: #073642;
+  }
+p{
+  font-size:18px;
+  text-align:left;
+  }
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  overflow: scroll;
+  }
+.main-container{
+  display: flex;
+  align-items: stretch;
+  flex-direction:row;
+  /*margin: 0px;*/
+  padding: 0px;
+  min-height: 100%;
+  width: 100%
+  }
+.main-container > div{
+  text-align: left;
+  /*min-height:100%; */
+  font-size: 30px;
+  flex-grow: 1; 
+  }
+.vert-container {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+.nav-container {
+    font-family: "Teko", sans-serif;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    min-width:300px;
+    width: 300px;
+    flex-grow:0;
+  }
+.vert-container > div{
+  /*margin: 0px;*/
+  text-align: left;
+  /*min-height:100%; */
+  font-size: 30px;
+  flex-grow: 1; 
+  }
+.nav-container > div{
+  margin: -1px;
+  margin-left:0px;
+  
+  text-align: left;
+  /*min-height:100; */
+  font-size: 26px;
+  flex-grow: 1; 
+  }
+.banner{background-image:url('graphics/Mythworks Banner Alt1.svg');height:5.3em;flex-grow:0;flex-basis:5.3em;background-repeat:no-repeat;}
+iframe{
+  overflow:hidden;
+  border: none;
+  width:100%;
+  transition-duration:1s;
+  }
+.close{
+  display:block;
+  cursor:pointer;
+  user-select:none;
+  color:#6b2d39;
+  width:90%;
+  margin: auto;
+  transition: 0.2s;
+  }
+.close:hover{
+  color:#111;
+  background-color:#6b2d39;
+  }
+  
+.collapsible{
+  
+  }
+.active, .collapsible:hover{
+  
+  }
+.navButton{
+  cursor:pointer;
+  user-select:none;
+  display:block;
+  overflow:hidden;
+  margin-left:16px;
+  margin-right:16px;
+  transition: 0.3s;
+  border-radius:10px;
+  color:#FDF6E3;
+  }
+.navSection{
+  cursor:pointer;
+  user-select:none;
+  display:block;
+  overflow:hidden;
+  margin-left:16px;
+  margin-right:16px;
+  }
+.navButtonInv{
+  cursor:pointer;
+  user-select:none;
+  display:block;
+  overflow:hidden;
+  margin-left:8px;
+  padding-left:8px;
+  margin-right:8px;
+  padding-right:8px;
+  border-radius:10px;
+  color:#122D12;
+  background-color:#fff;
+  transition: 0.3s;
+  }
+.biglink{
+  cursor:pointer;
+  user-select:none;
+  display:inline-block;
+  overflow:hidden;
+  padding-left:8px;
+  padding-right:8px;
+  border-radius:10px;
+  color:#122D12;
+  background-color:#111;
+  transition: 0.3s;
+  }
+a{
+  color:inherit;
+  font-weight:bold;
+  display:inline-block;
+  transition: 0.3s;
+  }
+.navButtonSel{
+  cursor:pointer;
+  user-select:none;
+  display:block;
+  overflow:hidden;
+  margin-left:8px;
+  padding-left:8px;
+  margin-right:8px;
+  padding-right:8px;
+  border-radius:10px;
+  color:#21441A;
+  border:dashed #21441A 3px;
+  transition: 0.3s;
+  }
+.navButton:hover, .navButtonInv:hover{
+  background-color: #21441A;
+  margin-left:8px;
+  padding-left:8px;
+  margin-right:8px;
+  padding-right:8px;
+  border-radius:10px;
+  color:#D2E8B1;
+  }
+a:hover{
+  background-color: #122D1288;
+  padding-left:8px;
+  padding-right:8px;
+  border-radius:10px;
+  color:#000;
+  }
+.content{
+  max-height:0px;
+  }
+.page{
+  font-size:18px;
+  padding-left:35px;
+  padding-right:35px;
+  padding-bottom:10px;
+  padding-top:10px;
+  border-radius: 12px;
+  margin: 50px;
+  background-color:#FDF6E3;
+  color: #14303A;
+  border:2px solid #eee8d5;
+  box-shadow: 20px 20px #002b36;
+  }
+@media (max-width: 800px){
+  .main-container{
+      flex-direction:column;
+    }
+  .banner{
+      background-image:none;
+      height:0em;
+      flex-grow:0;
+      flex-basis:0em;
+      background-repeat:no-repeat;
+    }
+  .nav-container{
+      flex-basis:0em;
+      flex-shrink:0;
+      height:auto;
+      width:100%;
+    }
+  .main-container > div{
+      margin: 0px;
+      text-align: center;
+      /*min-height:100%; */
+      font-size: 30px;
+      flex-grow: 1; 
+    }
+  .horiz-table{
+      flex-direction:column;
+    }
+  .page{
+    margin: 0px;
+    margin-top: 10px;
+    border-radius:0px;
+    }
+  }
+.ph1{
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  font-size: 56px;
+  display: inline-block;
+  color: #14303A;
+  margin-top:0;
+  margin-bottom:0;
+  }
+  
+.ph2{
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  display: inline-block;
+  margin-top:0;
+  margin-bottom:0;
+  color:#122D12;
+  }
+  
+.ph3{
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  margin-top:0;
+  font-size:32px;
+  margin-bottom:0;
+  }
+.ph4{
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  font-size:22px;
+  margin-top:0;
+  margin-bottom:0;
+  }
+h4{
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  font-size:22px;
+  margin-top:0;
+  margin-bottom:0;
+  }
+.pp{
+  font-family:serif;
+  margin-top:0;
+  margin-bottom:5;
+  font-size:18px;
+  }
+.pul{
+  font-family:serif;
+  margin-top:0;
+  margin-bottom:5;
+  font-size:18px;
+  }
+.horiz-table{
+  display: flex;
+  align-items: stretch;
+  width:100%;
+  flex-direction:row;
+  }
+.horiz-table-always{
+  display: flex;
+  align-items: stretch;
+  width:100%;
+  flex-direction:row;
+  }
+.horiz-table > div , .horiz-table-always > div, .horiz-table > a, .horiz-table-always > a{
+  display:block;
+  flex-grow:1;
+  margin-bottom:1em;
+  flex-wrap: wrap;
+  }
+.horiz-table > span , .horiz-table-always > span{
+  display:block;
+  flex-grow:1;
+  margin-bottom:1em;
+  }
+.emphasis{
+  display:block;
+  border:5px solid black;
+  border-radius:12px;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  }
+.example{
+  font-family:serif;
+  font-style:italic;
+  display: block;
+  margin: auto;
+  margin-bottom:1em;
+  }
+.a-sub{
+  display:inline-block;
+  color:#83946A;
+  font-size:18px;
+  font-family: "Teko", sans-serif;
+  margin-left:10px;
+  font-weight: 500;
+  }
+.accent1{
+  color:#859900;
+  }
+.navBar{
+  background-color:#002b36;
+  }
+  

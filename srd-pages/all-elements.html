@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Elements</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonSel" onclick="">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <span class="emphasis" style="background-color: #363940; border-color: #363940; color:#fff;">
+              <h1 class="ph1" style="background-color: #363940; border-color: #363940; color:#fff;">CHARACTER ELEMENTS</h1>
+              <p class="pp" style="background-color: #363940; border-color: #363940; color:#fff;">There are multiple elements that make up an average Wild Words character, most made from combinations and interplays of the previous core systems described within this document. Whether you use all of these for your own game is entirely your choice - the following categories can be chopped, changed, or even left out entirely if they don't fit the kind of game you're going for - but including something close to the following presentation gives a solid base.</p>
+            </span>
+            <h3 class="ph3">What Are Character Elements?</h3>
+            <p class="pp"><b>The narrative and mechanical pieces that come together to make a playable Wild Words character, usually presented for players in the form of a character sheet for ease of use during play.</b></p>
+            <p class="pp">The average Wild Words character is made from the following components...</p>
+            <ul class="pul">
+              <li><b>Backgrounds</b>, to describe who and what a character is within the setting or world</li>
+              <li><b>Edges</b>, to describe broad areas of competency that help start action rolls</li>
+              <li><b>Skills</b>, which give more focused competencies and act as the middle contributor action rolls</li>
+              <li><b>Aspects</b>, which contain special rules, act as health, and work like permanent resources in terms of adding dice to action rolls</li>
+              <li><b>Meters</b>, which track a build-up of something setting-related that may have ramifications</li>
+              <li><b>Impulses</b>, which set narrative goals and drawbacks for a character that definitely affect the roleplay, and may play into the game mechanics</li>
+              <li><b>Resources</b>, which are a fluid system of named, temporary equipment, useful for barter, creation, and enabling certain actions</li>
+              <li><b>Wealth</b>, which tracks how a character can gain or spend some kind of income</li>
+              <li><b>Metacurrency</b>, a player-facing resource that impacts the setting mechanically</li>
+              <li>And a <b>Creation Method</b>, an additional page that helps you decide on the way you want players to actually make their character using all of the aforementioned elements</li>
+            </ul>
+            <p class="pp">We'll tackle these one by one, and give examples of how they might appear in different games or genres. Most of these sections refer to certain core rules, so make sure you've read those first.</p>
+            <h3 class="ph3">Other Considerations</h3>
+            <p class="pp">Those may be the main bits of a character, but there are a couple of other things you might want to consider as well. We've listed them on this page, along with a little guidance on how you might want to interact with them.</p>
+            <h3 class="ph3">NAMES</h3>
+            <p class="pp">A character's name distinguishes them from the player that's controlling them. Names can usually be anything, unless you're going for a particular feel for the world or setting - if this is the case, advice for names (along with examples) can often help players as they make their choices.</p>
+            <span class="example">In <b>The Wildsea</b>, characters can be called just about anything. However, there are sample names listed for the various languages that a character might speak in the book's appendix, giving aid to players that want a solid, appropriate, in-universe name.</span>
+            <span class="example"><b>Streets By Moonlight</b> is set in some version of the real world, and expects characters to have 'realistic' names. However, it also makes it clear that nicknames are entirely acceptable, especially for underworld types.</span>
+            <h3 class="ph3">SET-UP QUESTIONS</h3>
+            <p class="pp">A quick way of having a player think about the history of their character is to sprinkle a few questions into some of the options presented. These questions might be for a player to muse over alone, or to share with the group in order to build some kind of shared backstory.</p>
+            <span class="example"><b>The Wildsea</b> does this in two ways - with questions in each background about a character's history, and with a round of 'Unsetting Questions' at the start of a session that helps players get into the same creative space as they discuss rumours and possibilities connected to elements of the world.</span>
+            <h3 class="ph3">BONDS</h3>
+            <p class="pp">Characters might have bonds with each other, or with important NPCs or factions within the setting. A character might even be bonded to a particular element of the world, such as a religion or a place.</p>
+            <p class="pp">If you want to include bonds in a Wild Words game, we recommend that they're narrative first, mechanical second. They might strengthen other attributes of a character in certain situations, or give permissions to take certain types of action that would otherwise be unavailable, but the roleplay benefit of them should shine more than anything.</p>
+            <span class="example">In <b>The Sword Spiral</b>, characters are bonded to each other in various ways, both positive and negative - they might be siblings, rivals, or even lovers. Roleplaying these bonds allows for a mechanical boost toward healing and recovery during downtime.</span>
+            <span class="example">In <b>Drift</b>, the impulse system revolves around the Bonds characters have with other NPCs and elements of the setting. Characters can call on these bonds to establish connections in unfamiliar places.</span>
+            <span class="example">In <b>Streets By Moonlight</b>, the death of one character leads directly to the creation of the next - a new investigator steps into the shoes of their dead friend or colleague. This mechanic, the Call, sets up a series of Bonds from character to character created by the same player, strengthening each character in a lineage.</span>
+            <br>
+            <hr>
+            <h1 class="ph1">BACKGROUNDS&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Backgrounds are both a character element and a book organizational tool - distinct sets of aspects and other elements, or suggestions for them, based around a particular theme (such as a character's job).</li>
+              <li>Backgrounds have a narrative element, in that they help tell a player who and what their character is.</li>
+              <li>Wild Words assumes characters will have multiple background choices mixed together into a single background.</li>
+            </ul>
+            <h4 class="ph4">Compartmentalization</h4>
+            <p class="pp">A character's background describes who they are, in broad strokes, but it has a mechanical purpose too. Backgrounds in Wild Words are used to compartmentalize special abilities and suggested skills, splitting all of the cool things you can have a character learn to do into more manageable chunks than pages and pages of lists would achieve.</p>
+            <span class="example"><b>The Wildsea </b>has three different types of background: Bloodline, Origin, and Post. Each of these work the same way - they contain suggestions of edges, skills, languages, resources, drives, and mires, along with a list of aspects that relate to that background - but describes a different part of the character's life. It's the combination of one bloodline, one origin, and one post that makes a traditional Wildsea character.</span>
+            <h4 class="ph4">Hard Limits or Suggestions?</h4>
+            <p class="pp">Backgrounds are mostly used during character creation, as a way of narrowing down the choices a player has to make. But how narrow do you want these choices?</p>
+            <ul class="pul">
+              <li>Hard Limits force a player to choose only from the options within the backgrounds they've chosen.</li>
+              <li>Soft Limits allow a player to take the options within their chosen backgrounds, but may allow them to take from other backgrounds too - maybe in a limited way, or by spending additional character creation metacurrency (more on that later).</li>
+              <li>No Limits treats a background as a suggestion or guide. Players can choose anything from anywhere when building their character.</li>
+            </ul>
+            <span class = example><b>The Wildsea </b>has no limits on character creation. Players choose three backgrounds, but can go outside of them as they like when making their decisions.</span>
+            <h4 class="ph4">How Many Background Choices?</h4>
+            <p class="pp">Core Wild Words assumes characters will be made from multiple background choices, each determining something important about them. Three is a good number here, allowing the building of a character to ideally consist of picking equally from among three distinct collections of 'cool stuff' - enough for a lot of variation, but not enough to be overwhelming. Two could also work, especially if you want characters to exhibit some sort of duality, but four or five is likely too many</p>
+            <span class="example">In <b>Streets by Moonlight</b>, characters are paranormal investigators among the abyrinthine lanes of New Knossos. Their early lives don't matter much, as characters aren't expected to last more than a few sessions before madness takes them, so each is comprised of only two backgrounds: their Job, and their Talent.</span>
+            <span class="example">In <b>The Wildsea</b>, character backgrounds are split into the more traditional three choices. These are defined as Bloodline (determining what a character is physically), Origin (which describes their early life and formative years), and Post (for clarifying what they do on the ship they crew, the skills and abilities that make them useful for sailing the rustling waves).</span>
+            <span class="example">In <b>PICO</b>, there are no backgrounds. Instead, cool stuff and abilities are grouped according to the parts a player chooses for their bug to have (like spikes or hard shells). Although appearing different from the usual background set-up of Wild Words, the function is the same - collections of cool stuff are split into manageable sections by theme.</span>
+            <h4 class="ph4">What Goes In a Background?</h4>
+            <p class="pp"><b>A mixture of narrative and mechanical information.</b></p>
+            <p class="pp"><b>Narrative</b>: What does taking this background mean for the character? Where does it put them in the settin, and what does it say about their history and who they are?</p>
+            <p class="pp"><b>Mechanical</b>: What special things does this background give access to? Are there aspects that only characters with this background can take, or special rules that only they can benefit (or suffer) from?</p>
+            <span class="example">Backgrounds in <b>Streets by Moonlight</b> are focused on the bad as much as the good. Characters get benefits from them, but also drawbacks that will likely lead to their eventual downfall.</span>
+            <h4 class="ph4">Does My Game Need Backgrounds</h4>
+            <p class="pp">No, but they're useful for the core presentation of Wild Words. If you're using playbooks for character choices, these will take the place of backgrounds. If you're doing a point-buy system, you might replace backgrounds with themed lists. Just be aware that the fewer 'big' choices like background that a player has to make during character creation, the more 'small' choices they'll end up reading through - and this can lead to choice paralysis or unintended complexity.</p>
+            <h4 style="color: #D25A31;">Chop & Change - Backgrounds</h4>
+            <p class="pp">When adding a background system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have certain backgrounds accessible only to characters that have a particular achievement or event in their history.</li>
+              <li>Change the cost of purchasing other character elements depending on whether they feature in a chosen background.</li>
+              <li>Allow different characters to take different numbers of backgrounds.</li>
+              <li>Not allow background duplication between characters.</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">EDGES&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Edges are areas of general competency that relate to how a character tackles obstacles or approaches situations.</li>
+              <li>Mechanically, an edge adds 1d6 to an action roll if a character is acting in a way that matches it. Only one edge can apply to any one roll.</li>
+              <li>Edge names are, ideally, themed after the setting they're used for, in order to reinforce elements of the world as they're used.</li>
+              <li>Edges are broad by design and flexible to a fault, and players are assumed to almost always have access to an edge to give them their first d6 of a roll</li>
+            </ul>
+            <h4 class="ph4">Edges Define An Approach</h4>
+            <p class="pp">The first true mechanical choice for a character, the edges a character gains should match how the player wants to tackle problems in a game. Taking an edge named 'Stealth' would be great for an assassin- or thief-type character, probably useful for a ranger or detective, and rubbish for a barbarian. In this way, edges define the approach a character usually takes. It doesn't mean they always have to hew to their edges, just that they get an extra d6 on action rolls when they do</p>
+            <span class="example"><b>The Wildsea</b> has seven edges; Grace, Iron, Sharps, Instinct, Teeth, Veils, and Tides. Kicking open a door might be done savagely with the Teeth edge, with great force using the Iron edge, or by applying smart pressure at the right location with Sharps. Using Veils to kick in a door, an edge of stealth and secrecy, might be a tough sell.</span>
+            <h4 class="ph4">How Many Edges</h4>
+            <p class="pp">There's no perfect number for how many edges should exist, or how many a character should have, but 7 edges in total (with each character having access to 3 of them) has worked well so far.</p>
+            <p class="pp">The more edges a game has, the narrower they will likely become. Too many edges and they might as well be skills. Too few edges and they might as well not exist.</p>
+            <span class="exactly">Rise, a game of nation-states, has six edges - War, Commerce, Culture, Plenty, Faith, and Progress. Each of these edges describes elements a nation might hold dear, and each player chooses two of these to represent their nation's broad characteristics.</span>
+            <h4 class="ph4">Naming Edges</h4>
+            <p class="pp">Edge names are important, but that doesn't mean they have to be dry. When naming an edge, try to balance...</p>
+            <ul class="pul">
+              <li>A feeling that it belongs to the world or setting</li>
+              <li>A clarity of meaning</li>
+              <li>A distinctiveness from other edges</li>
+              <li>A sense of brevity</li>
+            </ul>
+            <p class="pp">The ideal edge feels right for the world, is easy enough to understand, feels unique, and is probably a single word.</p>
+            <p class="pp">No pressure, then.</p>
+            <span class="example">One of <b>Drift's</b> edges, Smoke, is a good example of this. It's an edge of dirtiness and stealth, of crawling through gutters and keeping things hidden, of obscuring your movements and intentions. It could have been called 'Stealth', but the city can be a grimy, dirty place at times, so Smoke draws allusions both to hidden things and the feeling of the wider setting it's designed to fit. There are other edges in Drift that might be useful for stealthy actions and lying, but none of them are dedicated to it like Smoke is.</span>
+            <span class="example">The edges of <b>Rise</b> are named more simply than most, as the setting of the game isn't as important as the individual cultures and developments of the nation states involved in it. They're informative, but purposefully trade flavour for absolute clarity.</span>
+            <span class="example"><b>PICO</b> doesn't have edges - it wants players to roll fewer dice and the characters to be very specialized, so it has an expanded skills system instead.</span>
+            <h4 class="ph4">Edges as Stats</h4>
+            <p class="pp">Edges are close to what some TRPGs would call stats, very broad areas that a character excels in. In fact, you can treat edges as more traditional stats if you want to by having them describe the strengths of a character's own body and mind.</p>
+            <span class="example"><b>The Mountain Road</b>, a game of medieval travel, uses edges like basic stats. Characters might choose Strength, Reflexes, Guts, or Wisdom.</span>
+            <h4 style="color: #D25A31;">Chop & Change - Edges</h4>
+            <p class="pp">When adding edges to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Add a special rule to each of them, so that using each edge works slightly differently</li>
+              <li>Have characters take all the edges, but assign them different sized dice (if you're using variable dice sizes)</li>
+              <li>Limit the number of edges a character takes to one, if you want to encourage hyper-specialization</li>
+              <li>Tie the use of certain skills to the use of particular edges (though this will vastly decrease flexibility)</li>
+              <li>Allow multiple edges to contribute to an action roll</li>
+              <li>Make edges into a one box track, that are marked when used and can't be used again until unmarked.</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">SKILLS&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Skills add dice to an action roll depending on their rank (a rank one skill adds 1d6, two ranks in a skill would add 2d6 etc) on any action roll they might apply to.</li>
+              <li>Only one skill can be used for a particular roll, and the maximum they can add is 3d6 at rank thre</li>
+              <li>Skills are more specific than edges, but still broad. A skill calledSwordsmanship might add dice for someone attacking with a blade, maintaining their weapon, or spouting off about the history of classic instruments of war. They're flexible, in that they can definitely do X but could also do Y or Z.</li>
+              <li>Players should find out exactly what a skill means to their character as the game progresses. Different characters might habitually use the same skill in slightly different ways.</li>
+            </ul>
+            <h4 class="ph4">Skills Define Actions</h4>
+            <p class="pp">Edges are broad so skills can be narrow. Skills have both mechanical and narrative purpose; they add dice to actions, and they help inform players of the kinds of actions they should be taking in game. If a character has a skill that helps with stealth, the player is more likely to choose stealthy approaches to situations in order to roll the most dice, and have the highest chance of success.</p>
+            <h4 class="ph4">Skills Define Worlds</h4>
+            <p class="pp">A good skill list acts as an introduction, or at least a reminder, to the average player on what the world is about. Is Shoot a skill? The setting has ranged weapons and that's important. Is Arcane a skill? Magic exists.</p>
+            <h4 class="ph4">Nothing Wrong With Overlap</h4>
+            <p class="pp">Creative approaches are the name of the game here, so some overlap and fuzziness on skills tends to help players (especially new players) explore the methods and limits of their character.</p>
+            <span class="example">In <b>The Wildsea</b>, the Sway skill is specifically there for convincing others to do as you want, usually by making friends and earning trust. But the Outwit skill could get you similar results, and dipping into the cultural information provided by a language could also help. So if a character doesn't have Sway, that doesn't mean they're inherently rubbish at making friends or convincing people - it just means they'll have to be creative in doing so, or that such events might need a little extra set-up, or the right situation.</span>
+            <h4 class="ph4">How Many Skills?</h4>
+            <p class="pp">There's no specific amount of skills required, but roughly double the number of edges is probably a good target to aim for. Keep in mind that the more you add, the more specialized they'll tend to be. Always think of skills with the setting in mind - if it's a world of hard-boiled detective types, there should be at least one skill (if not more) that would allow for the finding of clues or processing of information. If you're making a game about worms having a tea party, you probably don't need a skill for katana use.</p>
+            <h4 class="ph4">Skills, Languages, Lores...</h4>
+            <p class="pp">Skills are usually described with a verb (such as Tend, Fight, or Climb). If you want more specialized skills, they might be two words instead (Arcane Lore, Computer Use). But skills don't even really have to be... Well, skills. The ranks-give-dice set-up of skills could work for using a particular type of gear, or speaking a language, or being wise on a particular subject. There's nothing stopping you from having skills and 'something else that works the same as skills but is technically different'.</p>
+            <span class="example"><b>The Wildsea</b> has Skills and Languages, with skills named with verbs and languages given setting appropriate names. Wildsea skills tend more toward involving actions, while Wildsea languages allow understanding, communication, and also offer cultural information about certain groups of people. Mechanically both groups are treated the same, in that you can only add one skill OR one language to a roll.</span>
+            <span class="emphasis"><h3 class="ph3">THE INVERTED PYRAMID</h3><p class="pp">Edges, Skills, and Aspects in Wild Words are an inverted pyramid of specificity. Edges are very broad, and can be applied in many situations. Skills are more narrow, and help tell a player what kind of actions their character is good at. And aspects are even more narrow, containing specific abilities that usually help in specific situations or with particular types of action. Messing with this pyramid is entirely possible, but might have ramifications when it comes to playability. Having fewer edges or less flexible skills might leave players feeling like they're missing out if they're not taking a particular approach, for example. Making the scope of these things too broad might invite choice paralysis in terms of potential actions or approaches, slowing the pace of play.</p>
+            <p class="pp">As a designer, you'll know your own game and own world best, so feel free to tailor these elements of the engine (as with all others) to suit the feel you're going for. But keep in mind that these are designed, and ordered, to make the process of making a dice pool flow as easily as possible.</p></span>
+            <h4 style="color:#D25A31">Chop & Change - Skills</h4>
+            <p class="pp">When adding a skill system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have some skills available only to certain backgrounds or character types.</li>
+              <li>Have each rank of a skill give a particular bonus that goes beyond adding dice to an action roll.</li>
+              <li>Have players make custom skills for their character using a couple of words or a short description.</li>
+              <li>Restrict the number of ranks a starting character can take, choose, or buy in a particular skill.</li>
+              <li>If using a currency system to buy character elements, increase the cost of rank two or three skills.</li>
+              <li>Name particular skill ranks (such as 'Journeyman', 'Expert', or 'Master').</li>
+              <li>Split skills into smaller categories that are inherently tied to a particular Edge.</li>
+              <li>Remove skills entirely in favour of an entirely different kind of system for gaining additional dice.</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">ASPECTS&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Aspects combine information about a character, special rules, tracks, and the ability to add an extra 1d6 to action rolls. Most characters have multiple aspects, and they're usually split into groups based on background choices.</li>
+              <li>The track of an aspect gets marked as a character takes damage, or sometimes as they tap into the power of the aspect itself. Tracks typically range from one to eight boxes in length. When an aspect's track is fully marked, the character loses access to the special rules that aspect provides, and it can't be used to add advantage dice to a roll.</li>
+              <li>Aspects are very specific in nature, describing the most important traits or pieces of gear that a player never wants their character to be completely without. Aspects have a type word to help describe what they are (such as 'gear').</li>
+              <li>An aspect's ability to add 1d6 to an action roll is determined by its name and presentation, not the special rules. Special rules should do something more interesting than just adding dice.</li>
+              <li>Aspects change as a character grows in power and experience, and are at the core of the Wild Words character progression system.</li>
+            </ul>
+            <h4 class="ph4">The Look</h4>
+            <p class="pp">Aspects have a name, type, track, and special rule (and maybe a bit of flavour text). They are generally set out similarly to the example below...</p>
+            <span class="emphasis">
+              <h4 class="ph4">Acid Tongue </h4><span class="a-sub">3-Track Trait</span>
+              <p class="pp">The truths you spit cut to the core. Treat conflicts as triumphs when engaged in an argument, and you can mark this aspect to create a whisper based on any topic you've recently argued over.</p>
+            </span>
+            <h4 class="ph4">Aspects Define Actions</h4>
+            <p class="pp">Edges are broad, skills are narrower, and aspects are specialized. An aspect is a unique thing; a feature of a character's learning or biology, or a piece of gear they rely on, or a companion that accompanies them. Players can use them to help choose the actions their character might take.</p>
+            <span class="example">In <b>The Sword Spiral</b>, the 'Grit' edge lets us know that a character can approach things in a rough and ready way. The 'Bladework' skill informs us that this character has some familiarity with edged weapons. And the 'Bastard Sword' aspect tells us that if there's a problem to be solved, this character might well try to slice their way through it - the existence of the sword as an aspect helps the character rely on those edge and skill choices.</span>
+            <h4 class="ph4">Aspects are Special</h4>
+            <p class="pp">Technically a character can have as many aspects as they like, and more aspects means a more powerful character. But it also means a more complex character - it's better to have players combine or improve their character's aspects as they advance rather than just gaining more and more.</p>
+            <span class="example">In <b>The Wildsea</b>, characters might have four or six aspects to start with, depending on their level of experience. No character can have more than eight aspects at a time (excluding temporary aspects).</span>
+            <span class="example">In <b>Streets by Moonlight</b>, characters are made to be simple to play and easy to use. They each have two aspects - one from their Job, and one from their Talent.</span>
+            <h4 class="ph4">Aspects are Eternal</h4>
+            <p class="pp">When a player chooses an aspect, it's central to their character. It's an assumption of the Wild Words engine that an aspect can never be taken away from a character (though the benefits it offers might be denied them for a time through damage or special rules). Even if, narratively, an aspect is lost, it should always be able to be found again if the player wants that.</p>
+            <span class="example">Angier fully marks their grappling hook, describing how the rope snaps. When it gets repaired, this is framed narratively as the rope being mended or a new hook being added.</span>
+            <span class="emphasis"><h3 class="ph3">DO I NEED ASPECTS?</h3>
+            <p class="pp">Technically, no. Like any other element of the Wild Words system, you can slightly alter, completely change, or even remove aspects as you like.</p>
+            <p class="pp">... But I woudn't recommend it.</p>
+            <p class="pp">Aspects may not be a 'core element' of the Wild Words system, but they are a good example of tying other core systems together, a kind of emergent complexity. They marry a fiction-first approach with special rules, they incorporate tracks, they remove the need for a separate HP or wound system, they act as the 'narrow end' of the inverted pyramid of specificity mentioned in the skills section, and they're a great flag for the GM that a player wants a particular thing to feature in the game so that they can shine.</p>
+            </span>
+            <h4 class="ph4">Aspect Types</h4>
+            <p class="pp">Most games will have a lot of aspects to choose from. Giving the aspects a type helps manage some other special rules that exist around them (like the ability to clear marks from them with certain actions) or makes them susceptible or resistant to other elements of the world (such as a pirate's ability to disarm an opponent only working on 'gear' type aspects). Some types may even have their own built-in special rules that aren't mentioned in the text of every aspect that has them (likely to save space on the page). The type of an aspect should fit the setting it's used in.</p>
+            <span class="example">In <b>The Wildsea</b>, there are three types of aspect - trait, gear, and companion. Marks on a trait are cleared by healing, marks on gear by repair, and marks on a companion by whichever of those two options makes more sense. Companions also have shorter tracks than most aspects, but benefit from the special rule that they can all act autonomously, which might be a great narrative help.</span>
+            <span class="example">Aspects don't have a type in <b>Streets by Moonlight.</b> There aren't too many of them to choose from, and players clear a mark from each at the end of a session rather than with some type-dependent healing rules.</span>
+            <h4 class="ph4">What Can Aspect-Based Special Rules Do?</h4>
+            <p class="pp"><b>Big question, easy answer - they allow a character to engage with, or even break, the rules of the game.</b></p>
+            <p class="pp">An aspect that describes a sword might have a damage type, or even an amount of damage that it deals when used. This would play into another set of rules within the game, concerning combat and damage.</p>
+            <p class="pp">An aspect that describes an unusual sensory organ might give the character a new method of seeing or hearing that most other character's wouldn't have access to. This allows new narrative opportunities, and maybe helps mechanically in certain situations where they have to rely on this new sense.</p>
+            <p class="pp">An aspect that describes a helpful robotic companion that blocks bullets for you might give the character the ability to treat the dice differently when they're rolling to escape harm. This breaks the usual rules of the game, telling the player that their dice work in a special way when this aspect is concerned.</p>
+            <p class="pp">Ultimately, the kind of rules you might add to an aspect will depend on the setting it's made for, the power level you want it to have, the kinds of narrative options you want to offer players, and the rules you want them to be able to bend or break.</p>
+            <h4 class="ph4">What's a Bad Aspect?</h4>
+            <p class="pp">Anything that takes away the agency of another player, or another character, that they had no choice in. Here's an example...</p>
+            <span class="emphasis">
+              <h4 class="ph4">Human Shield </h4><span class="a-sub">4-Track Trait</span>
+              <p class="pp">Once per scene, choose an ally to take the damage of an incoming attack that's aimed at you.</p>
+            </span>
+            <p class="pp">This is a bad aspect, because it allows you to negatively affect another character at the table without the permission of their player. You could fix it by changing the wording to allow another player to volunteer their character for taking that damage, or by directing the damage to an NPC (thus not removing player agency).</p>
+            <h4 class="ph4">Strong Aspect, Short Track</h4>
+            <p class="pp">The special rules of an aspect are essentially traded for by you, the designer. For every special thing an aspect can do, remove some boxes from the aspect's track - that aspect is now more fragile or can be used less often. The stronger the thing, the more boxes get removed.</p>
+            <span class="example">When designing aspects for The Wildsea, each starts with a five-box track and no special rules. Weak special rules remove one or two boxes, strong special rules three or four. If the rule has a limit on when or how it is used, or forces the player to mark the track for using it, that adds a box or two back on. This way, stronger aspects that can only be used rarely can be (roughly) balanced against cheaper ones that get used freely.</span>
+            <h4 class="ph4">Example Special Rules</h4>
+            <p class="pp">The scope of an aspect's special rule (or rules) depends on the rest of the rules for the game. Here are a few suggestions that rely on core features of the Wild Words Engine...</p>
+            <ul class="pul">
+              <li>Deal a certain type of damage at a particular range.</li>
+              <li>Learn information about a particular thing (this might give the player the option to make the information themselves, or rely on the GM).</li>
+              <li>Treat a bad dice result as a better one, or reroll dice in a certain situation.</li>
+              <li>Gain resistance or immunity to a type of damage or hazardous element of the setting.</li>
+              <li>Treat one kind of resource as another (useful for setting up other special rules that affect each other).</li>
+              <li>Gain a sense or way of interacting with the world that wouldn't normally be available.</li>
+              <li>Bolster another player's character in some way.</li>
+              <li>Allow a change of shape, size, or material for narrative effect.</li>
+              <li>Create a resource of some kind, either by inventing it or by pulling one from a pre-made list.</li>
+              <li>Add a special rule to, or raise or lower the impact of, a particular type of action relevant to the setting.</li>
+              <li>Allow things that would normally take a long time to be done quickly.</li>
+            </ul>
+            <h4 style="color: #D25A31;">Chop & Change - Aspects</h4>
+            <p class="pp">When adding an aspect system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have players name, flavour, or even entirely create aspects themselves as they make their character.</li>
+              <li>Allow permanent damage or change to an aspect that can't be reversed.</li>
+              <li>Decouple tracks from aspects - they can't be damaged and are always effective.</li>
+              <li>Decouple special rules from aspects and have them simply act as flavoured HP bars.</li>
+              <li>Have aspects bought with a kind of currency, either in-world or meta.</li>
+              <li>Have aspects that can only be taken after certain other aspects have been taken, or after achieving something setting-specific.</li>
+              <li>Have new aspects gained by combining in-world resources and metacurrency.</li>
+              <li>Tie skills to an aspect, so if the aspect is fully marked a character loses access to the linked skills.</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">IMPULSES&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Impulses are narrative-first signals to a player that their character should act a certain way. This might come in the form of goals to be chased, rules to be followed, or vices to be indulged in.</li>
+              <li>Impulses might have a mechanical component to them, but likely not at all times. They exist to suggest play decisions, not necessarily to force them.</li>
+              <li>Impulses may have a track attached to determine their strength over or importance to a character.</li>
+              <li>A player following a character's impulse should be rewarded in some way (even if that impulse might be detrimental to the character).</li>
+            </ul>
+            <h4 class="ph4">Scope</h4>
+            <p class="pp">Ideally, impulses are there to help a player decide what their character might do in a given situation. If they have an impulse that leads them to indulging in something, and that thing is presented, it makes narrative sense for their character to be drawn to that thing.</p>
+            <p class="pp">But that doesn't mean a character should have to engage with it - that's a player agency concern. Ther are a few ways you can handle this...</p>
+            <ul class="pul">
+              <li>Leave it completely narrative.</li>
+              <li>Reward engaging with an impulse.</li>
+              <li>Penalize resisting an impulse.</li>
+              <li>Let the dice decide what happens.</li>
+            </ul>
+            <span class="example">In <b>The Wildsea</b>, impulses are split into two sections - Drives and Mires. Drives are positive impulses that describe a character's goals, and working towards them rewards a player with milestones to advance their character. Mires are negative impulses with a small attached track - they don't affect the character until the track starts to fill, but once it does there's a mechanical penalty on actions that might be affected by that impulse.</span>
+            <span class="example">In <b>Rise</b>, impulses are coded as the wants of a nation-state's citizens, and have a single box that's either marked or unmarked. If the box of a want is marked (such as 'Hungry'), there's a mechanical penalty associated with actions related to that impulse.</span>
+            <span class="example">In <b>PICO</b>, a bug has one grand goal that they'll likely never achieve. There's no mechanical tie to this goal, it's just there as a little bit of flavour for the character.</span>
+            <h4 class="ph4">Deciding on Impulses</h4>
+            <p class="pp">Like all elements of a character, the impulses should be tied to the world you're creating. A setting revolving around the mean streets of a major city might have characters pulled towards engaging with their vices, or earning rewards and advancement by rising above them. Think about what social pressures, cultural expectations, and grand goals might matter to the inhabitants of your world, and craft an impulse system around that.</p>
+            <span class="example">In <b>The Sword Spiral</b>, honour in combat is important. The impulses here are codes of conduct to follow that might get in the way of success, reinforced by cultural expectations - attacking an enemy that's unarmed or unaware might not have a mechanical downside, or might even have a mechanical upside, but will damage a character's Honour... And it's that honour that a player uses to add to the dice pool of rolls that benefit their allies.</span>
+            <span class="example">In <b>Streets by Moonlight</b>, characters are inherently flawed. Their impulses are impossible to resist - if they come across them, they must engage with them. Whether they survive or not is down to the luck of the dice.</span>
+            <h4 class="ph4">Leaving Out Impulses</h4>
+            <p class="pp">Of all the potential character elements, impulses is the one that can most easily be left out of a Wild Words game. It's there to create conflict and drama, and to guide decision-making in an unfamiliar setting, but if your world is a more familiar one or you want absolute player agency over a character's thoughts, feelings, and actions, leaving it out might be the better choice.</p>
+            <h4 class="ph4">Impulses as Flags</h4>
+            <p class="pp">For a GM, a player choosing a particular impulse likely means that they want it featured in the game. If a player chooses for their character to have an unsatiable yearning for dark knowledge, the setting and game should allow them to engage with that (even if that engagement is resisting it).</p>
+            <h4 class="ph4">Impulse Tracks</h4>
+            <p class="pp">Consider giving an impulse a track that can be marked and cleared if you want it to affect a character over time. Meters work particularly well for this. Dice rolls related to an impulse may even depend on how many boxes of the track are marked, or unmarked.</p>
+            <span class="example">In <b>Drift</b>, the impulse system is known as the Chain. The Chain sets out six important people, places, and life events that a character can draw strength from or rely upon in darker or more confusing moments. A 'chain roll' allows them to roll a number of dice equal to the unmarked boxes on the chain to resist the unsettling effects of the living city they live in. The more that chain has been damaged (and thus marked), the fewer dice the player will have to roll with, and the less stable that character will be in these moments.</span>
+            <h4 style="color: #D25A31;">Chop & Change - Impulses</h4>
+            <p class="pp">When adding an impulse system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have players create their own positive or negative impulses during character creation.</li>
+              <li>Have impulses reflect the bonds between characters.<li>
+              <li>Have impulses as hard narrative rules a player must adhere to, or be penalized for stepping outside of.</li>
+              <li>Have impulses tied to advancing, or even using, skills or aspects.</li>
+              <li>Have impulses resisted by expending resources or currency.</li>
+              <li>Have impulses hidden from the players, entirely in the realm of the GM.</li>
+              <li>Have impulses change once they've been engaged with once to keep the system fresh.</li>
+              <li>Have impulses change a character permanently, for better or worse.</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">RESOURCES&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Resources are simple and temporary, elements of the world that a character can pick up and keep to use later.</li>
+              <li>Resources are usually split into several categories depending on what they are, or how they're used by the rules. Not all categories have to work in the same way, but keeping them similar helps to keep the rules-burden low.</li>
+              <li>A resource can have one or more tags, words attached to it that describe a quality it has.</li>
+              <li>Resources might be arranged in lists or tables in a book, but they should always be simple enough to make in the moment for a GM. Resources are a great reward for small successes during play, so shouldn't require checking a book repeatedly.</li>
+              <li>Resources likely give a 1d6 advantage to an action roll when used, but might be consumed in the process.</li>
+            </ul>
+            <h4 class="ph4">What is a Resource?</h4>
+            <p class="pp">In most Wild Words games, a resource is anything a character picks up during a game to keep, but that isn't vitally important. They're intended to be found, lost, bought, sold - resources are fluid, by their very nature</p>
+            <h4 class="ph4">Mini-Aspects</h4>
+            <p class="pp">In fact, resources are a lit like tiny, temporary, uncomplicated aspects. Their names are important for working out what you might do with them, they give 1d6 advantages on action rolls when used, and they might allow a character to do something they wouldn't normally be able to.</p>
+            <span class="example">Klyka picks up a jagged saw as a resource. He wouldn't normally be able to cut through a rope with ease with just his bare hands, but using the saw as part of an action makes that far more possible.</span>
+            <p class="pp">But, very much unlike aspects...</p>
+            <h4 class="ph4">Resources are Fleeting</h4>
+            <p class="pp">No character or rule should ever rely on a single particular resource to work without a really good reason, because resources are entirely temporary by their nature. A category of resources might be required for something, or a resource with the right kind of type or tag, but avoid hyper-specificity when writing resource-related rules.</p>
+            <span class="example">In <b>The Wildsea</b>, healing usually consumes a resource - a specimen, to be precise. What type of specimen? One that's useful to the roll - that's all the guidance that's given, the rest is left up to the narrative and the interpretation of players.</span>
+            <h4 class="ph4">Resource, Tag, and Category Examples</h4>
+            <p class="pp">This is a lot of words to throw at you at once, but the Wild Words resource system is pretty simple (honest). First you choose a few categories of resource that relate to your setting, then think of a few resources as examples for each type, then how these reosurces might be modified thanks to the condition they're in. Here are a few examples, based around particular themes...</p>
+            <p class="pp"><b>A World of Investigation and Gumshoe Hijinks</b></p>
+            <ul class="pul">
+              <li>Possible Categories: Clues, Contacts</li>
+              <li>Resource Examples: Footprint on the Stairs, Discarded Cigarette, Marley from the Broadmix Club</li>
+              <li>Tag Examples: Spoiled, Dirty, Angry</li>
+            </ul>
+            <p class="pp"><b>A World of Swords and Sorcery</b></p>
+            <ul class="pul">
+              <li>Possible Categories: Loot, Spells</li>
+              <li>Resource Examples: Treasure Chest, Silver Goblet, An Orc's Tooth, Bounty Contract, Grand Levitate, Prestidigitation, Flaming Wheel</li>
+              <li>Tag Examples: Tarnished, Gleaming, Empowered, Unstable, Mind-Born</li>
+            </ul>
+            <p class="pp"><b>A World of Treetop Seas</b></p>
+            <ul class="pul">
+              <li>Possible Categories: Salvage, Charts</li>
+              <li>Resource Examples: Cryptolithic Amber, Broken Sidearm, Chips of Old-World Stone, A Map of the Wavetops, A Many-Folded Chart</li>
+              <li>Tag Examples: Rusting, Pre-Verdant, Faded</li>
+            </ul>
+            <h4 class="ph4">But What Do Resources DO?</h4>
+            <p class="pp">Now this is a tough one, because the answer is 'whatever you want or need them to'. But it's a bit more in-depth than that.</p>
+            <p class="pp">All resources should be able to give a 1d6 advantage when used as part of an action. They should also allow some actions to be taken that wouldn't usually be possible (for example, you might be able to hunker down and hide in plain sight under an Invisible Cloak resource).</p>
+            <p class="pp">But each category you create can also have special rules attached. Perhaps mystical Bounty Contracts turn directly into currency when their mark is brought down. Eggs might hatch when you've carried them around for long enough. Whispers can change the world in small ways, giving narrative agency to a player that's usually reserved for the GM. Resources can do... Pretty much anything.</p>
+            <p class="pp">But there should be some limits.</p>
+            <h4 class="ph4">Using Resources</h4>
+            <p class="pp">Resources come and go, and one of the ways that Wild Words enforces that is by making them limited use. Sometimes it's one-use, sometimes several. Depends on the resource. As a good guideline, resources might be...</p>
+            <ul class="pul">
+              <li><b>Used/Utilized</b>: The resource remains after use.</li>
+              <li><b>Risked</b>: The resource remains after use, but only if things go well.</li>
+              <li><b>Tarnished</b>: The resource gains a negative tag after use. If it already has one, the resource is consumed.</li>
+              <li><b>Consumed</b>: The resource is destroyed or otherwise
+                removed after being used.</li>
+            </ul>
+            <p class="pp">As for which categories of resources follow which rules, or what kind of actions trigger what kind of outcome from the table above... That one's entirely your choice!</p>
+            <br>
+            <hr>
+            <h1 class="ph1">WEALTH&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>A measure of how rich a character (or an entire group) is, usually denoted by a number that fluctuates as things are bought or sold.</li>
+              <li>The core expression of wealth in Wild Words is quantative, in that it's represented by a simple numbe</li>
+              <li>Wealth can be seen as the flip side of resources, which are qualitative in nature. The value of wealth is in the amount of it a character has, whereas the value of resources is in the qualities they possess.</li>
+              <li>Wealth should be named in a setting-appropriate way. A feudal society might use silver coins, whereas a space-faring civilization might rely on universal credits.</li>
+            </ul>
+            <h4 class="ph4">Money or Mystery?</h4>
+            <p class="pp">The most obvious form of wealth is money, so that's the one we're going to explore first. Whether it comes in the form of coins, gold, credits, or weird stones, if a setting has wealth players are probably going to want to amass some of it. It's the looter's impulse in all of us, perhaps.</p>
+            <span class="example"><b>Drift</b> has an in-world currency, Zen (triangular coins produced and distributed by the parasite city ), which acts as a measure of Wealth for each character. They are found in gutters and vending machines slots and the spaces between sofa cushions, and are traded for goods or services at stations. It's highly granular, and a character might amass hundreds of 'zennies' at a time.</span>
+            <p class="pp">This kind of tangible wealth system, based on something characters can pick up and hold, is simple and straightforward. For better or worse, we all understand how money works. But you don't need to use wealth to represent something that's purely physical if it doesn't work for your game.</p>
+            <span class="example"><b>Rise</b> measures a nation's wealth with a specific currency, Yield, which can be spent on expanding empires or creating buldings. Yield represents many things, from time spent working to stacks of gold coins, but it's still an in-world currency and is represented by a single number. The actual nature of the Yield, or where it's drawn from, doesn't matter. It's also low on the granularity scale, and a nation might only have 4 or 5 Yield to spend at any one time.</span>
+            <h4 class="ph4">Spending, Saving, and Interaction</h4>
+            <p class="pp">Whatever you're using to represent wealth, players are going to want to spend it at some point. But what can they spend it on?</p>
+            <p class="pp">Think of what other parts of the game wealth might tie into. Is it involved in every transaction? Does it take the place of barter? How is it earned, and carried? Is it spent on anything that a player might not expect? Does having a certain amount of wealth give any bonuses, or does having none bring downsides beyond not being able to afford things?</p>
+            <span class="example">Zen in <b>drift</b> is used to buy food from vending machines, to pay for train repairs and medical services, all the stuff you might expect. But it also ties into a character's luck - the more Zen they have, the more likely it is that Fortune rolls will go their way (the parasite city doesn't quite understand the relationship between money and opportunity, but it's giving it a go).</span>
+            <h4 class="ph4">Broke By Choice</h4>
+            <p class="pp">Wealth isn't essential for a Wild Words game. If your setting focuses on rangers in the wilderness who never visit cities, who cares how many discarded coins they might find on their travels?</p>
+            <p class="pp">Removing wealth means fewer numbers to handle for a player, and less of an economy to balance for a designer. And if you're not entirely comfortable getting rid of money with nothing else to stand in for it, the box on the right offers some handy alternatives.</p>
+            <span class="emphasis">
+              <h3 class="ph3">IN THIS ECONOMY?</h3>
+              <p class="pp">If you don't want a single standard currency but still want trade or commerce, there are a couple of routes you can take...</p>
+              <h4 class="ph4">Barter System</h4>
+              <p class="pp">This removes numerical wealth from the game, instead usng Resources (pg xx) to make a more quality-based system. How much is a chicken's egg worth? No idea, but I'll trade you one for that handful of herbs.</p>
+              <span class="example"><b>The Wildsea</b> doesn't have a wealth system. Resources are traded for other resources, or used to accomplish tasks. The 'worth' of a particular resource is decided narratively rather than numerically, according to what the resource is and any special tags it might have.</span>
+              <h4 class="ph4">Wealth Ratings</h4>
+              <p class="pp">This also removes numerical wealth, replacing it with a ratings track. When the characters find something that might make them 'wealthier', a box on the track is marked. When they need to see if they can afford something, they roll dice equal to the number of marked boxes. A Triumph means they can afford it no problem, a Conflict means they can afford it by erasing one of the marks and lowering their overall wealth, and a Disaster means they can't afford it at all.</p>
+              <span class="example"><b>The Sword Spiral</b> tracks wealth with a single rating in this way. Not every coin is tracked, and any valuable stuff just gets tossed into a treasure chest rather than being recorded by name.</span>
+            </span>
+            <h4 style="color: #D25A31;">Chop & Change - Impulses</h4>
+            <p class="pp">When adding a wealth system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Make multiple currencies that can be spent on different things</li>
+              <li>Have multiple denominations of the same currency that are recorded separately</li>
+              <li>Specify that characters are assumed to always have enough for basic transactions (the Wildsea does this with the Scratch rules)</li>
+              <li>Have wealth grow or degrade naturally over time</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">METACURRENCY&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Metacurrencies aren't an element of the world of the game. Instead they're spent by players to affect their characters, alter rolls, or change elements of a scene - they're an element of the rules.</li>
+              <li>Metacurrencies are usually recorded on a character sheet, but they're not something a character has access to, they're for that character's player to use.</li>
+              <li>Earning a metacurrency might be done by making certain choices, or it might be linked to entirely out-of-world actions (like beginning a session of play).</li>
+              <li>A metacurrency might be numerical, like wealth, or descriptive, like a Resource.</li>
+            </ul>
+            <h4 class="ph4">Metawhat?</h4>
+            <p class="pp">If it's something a player gains or uses rather than a character, it's probably a metacurrency. It doesn't appear as an element of the world or story, but can be used to affect those things.</p>
+            <span class="example">In <b>The Mountain Road</b>, each player gets a point of Divine Favour at the beginning of a session. This can be spent when their character is about to take serious damage or consequences from an action. Spending Divine Favour allows a player to describe how their character avoids this outcome, regardless of the rest of the rules.</span>
+            <p class="pp">Some metacurrencies are recorded and spent as basic numbers like Wealth, or have individual names and qualities like Resources. They can be qualitative or quantitative, but remember that this changes how they're recorded on a character sheet.</p>
+            <span class="example"><b>The Wildsea</b> uses a metacurrency for character advancement, known as Milestones. They're earned by satisfying drives and taking part in big moments, and they're recorded on a character sheet in the form of a small phrase that harkens back to the event that earned them. 'Defeated the Pinwolves' might be a milestone, or 'Survived the Sinking of the Heron'. Characters aren't aware that they've earned a milestone, they're just happy they weren't eaten by pinwolves or consigned to the Under-Eaves.</span>
+            <h4 class="ph4">Made for Flexibility</h4>
+            <p class="pp">Metacurrencies exist to give players a little flexibility. Their character might be in an impossible situation, but that doesn't mean that they are as a player if they have some kind of game-affecting metacurrency to spend.</p>
+            <span class="example">Galstaf is bound securely in the back of a bandit's cart. He's got no way of escape, and can't reach any of his gear. His player, however, has a point of Divine Favour to spend - she spends it, and the cart jostles over a stone in the path. It allows Galstaf to shift position just enough to roll out of the back of the cart. He's still trussed up, but at least he's not being taken back to a bandit camp.</span>
+            <h4 class="ph4">The Uses and Limits of Metacurrency</h4>
+            <p class="pp">...Are pretty much whatever you want them to be. They might add dice, change rules, turn back the clock... Anything you want. Something important to consider here though is that metacurrency spending can actually take players out of the game - it stops them thinking about what their character might do and gets them thinking about what they as a player might do. It puts the rules above the fiction for a moment, if handled poorly.</p>
+            <p class="pp">A good golden rule to follow is this: metacurrency should never affect a character that isn't your own, at least not without that character's player giving their consent.</p>
+            <h4 class="ph4">GM Metacurrencies</h4>
+            <p class="pp">It's not just players that might gain and spend metacurrency throughout a session! GMs might be able to as well, earning it after certain player actions or decisions and spending it to introduce complications to the world or story.</p>
+            <span class="example">In <b>The Wildsea: Storm & Root</b>, acting under scrutiny might mark a particular track. The Firefly can clear these marks to introduce dangerous stuff to a scene, like an instance of damage or the appearance of a hazard. Players might be able to unamrk them to, through the actions of their characters - it adds a kind of race to proceedings that's unique to this area of the game mechanics.</span>
+            <h4 class="ph4">Is Metacurrency Right For Your Game?</h4>
+            <p class="pp">The big question to ask yourself when it comes to metacurrency is 'do my mechanics need it'. Only you can answer that.</p>
+            <span class="example">The base game of The Wildsea doesn't use a metacurrency system for anything outside of developing characters and adding to ships, and even the metacurrency for adding to ships is mostly gained through trading away in-world cargo (a special kind of resource) to shipwrights at port</span>
+            <h4 style="color: #D25A31;">Chop & Change - Metacurrencies</h4>
+            <p class="pp">When adding a metacurrency system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have it so the GM can only introduce certain elements to a scene by spending a metacurrency</li>
+              <li>Have a metacurrency that's tracked for an entire group of players, rather than player by player</li>
+              <li>Have metacurrency earned through player actions rather than character actions, if you want to evoke a very 80s 'but I brought the pizza' vibe</li>
+            </ul>
+            <br>
+            <hr>
+            <h1 class="ph1">CREATION METHODS&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Once you've decided every element that a character should have, you need to work out how they get put together.</li>
+              <li>There are two main creation methods - point-buy and choice-based. You might use one, the other, or a mix of both. or something entirely different that I haven't thought of!</li>
+              <li>The creation method you choose will impact how information is organized and presented to the player - keep the flow of character creation in mind when deciding on this.</li>
+            </ul>
+            <h4 class="ph4">Point-Buy vs Choice-Based</h4>
+            <p class="pp"><b>Point-buy systems</b> give players a certain amount of points (or any other metacurrency) to spend during character creation. Each option costs a certain number of points, and when the player is out of points their character is finished.</p>
+            <ul class="pul">
+              <li><b>Benefits</b>: Allows for extremely modular characters, allows for different balances of character elements, easy to fold this naturally into a progression system</li>
+              <li>Drawbacks: Players need to read and digest a lot of options, players need to track the points they're spending, may end up with unbalanced characters, economy of character elements needs to be finely-tuned</li>
+            </ul>
+            <p class="pp"><b>Choice-Based</b> systems rely on the rules stating that a number of options have to be chosen, usually from distinct categories (two things from here, six from here etc). Characters may get a different amount of choices to make depending on the level of play, but all players go through the same kinds of choices.</p>
+            <ul class="pul">
+              <li><b>Benefits</b>: Easy to organize a step-by-step process, no/minimal numbers to track, should result in balanced characters, may reduce the amount a player needs to read and choose from, players aren't at risk of 'running out of points' by overspending on early options</li>
+              <li><b>Drawbacks</b>: More restrictive in terms of how much of one thing a character can have, doesn't support varying power levels as well in terms of granularity, much harder to dovetail into a progression system.</li>
+            </ul>
+            <h4 class="ph4">The Power of Choice</h4>
+            <p class="pp">Character creation is important. Players are going to spend at least a couple of hours, if not weeks, months, or years, with the characters they create. Whether you choose point-buy, choice-based, or a hybrid of the two, allowing players to create the kinds of character they want is the most important thing.</p>
+            <p class="pp">And hybrids <i>are</i> possible - maybe a player chooses two things from one section, and then has 6 points to spend in another. Or perhaps players are making more than just a single character, and you use one system for characters and another for whatever else they create.</p>
+            <span class="example"><b>The Wildsea</b> is choice-based when it comes to characters, point-buy in terms of ship creation. When making a character, a player makes a certain number of choices based on the elements of the backgrounds they choose. When making a ship, which is a group activity, each player has a personal metacurrency (stakes) to spend, and the group also get some stakes to share. These stakes are spent on things for the ship as whole, and on things that make the ship better for each player's particular character.</span>
+            <h4 class="ph4">Using Metacurrencies</h4>
+            <p class="pp">Point-based character creation is one of the most common ways of bringing in a <a href="srd-pages/metacurrency">metacurrency</a> Perhaps leftovers get converted into an in-game type of wealth or resource, or saved for future character progression.</p>
+            <span class="emphasis">
+              <h3 class="ph3">ADVANCEMENT</h3>
+              <p class="pp">Also known as character progression, advancement allows characters to 'level up' - they gain more skills, develop aspects, maybe even change their impulses.</p>
+              <ul class="pul">
+                <li>Tied to completing a certain number of sessions, with all players being able to advance their characters at the same time.</li>
+                <li>Related to the earning and spending of a metacurrency, or even in-game wealth.</li>
+                <li>Something that is represented in-game, with characters training to master new skills and aspects.</li>
+              </ul>
+              <p class="pp">The Golden Rule of advancement for Wild Words is that it should be able to build on what already exists. Consider combining aspects, broadening the use of particular skills, and locking certain resources in to being a permanent part of a character's kit as ways a character might advance.</p>
+              <p class="pp">...And let them take new stuff too, of course.</p>
+            </span>
+            <h4 style="color: #D25A31;">Chop & Change - Metacurrencies</h4>
+            <p class="pp">When adding a creation method system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have different characters start at different levels of power and experience.</li>
+              <li>Allow 'undecided' choices, where a character can save part of character creation to use in-game as a reveal or the answer to a problem.</li>
+              <li>Introduce an element of randomness to proceedings, with rolls for how many points might be spent in a point-buy system, or how many choices made in a choice-based one.</li>
+              <li>Enforce uniqueness - a minor advancement as the end of the character creation process, so that all players come with a character that transcends the options in the book in some way.</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButtonSel" onclick="">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">WEALTH&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>A measure of how rich a character (or an entire group) is, usually denoted by a number that fluctuates as things are bought or sold.</li>
+              <li>The core expression of wealth in Wild Words is quantative, in that it's represented by a simple numbe</li>
+              <li>Wealth can be seen as the flip side of resources, which are qualitative in nature. The value of wealth is in the amount of it a character has, whereas the value of resources is in the qualities they possess.</li>
+              <li>Wealth should be named in a setting-appropriate way. A feudal society might use silver coins, whereas a space-faring civilization might rely on universal credits.</li>
+            </ul>
+            <h4 class="ph4">Money or Mystery?</h4>
+            <p class="pp">The most obvious form of wealth is money, so that's the one we're going to explore first. Whether it comes in the form of coins, gold, credits, or weird stones, if a setting has wealth players are probably going to want to amass some of it. It's the looter's impulse in all of us, perhaps.</p>
+            <span class="example"><b>Drift</b> has an in-world currency, Zen (triangular coins produced and distributed by the parasite city ), which acts as a measure of Wealth for each character. They are found in gutters and vending machines slots and the spaces between sofa cushions, and are traded for goods or services at stations. It's highly granular, and a character might amass hundreds of 'zennies' at a time.</span>
+            <p class="pp">This kind of tangible wealth system, based on something characters can pick up and hold, is simple and straightforward. For better or worse, we all understand how money works. But you don't need to use wealth to represent something that's purely physical if it doesn't work for your game.</p>
+            <span class="example"><b>Rise</b> measures a nation's wealth with a specific currency, Yield, which can be spent on expanding empires or creating buldings. Yield represents many things, from time spent working to stacks of gold coins, but it's still an in-world currency and is represented by a single number. The actual nature of the Yield, or where it's drawn from, doesn't matter. It's also low on the granularity scale, and a nation might only have 4 or 5 Yield to spend at any one time.</span>
+            <h4 class="ph4">Spending, Saving, and Interaction</h4>
+            <p class="pp">Whatever you're using to represent wealth, players are going to want to spend it at some point. But what can they spend it on?</p>
+            <p class="pp">Think of what other parts of the game wealth might tie into. Is it involved in every transaction? Does it take the place of barter? How is it earned, and carried? Is it spent on anything that a player might not expect? Does having a certain amount of wealth give any bonuses, or does having none bring downsides beyond not being able to afford things?</p>
+            <span class="example">Zen in <b>drift</b> is used to buy food from vending machines, to pay for train repairs and medical services, all the stuff you might expect. But it also ties into a character's luck - the more Zen they have, the more likely it is that Fortune rolls will go their way (the parasite city doesn't quite understand the relationship between money and opportunity, but it's giving it a go).</span>
+            <h4 class="ph4">Broke By Choice</h4>
+            <p class="pp">Wealth isn't essential for a Wild Words game. If your setting focuses on rangers in the wilderness who never visit cities, who cares how many discarded coins they might find on their travels?</p>
+            <p class="pp">Removing wealth means fewer numbers to handle for a player, and less of an economy to balance for a designer. And if you're not entirely comfortable getting rid of money with nothing else to stand in for it, the box on the right offers some handy alternatives.</p>
+            <span class="emphasis">
+              <h3 class="ph3">IN THIS ECONOMY?</h3>
+              <p class="pp">If you don't want a single standard currency but still want trade or commerce, there are a couple of routes you can take...</p>
+              <h4 class="ph4">Barter System</h4>
+              <p class="pp">This removes numerical wealth from the game, instead usng Resources (pg xx) to make a more quality-based system. How much is a chicken's egg worth? No idea, but I'll trade you one for that handful of herbs.</p>
+              <span class="example"><b>The Wildsea</b> doesn't have a wealth system. Resources are traded for other resources, or used to accomplish tasks. The 'worth' of a particular resource is decided narratively rather than numerically, according to what the resource is and any special tags it might have.</span>
+              <h4 class="ph4">Wealth Ratings</h4>
+              <p class="pp">This also removes numerical wealth, replacing it with a ratings track. When the characters find something that might make them 'wealthier', a box on the track is marked. When they need to see if they can afford something, they roll dice equal to the number of marked boxes. A Triumph means they can afford it no problem, a Conflict means they can afford it by erasing one of the marks and lowering their overall wealth, and a Disaster means they can't afford it at all.</p>
+              <span class="example"><b>The Sword Spiral</b> tracks wealth with a single rating in this way. Not every coin is tracked, and any valuable stuff just gets tossed into a treasure chest rather than being recorded by name.</span>
+            </span>
+            <h4 style="color: #D25A31;">Chop & Change - Wealth</h4>
+            <p class="pp">When adding a wealth system to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Make multiple currencies that can be spent on different things</li>
+              <li>Have multiple denominations of the same currency that are recorded separately</li>
+              <li>Specify that characters are assumed to always have enough for basic transactions (the Wildsea does this with the Scratch rules)</li>
+              <li>Have wealth grow or degrade naturally over time</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meters</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+         <link href="../srd-test.css" rel="stylesheet" type="text/css" media="all">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       </head>
+       <body>
+       <script src="../srd-test.js"></script>
+    <div class="main-container">
+      <div class="nav-container">
+        <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
+        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
+          <span class="content navSection" style="max-height:100%;">
+          <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
+            <span class="navButton" onclick="window.location='../srd'">Overview</span>
+            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+              <span class="content navSection">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                <span class="navButtonSel" onclick="">Meters</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+              </span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+              <span class="content navSection" style="max-height:100%;">
+                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+              </span>
+            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+          </span>
+        
+        </div>
+        <div class="banner"></div>
+      </div>
+      <div style="flex-grow:8" class="vert-container" id="stack">
+        <div id="titlebar" style="flex-grow:0;padding-left:20px;"><h1>WILD WORDS <span style="color:#4A6B6A">v1.0</span></h1></div>
+        <div>
+          <div class="page">
+            <h1 class="ph1">METERS&nbsp;</h1><h2 class="ph2">CHARACTER ELEMENT</h2><br>
+            <h4 class="ph4">The Basics</h4>
+            <ul class="pul">
+              <li>Meters are specialized tracks, or gauges, that are filled by a character encountering or interacting with an element of the world or a portion of the wider rules.</li>
+              <li>Meters usually do nothing until fully marked, or if represented by a gauge do nothing until the gauge level changes.</li>
+              <li>A meter might exist for an element of the world or an element of a character.</li>
+            </ul>
+            <h4 class="ph4">Waiting for Change</h4>
+            <p class="pp">Meters filling leads to a change of some kind, just like any other track. They're similar to aspects in this way, but with the crucial difference of their special rules not coming into play until that last mark is made.</p>
+            <p class="pp">Meters might be counting up to something good, but are more often used to signal something bad. Marks on a meter might be imposed by the GM in response to a character's action or a happening in the world, but could also be voluntarily made by players.</p>
+            <span class="example">In <b>Drift</b>, each character in a drifter crew (and the train they share owership of) has a paradox meter, represented by a gauge. This measures the potentially harmful effects of the city's tendency to warp reality. The meter might be marked by moving through unstable areas, or voluntarily marked by taping into a particularly weird or powerful ability granted by an aspect. When the meter fills the gauge level increases - zero has no impact, one shows the character beginning to break under the pressure (imposing a penalty relevant to the situation), and when the gauge hits two the character is in serious danger of permanent change in the form of an unhealable injury.</span>
+            <span class="example"><b>Wildsea</b> doesn't explicitly use meters, but a ship's ratings work in a similar way. Until they're fully marked they function as normal, after being fully marked there's usually an immediate and related catastrophe.</span>
+            <span class="example">In <b>Rise</b>, each nation-state has a meter representing unrest. When unmarke or partially marked there's no effect, but when fully marked a rebellion begins and the player must destroy resources to quell the fury of their populace.</span>
+            <h4 class="ph4">Stress, Wounds, and HP</h4>
+            <p class="pp">The most traditional use of a meter-style system is one that Wild Words usually bypasses, as a marker of health or longevity. Aspects are used to track character damage in most games, so while you might want to use a meter for an additional health-style system, we recommend leaving that kind of thing to aspects - they are built for it.</p>
+            <p class="pp">But a recommendation is not a rule. For example..</p>
+            <span class="example">In <b>Streets by Moonlight</b>, the characters take damage to their Stability (a meter that combines physical and mental state) as they uncover deeper and darker mysteries of the moonlit streets, and suffer at the hands of the cryptic presences that dwell there. When a meter is full, the character dies... But will be replaced by the start of the next scene by a new character called in their stead, a more powerful individual with a fresh and unmarked Stability meter of their own. This would be an impossibly harsh punishment for most games, but frequent death and character replacement are built into the rules of SBM from the ground up. The characters are metaphorical mayflies, getting one or two moments in the sun before hubris takes them. </span>
+            <h4 class="ph4">Meters Are Very Optional</h4>
+            <p class="pp">If you've got nothing in the setting that needs tracking like a meter tracks things... Don't use them. Every character element is optional, but these are more optional than most.</p>
+            <span class="example">PICO doesn't use meters at all - it's specifically stripped back in terms of mechanical complexity compared to some Wild Words games, and there's no element of the setting that requires a meter to manage it.</span>
+            <h4 class="ph4">Marking and Clearing Meters</h4>
+            <p class="pp">When incorporating meters, think of what a player might do during the course of an average session to manage the marks on them. You don't want meter-management to become too much of a distraction from roleplay, especially as it's a mechanical system at heart (though there may well be narrative consequences). Ideally, a meter should only start becoming necessary to deal with when the marks are nearing full, though interacting with it early can stave off or delay these moments.</p>
+            <h4 style="color: #D25A31;">Chop & Change - meters</h4>
+            <p class="pp">When adding meters to your Wild Words game, you might...</p>
+            <ul class="pul">
+              <li>Have the GM control and mark meters in secret, with their length or state a mystery to players.</li>
+              <li>Give meters break points for additional rules-based granularity (Drift does something like this when it comes to Fuel).</li>
+              <li>Tie specific meters to specific character choices, with each player managing their meters in different ways.</li>
+              <li>Remove aspects and deal with all health and damage-related situations using a meter.</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:0.3" class="vert-container">
+      </div>
+    </div>
+  
+
+</body></html>
