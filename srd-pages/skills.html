@@ -15,46 +15,63 @@
     <div class="main-container">
       <div class="nav-container">
         <!-- This is where the navigation bar is located. Each nav button should call `appendToStack(link)` for their respective webpages-->
-        <div style="flex-grow:0;background-color:#4A6B6A;padding-top:1em;">
+        <div style="flex-grow:0;padding-top:1em;" class="navBar">
         <span class="collapsible mobileOnly navButton" onclick="collapse(this);" style="display:none">Menu</span>
           <span class="content navSection" style="max-height:100%;">
           <!---This is where the navigation links themselves are, the stuff declared above is for mobile compatibility.-->
-            <span class="navButton" onclick="window.location='../srd'">Overview</span>
-            <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
-            <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+            <span class="navButton" onclick="window.location ='../index'">What's Here</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ Wild Words</span>
               <span class="content navSection">
-                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+                <span class="navButton" onclick="window.location ='../srd'">Attribution</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/setting-genre-tone'">Setting, Genre &amp; Tone</span>
+                <span class="navButton" onclick="window.location ='../srd-pages/core-concepts'">Core Concepts</span>
+                <span class="collapsible navButton" onclick="collapse(this);">▾ Core System</span>
+                  <span class="content navSection">
+                    <span class="navButtonInv" onclick="window.location ='../srd-pages/all-core'">View All</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/the-conversation'">The Conversation</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/scenes'">Scenes</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/tracks'">Tracks</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/dice-pools-rolls'">Dice, Pools &amp; Rolls</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/actions'">Actions</span>
+                  </span>
+                <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
+                  <span class="content navSection">
+                    <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
+                    <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/skills'">Skills</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
+                  </span>
+                <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+                  <span class="content navSection">
+                    <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
+                    <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+                  </span>
+                <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
               </span>
-            <span class="collapsible navButton" onclick="collapse(this);">▾ Character Elements</span>
-              <span class="content navSection" style="max-height:100%;">
-                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-elements'">View All</span>
-                <span class="navButtonInv" onclick="window.location ='../srd-pages/overview-elements'">Overview</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/backgrounds'">Backgrounds</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/edges'">Edges</span>
-                <span class="navButtonSel" onclick="">Skills</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/aspects'">Aspects</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/meters'">Meters</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/impulses'">Impulses</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/resources'">Resources</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/wealth'">Wealth</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/metacurrency'">Metacurrency</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/creation-method'">Creation Method</span>
-              </span>
-            <span class="collapsible navButton" onclick="collapse(this);">▾ Subsystems</span>
+            <span class="collapsible navButton" onclick="collapse(this);">▾ By Firefly's Light</span>
               <span class="content navSection">
-                <span class="navButtonInv" onclick="window.location ='../srd-pages/all-sub'">View All</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/twists'">Twists</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/damage-resistance'">Damage &amp; Resistance</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/impact'">Impact</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/shared-assets'">Shared Assets</span>
-                <span class="navButton" onclick="window.location ='../srd-pages/hazards'">Hazards</span>
+                <span class="navButton" onclick="window.location ='../firefly/legal'">Legal</span>
+                <span class="collapsible navButton" onclick="collapse(this);">▾ Resources</span>
+                    <span class="content navSection">
+                        <span class="navButton" onclick="window.location ='../firefly/b-o-p'">Bloodlines, Origins, Posts</span>
+                        <span class="navButton" onclick="window.location ='../firefly/hazards'">Hazards</span>
+                        <span class="navButton" onclick="window.location ='../firefly/reaches'">Reaches</span>
+                        <span class="navButton" onclick="window.location ='../firefly/incursions'">Incursions</span>
+                    </span>
               </span>
-            <span class="navButton" onclick="window.location ='../srd-pages/wildsea'">Example: The Wildsea</span>
+            <span class="navButton" onclick="collapse(this);">Buy The Wildsea</span>
           </span>
         
         </div>
@@ -86,7 +103,7 @@
             <span class="example"><b>The Wildsea</b> has Skills and Languages, with skills named with verbs and languages given setting appropriate names. Wildsea skills tend more toward involving actions, while Wildsea languages allow understanding, communication, and also offer cultural information about certain groups of people. Mechanically both groups are treated the same, in that you can only add one skill OR one language to a roll.</span>
             <span class="emphasis"><h3 class="ph3">THE INVERTED PYRAMID</h3><p class="pp">Edges, Skills, and Aspects in Wild Words are an inverted pyramid of specificity. Edges are very broad, and can be applied in many situations. Skills are more narrow, and help tell a player what kind of actions their character is good at. And aspects are even more narrow, containing specific abilities that usually help in specific situations or with particular types of action. Messing with this pyramid is entirely possible, but might have ramifications when it comes to playability. Having fewer edges or less flexible skills might leave players feeling like they're missing out if they're not taking a particular approach, for example. Making the scope of these things too broad might invite choice paralysis in terms of potential actions or approaches, slowing the pace of play.</p>
             <p class="pp">As a designer, you'll know your own game and own world best, so feel free to tailor these elements of the engine (as with all others) to suit the feel you're going for. But keep in mind that these are designed, and ordered, to make the process of making a dice pool flow as easily as possible.</p></span>
-            <h4 style="#color:D25A31">Chop & Change - Skills</h4>
+            <h4 style="color:#D25A31">Chop & Change - Skills</h4>
             <p class="pp">When adding a skill system to your Wild Words game, you might...</p>
             <ul class="pul">
               <li>Have some skills available only to certain backgrounds or character types.</li>
