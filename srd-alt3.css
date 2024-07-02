@@ -197,7 +197,7 @@ a:hover{
   background-color:#FDF6E3;
   color: #1A1A28;
   border:2px solid #759262;
-  box-shadow: 20px 20px #48683B;
+  box-shadow: 20px 0px #21441A;
   }
 @media (max-width: 800px){
   .main-container{
