@@ -56,8 +56,10 @@ function resize() {
     }
 }
 $(window).on("resize", resize);
-resize(); // call once initially
-
+window.onload = function() {
+  resize();
+};
+ // call once initially
 //Collapsible menu stuff
 
 var coll = document.getElementsByClassName("collapsible");
